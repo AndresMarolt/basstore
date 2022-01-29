@@ -4,8 +4,16 @@ let interes = 0.08;
 
 const productos = [];
 
-function calcularTotal(costoProd, giftcard) {
-    return costoProd - giftcard;
+function restarGiftcard(gc) {
+    if(gc) {
+        console.log("Gift Card: $" + gc);
+        total -= gc;
+    }
+}
+
+function calcularCuotas(total, interes, cuotas) {
+    let costoCuotas = (total + total * interes) / cuotas;
+    return costoCuotas;
 }
 
 class Producto {
@@ -46,15 +54,12 @@ for(let j=0; j<productos.length; j++) {
     console.log("\n\n");
 }
 
-if(giftcard) {
-    console.log("Gift Card: $" + giftcard);
-    total -= giftcard;
-}
+restarGiftcard(giftcard);
 
 console.log("MONTO TOTAL EN UN SOLO PAGO: $" + total);
 
 if(cuotas>1) {
-    let arancelCuotas = (total + total * interes) / cuotas;
+    let arancelCuotas = calcularCuotas(total,interes, cuotas);
     console.log("\nCuotas: " + cuotas +
     "\nInterés: " + interes*100 + "%" +
     "\nArancel de la cuota: $" + arancelCuotas);
