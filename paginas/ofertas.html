@@ -52,7 +52,7 @@
             </nav>
 
             <div class="buscar">
-                <input type="text" placeholder="Buscar..." class="buscar__barra">
+                <input type="text" placeholder="&#x1F50D;Buscar..." class="buscar__barra">
             </div>
 
             <div class="inicio-sesion">
@@ -60,7 +60,6 @@
                 <a href="" class="log">SignUp</a>
             </div>
         </div>
-        
     </header>
 
 
@@ -70,123 +69,162 @@
             
             <h1 class="titulo">Ofertas</h1>
 
-            <select name="" id="ordenar-productos">
-                <option value="0">--Ordenar por--</option>
-                <option value="1">Precio mayor a menor</option>
-                <option value="2">Precio menor a mayor</option>
-                <option value="3">Más destacado</option>
-                <option value="4">Lo más nuevo</option>
-            </select>
-            
-            <div class="productos-todo">
-                <div class="contenedor__producto">
-                    <a class="producto" href="producto.html">
-                        <div class="producto__contenedor">
-                            <img src="../src/img/studio/Audient id4.webp" alt="Producto 3" class="producto__imagen">
-                            <div class="producto__datos">
-                                <p class="producto__datos__precio">$200000</p>
-                                <p class="producto__datos__nombre">Audient iD4 MkII</p>
-                            </div>  
-                        </div>
-                    </a>
+            <div class="filtros_productos">
+                <div class="filtros">
+                    <div class="filtro">
+                        <label for="ordenar-productos">Ordenar por:</label>
+                        <select name="" id="ordenar-productos" class="form-control">
+                            <option value="0">--Ordenar por--</option>
+                            <option value="1">Precio mayor a menor</option>
+                            <option value="2">Precio menor a mayor</option>
+                            <option value="3">Más destacado</option>
+                            <option value="4">Lo más nuevo</option>
+                        </select>
+                    </div>
+
+                    <div class="filtro">
+                        <label for="tipo">Tipo de Producto</label>
+                        <select name="" id="tipo" class="form-control">
+                            <option value="0">--Elija un tipo de producto--</option>
+                            <option value="1">Bajos</option>
+                            <option value="2">Studio</option>
+                            <option value="3">Amplificadores</option>
+                            <option value="4">Pedales</option>
+                            <option value="5">Accesorios</option>
+                        </select>
+                    </div>
+
+                    <div class="filtro">
+                        <label for="marca">Marca</label>
+                        <select name="" id="marca" class=" form-control">
+                            <option value="0">--Elija una marca--</option>
+                            <option value="1">Ampeg</option>
+                            <option value="2">ESP</option>
+                            <option value="3">Fernandes</option>
+                            <option value="4">Ibanez</option>
+                            <option value="5">Gibson</option>
+                            <option value="6">G&L</option>
+                            <option value="7">Lakland</option>
+                            <option value="8">Rickenbacker</option>
+                            <option value="9">Schecter</option>
+                            <option value="10">Squier</option>
+                            <option value="11">Warwick</option>
+                            <option value="12">Washburn</option>
+                            <option value="13">Yamaha</option>
+                        </select>
+                    </div>
                 </div>
-                    
-                <div class="contenedor__producto">
-                    <a class="producto" href="producto.html">
-                        <div class="producto__contenedor">
-                            <img src="../src/img/bajos/sire marcus miller.jpg" alt="Producto 8" class="producto__imagen">
-                            <div class="producto__datos">
-                                <p class="producto__datos__precio">$95000</p>
-                                <p class="producto__datos__nombre">Sire Marcus Miller V5 (Zurdo)</p>
+
+                <div class="productos-todo">
+                    <div class="contenedor__producto">
+                        <a class="producto" href="producto.html">
+                            <div class="producto__contenedor">
+                                <img src="../src/img/studio/Audient id4.webp" alt="Producto 3" class="producto__imagen">
+                                <div class="producto__datos">
+                                    <p class="producto__datos__precio">$200000</p>
+                                    <p class="producto__datos__nombre">Audient iD4 MkII</p>
+                                </div>  
                             </div>
-                        </div>
-                    </a>
-                </div>
-                    
-                <div class="contenedor__producto">
-                    <a class="producto" href="producto.html">
-                        <div class="producto__contenedor">
-                            <img src="../src/img/bajos/destacado3.jpg" alt="Producto 3" class="producto__imagen">
-                            <div class="producto__datos">
-                                <p class="producto__datos__precio">$500000</p>
-                                <p class="producto__datos__nombre">F Bass AC5 Violin Burst</p>
+                        </a>
+                    </div>
+                        
+                    <div class="contenedor__producto">
+                        <a class="producto" href="producto.html">
+                            <div class="producto__contenedor">
+                                <img src="../src/img/bajos/sire marcus miller.jpg" alt="Producto 8" class="producto__imagen">
+                                <div class="producto__datos">
+                                    <p class="producto__datos__precio">$95000</p>
+                                    <p class="producto__datos__nombre">Sire Marcus Miller V5 (Zurdo)</p>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                </div>
-                    
-                <div class="contenedor__producto">
-                    <a class="producto" href="producto.html">
-                        <div class="producto__contenedor">
-                            <img src="../src/img/bajos/destacado4.jpg" alt="Producto 4" class="producto__imagen">
-                            <div class="producto__datos">
-                                <p class="producto__datos__precio">$80000</p>
-                                <p class="producto__datos__nombre">Warwick Rockbass Corvette 5</p>
+                        </a>
+                    </div>
+                        
+                    <div class="contenedor__producto">
+                        <a class="producto" href="producto.html">
+                            <div class="producto__contenedor">
+                                <img src="../src/img/bajos/destacado3.jpg" alt="Producto 3" class="producto__imagen">
+                                <div class="producto__datos">
+                                    <p class="producto__datos__precio">$500000</p>
+                                    <p class="producto__datos__nombre">F Bass AC5 Violin Burst</p>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                </div>
-                    
-                <div class="contenedor__producto">
-                    <a class="producto" href="producto.html">
-                        <div class="producto__contenedor">
-                            <img src="../src/img/amplificadores/destacado5.jpg" alt="Producto 5" class="producto__imagen">
-                            <div class="producto__datos">
-                                <p class="producto__datos__precio">$120000</p>
-                                <p class="producto__datos__nombre">Cabezal GR Bass Mini One</p>
+                        </a>
+                    </div>
+                        
+                    <div class="contenedor__producto">
+                        <a class="producto" href="producto.html">
+                            <div class="producto__contenedor">
+                                <img src="../src/img/bajos/destacado4.jpg" alt="Producto 4" class="producto__imagen">
+                                <div class="producto__datos">
+                                    <p class="producto__datos__precio">$80000</p>
+                                    <p class="producto__datos__nombre">Warwick Rockbass Corvette 5</p>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                </div>
-                    
-                <div class="contenedor__producto">
-                    <a class="producto" href="producto.html">
-                        <div class="producto__contenedor">
-                            <img src="../src/img/bajos/squier classic vibe 60s jb.jpg" alt="Producto 9" class="producto__imagen">
-                            <div class="producto__datos">
-                                <p class="producto__datos__precio">$350000</p>
-                                <p class="producto__datos__nombre">Squier Classic Vibe 60s JB</p>
+                        </a>
+                    </div>
+                        
+                    <div class="contenedor__producto">
+                        <a class="producto" href="producto.html">
+                            <div class="producto__contenedor">
+                                <img src="../src/img/amplificadores/destacado5.jpg" alt="Producto 5" class="producto__imagen">
+                                <div class="producto__datos">
+                                    <p class="producto__datos__precio">$120000</p>
+                                    <p class="producto__datos__nombre">Cabezal GR Bass Mini One</p>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                </div>
-                    
-                <div class="contenedor__producto">
-                    <a class="producto" href="producto.html">
-                        <div class="producto__contenedor">
-                            <img src="../src/img/studio/interfaces.jpg" alt="Producto 7" class="producto__imagen">
-                            <div class="producto__datos">
-                                <p class="producto__datos__precio">$30000</p>
-                                <p class="producto__datos__nombre">Focusrite Scarlett Solo</p>
+                        </a>
+                    </div>
+                        
+                    <div class="contenedor__producto">
+                        <a class="producto" href="producto.html">
+                            <div class="producto__contenedor">
+                                <img src="../src/img/bajos/squier classic vibe 60s jb.jpg" alt="Producto 9" class="producto__imagen">
+                                <div class="producto__datos">
+                                    <p class="producto__datos__precio">$350000</p>
+                                    <p class="producto__datos__nombre">Squier Classic Vibe 60s JB</p>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                </div>
-                    
-                <div class="contenedor__producto">
-                    <a class="producto" href="producto.html">
-                        <div class="producto__contenedor">
-                            <img src="../src/img/amplificadores/amplificador2.jpg" alt="Producto 8" class="producto__imagen">
-                            <div class="producto__datos">
-                                <p class="producto__datos__precio">$95000</p>
-                                <p class="producto__datos__nombre">Amplificador Acus OneforBass</p>
+                        </a>
+                    </div>
+                        
+                    <div class="contenedor__producto">
+                        <a class="producto" href="producto.html">
+                            <div class="producto__contenedor">
+                                <img src="../src/img/studio/interfaces.jpg" alt="Producto 7" class="producto__imagen">
+                                <div class="producto__datos">
+                                    <p class="producto__datos__precio">$30000</p>
+                                    <p class="producto__datos__nombre">Focusrite Scarlett Solo</p>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                </div>
-                    
-                <div class="contenedor__producto">
-                    <a class="producto" href="producto.html">
-                        <div class="producto__contenedor">
-                            <img src="../src/img/amplificadores/cabezal.jpg" alt="Producto 9" class="producto__imagen">
-                            <div class="producto__datos">
-                                <p class="producto__datos__precio">$350000</p>
-                                <p class="producto__datos__nombre">Cabezal Epifani UL502</p>
+                        </a>
+                    </div>
+                        
+                    <div class="contenedor__producto">
+                        <a class="producto" href="producto.html">
+                            <div class="producto__contenedor">
+                                <img src="../src/img/amplificadores/amplificador2.jpg" alt="Producto 8" class="producto__imagen">
+                                <div class="producto__datos">
+                                    <p class="producto__datos__precio">$95000</p>
+                                    <p class="producto__datos__nombre">Amplificador Acus OneforBass</p>
+                                </div>
                             </div>
-                        </div>
-                    </a>
+                        </a>
+                    </div>
+                        
+                    <div class="contenedor__producto">
+                        <a class="producto" href="producto.html">
+                            <div class="producto__contenedor">
+                                <img src="../src/img/amplificadores/cabezal.jpg" alt="Producto 9" class="producto__imagen">
+                                <div class="producto__datos">
+                                    <p class="producto__datos__precio">$350000</p>
+                                    <p class="producto__datos__nombre">Cabezal Epifani UL502</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                        
                 </div>
-                    
             </div>
 
             <ul class="pagination">

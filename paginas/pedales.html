@@ -52,7 +52,7 @@
             </nav>
 
             <div class="buscar">
-                <input type="text" placeholder="Buscar..." class="buscar__barra">
+                <input type="text" placeholder="&#x1F50D;Buscar..." class="buscar__barra">
             </div>
 
             <div class="inicio-sesion">
@@ -70,123 +70,165 @@
             
             <h1 class="titulo">Pedales</h1>
 
-            <select name="" id="ordenar-productos">
-                <option value="0">--Ordenar por--</option>
-                <option value="1">Precio mayor a menor</option>
-                <option value="2">Precio menor a mayor</option>
-                <option value="3">Más destacado</option>
-                <option value="4">Lo más nuevo</option>
-            </select>
-            
-            <div class="productos-todo">
-                <div class="contenedor__producto">
-                    <a class="producto" href="producto.html">
-                        <div class="producto__contenedor">
-                            <img src="../src/img/pedales/EBS BassIQ.jpg" alt="Producto 1" class="producto__imagen">
-                            <div class="producto__datos">
-                                <p class="producto__datos__precio">$45000</p>
-                                <p class="producto__datos__nombre">EBS Bass IQ Envelope Filter</p>
+            <div class="filtros_productos">
+                <div class="filtros">
+                    <div class="filtro">
+                        <label for="ordenar-productos">Ordenar por:</label>
+                        <select name="" id="ordenar-productos" class="form-control">
+                            <option value="0">--Ordenar por--</option>
+                            <option value="1">Precio mayor a menor</option>
+                            <option value="2">Precio menor a mayor</option>
+                            <option value="3">Más destacado</option>
+                            <option value="4">Lo más nuevo</option>
+                        </select>
+                    </div>
+
+                    <div class="filtro">
+                        <label for="tipo">Tipo de Producto</label>
+                        <select name="" id="tipo" class="form-control">
+                            <option value="0">--Elija un tipo de pedal--</option>
+                            <option value="1">Overdrive</option>
+                            <option value="2">Compresor</option>
+                            <option value="3">Tremolo</option>
+                            <option value="4">Chorus</option>
+                            <option value="5">Delay</option>
+                            <option value="6">Wah</option>
+                            <option value="7">Envelope Filter</option>
+                            <option value="8">Octavador</option>
+                        </select>
+                    </div>
+
+                    <div class="filtro">
+                        <label for="marca">Marca</label>
+                        <select name="" id="marca" class=" form-control">
+                            <option value="0">--Elija una marca--</option>
+                            <option value="1">Ampeg</option>
+                            <option value="2">ESP</option>
+                            <option value="3">Fernandes</option>
+                            <option value="4">Ibanez</option>
+                            <option value="5">Gibson</option>
+                            <option value="6">G&L</option>
+                            <option value="7">Lakland</option>
+                            <option value="8">Rickenbacker</option>
+                            <option value="9">Schecter</option>
+                            <option value="10">Squier</option>
+                            <option value="11">Warwick</option>
+                            <option value="12">Washburn</option>
+                            <option value="13">Yamaha</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="productos-todo">
+                    <div class="contenedor__producto">
+                        <a class="producto" href="producto.html">
+                            <div class="producto__contenedor">
+                                <img src="../src/img/pedales/EBS BassIQ.jpg" alt="Producto 1" class="producto__imagen">
+                                <div class="producto__datos">
+                                    <p class="producto__datos__precio">$45000</p>
+                                    <p class="producto__datos__nombre">EBS Bass IQ Envelope Filter</p>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                </div>
-                    
-                <div class="contenedor__producto">
-                    <a class="producto" href="producto.html">
-                        <div class="producto__contenedor">
-                            <img src="../src/img/pedales/MXR M288 Bass Octave Deluxe.jpg" alt="Producto 2" class="producto__imagen">
-                            <div class="producto__datos">
-                                <p class="producto__datos__precio">$70000</p>
-                                <p class="producto__datos__nombre">MXR M288 Bass Octave Deluxe</p>
+                        </a>
+                    </div>
+                        
+                    <div class="contenedor__producto">
+                        <a class="producto" href="producto.html">
+                            <div class="producto__contenedor">
+                                <img src="../src/img/pedales/MXR M288 Bass Octave Deluxe.jpg" alt="Producto 2" class="producto__imagen">
+                                <div class="producto__datos">
+                                    <p class="producto__datos__precio">$70000</p>
+                                    <p class="producto__datos__nombre">MXR M288 Bass Octave Deluxe</p>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                </div>
-                    
-                <div class="contenedor__producto">
-                    <a class="producto" href="producto.html">
-                        <div class="producto__contenedor">
-                            <img src="../src/img/pedales/MXR M82 Bass Filter Envelope.jpg" alt="Producto 3" class="producto__imagen">
-                            <div class="producto__datos">
-                                <p class="producto__datos__precio">$500000</p>
-                                <p class="producto__datos__nombre">MXR M82 Bass Filter Envelope</p>
-                            </div>  
-                        </div>
-                    </a>
-                </div>
-                    
-                <div class="contenedor__producto">
-                    <a class="producto" href="producto.html">
-                        <div class="producto__contenedor">
-                            <img src="../src/img/pedales/Boss DD-7.jpg" alt="Producto 4" class="producto__imagen">
-                            <div class="producto__datos">
-                                <p class="producto__datos__precio">$80000</p>
-                                <p class="producto__datos__nombre">Boss DD-7 Digital Delay</p>
+                        </a>
+                    </div>
+                        
+                    <div class="contenedor__producto">
+                        <a class="producto" href="producto.html">
+                            <div class="producto__contenedor">
+                                <img src="../src/img/pedales/MXR M82 Bass Filter Envelope.jpg" alt="Producto 3" class="producto__imagen">
+                                <div class="producto__datos">
+                                    <p class="producto__datos__precio">$500000</p>
+                                    <p class="producto__datos__nombre">MXR M82 Bass Filter Envelope</p>
+                                </div>  
                             </div>
-                        </div>
-                    </a>
-                </div>
-                    
-                <div class="contenedor__producto">
-                    <a class="producto" href="producto.html">
-                        <div class="producto__contenedor">
-                            <img src="../src/img/pedales/Boss PS-6 Harmonist.jpg" alt="Producto 5" class="producto__imagen">
-                            <div class="producto__datos">
-                                <p class="producto__datos__precio">$40000</p>
-                                <p class="producto__datos__nombre">Boss PS-6 Harmonist</p>
+                        </a>
+                    </div>
+                        
+                    <div class="contenedor__producto">
+                        <a class="producto" href="producto.html">
+                            <div class="producto__contenedor">
+                                <img src="../src/img/pedales/Boss DD-7.jpg" alt="Producto 4" class="producto__imagen">
+                                <div class="producto__datos">
+                                    <p class="producto__datos__precio">$80000</p>
+                                    <p class="producto__datos__nombre">Boss DD-7 Digital Delay</p>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                </div>
-                    
-                <div class="contenedor__producto">
-                    <a class="producto" href="producto.html">
-                        <div class="producto__contenedor">
-                            <img src="../src/img/pedales/Electro Harmonix Freeze.jpg" alt="Producto 6" class="producto__imagen">
-                            <div class="producto__datos">
-                                <p class="producto__datos__precio">$320000</p>
-                                <p class="producto__datos__nombre">Electro Harmonix Freeze</p>
+                        </a>
+                    </div>
+                        
+                    <div class="contenedor__producto">
+                        <a class="producto" href="producto.html">
+                            <div class="producto__contenedor">
+                                <img src="../src/img/pedales/Boss PS-6 Harmonist.jpg" alt="Producto 5" class="producto__imagen">
+                                <div class="producto__datos">
+                                    <p class="producto__datos__precio">$40000</p>
+                                    <p class="producto__datos__nombre">Boss PS-6 Harmonist</p>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                </div>
-                    
-                <div class="contenedor__producto">
-                    <a class="producto" href="producto.html">
-                        <div class="producto__contenedor">
-                            <img src="../src/img/pedales/Boss TR-2 Tremolo.jpg" alt="Producto 7" class="producto__imagen">
-                            <div class="producto__datos">
-                                <p class="producto__datos__precio">$30000</p>
-                                <p class="producto__datos__nombre">Boss TR-2 Tremolo</p>
+                        </a>
+                    </div>
+                        
+                    <div class="contenedor__producto">
+                        <a class="producto" href="producto.html">
+                            <div class="producto__contenedor">
+                                <img src="../src/img/pedales/Electro Harmonix Freeze.jpg" alt="Producto 6" class="producto__imagen">
+                                <div class="producto__datos">
+                                    <p class="producto__datos__precio">$320000</p>
+                                    <p class="producto__datos__nombre">Electro Harmonix Freeze</p>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                </div>
-                    
-                <div class="contenedor__producto">
-                    <a class="producto" href="producto.html">
-                        <div class="producto__contenedor">
-                            <img src="../src/img/pedales/Electro Harmonix Nano Battalion.jpg" alt="Producto 8" class="producto__imagen">
-                            <div class="producto__datos">
-                                <p class="producto__datos__precio">$45000</p>
-                                <p class="producto__datos__nombre">Electro Harmonix Nano Battalion</p>
+                        </a>
+                    </div>
+                        
+                    <div class="contenedor__producto">
+                        <a class="producto" href="producto.html">
+                            <div class="producto__contenedor">
+                                <img src="../src/img/pedales/Boss TR-2 Tremolo.jpg" alt="Producto 7" class="producto__imagen">
+                                <div class="producto__datos">
+                                    <p class="producto__datos__precio">$30000</p>
+                                    <p class="producto__datos__nombre">Boss TR-2 Tremolo</p>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                </div>
-                    
-                <div class="contenedor__producto">
-                    <a class="producto" href="producto.html">
-                        <div class="producto__contenedor">
-                            <img src="../src/img/pedales/FENDER The Bends.jpg" alt="Producto 9" class="producto__imagen">
-                            <div class="producto__datos">
-                                <p class="producto__datos__precio">$30000</p>
-                                <p class="producto__datos__nombre">Fender The Bends</p>
+                        </a>
+                    </div>
+                        
+                    <div class="contenedor__producto">
+                        <a class="producto" href="producto.html">
+                            <div class="producto__contenedor">
+                                <img src="../src/img/pedales/Electro Harmonix Nano Battalion.jpg" alt="Producto 8" class="producto__imagen">
+                                <div class="producto__datos">
+                                    <p class="producto__datos__precio">$45000</p>
+                                    <p class="producto__datos__nombre">Electro Harmonix Nano Battalion</p>
+                                </div>
                             </div>
-                        </div>
-                    </a>
+                        </a>
+                    </div>
+                        
+                    <div class="contenedor__producto">
+                        <a class="producto" href="producto.html">
+                            <div class="producto__contenedor">
+                                <img src="../src/img/pedales/FENDER The Bends.jpg" alt="Producto 9" class="producto__imagen">
+                                <div class="producto__datos">
+                                    <p class="producto__datos__precio">$30000</p>
+                                    <p class="producto__datos__nombre">Fender The Bends</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                        
                 </div>
-                    
             </div>
 
             <ul class="pagination">

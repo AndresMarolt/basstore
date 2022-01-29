@@ -51,7 +51,7 @@
             </nav>
 
             <div class="buscar">
-                <input type="text" placeholder="Buscar..." class="buscar__barra">
+                <input type="text" placeholder="&#x1F50D;Buscar..." class="buscar__barra">
             </div>
 
             <div class="inicio-sesion">
@@ -69,123 +69,162 @@
             
             <h1 class="titulo">Accesorios</h1>
 
-            <select name="" id="ordenar-productos">
-                <option value="0">--Ordenar por--</option>
-                <option value="1">Precio mayor a menor</option>
-                <option value="2">Precio menor a mayor</option>
-                <option value="3">Más destacado</option>
-                <option value="4">Lo más nuevo</option>
-            </select>
-            
-            <div class="productos-todo">
-                <div class="contenedor__producto">
-                    <a class="producto" href="producto.html">
-                        <div class="producto__contenedor">
-                            <img src="../src/img/accesorios/D'Addario EXL160BT Balanced Tension (50-120).webp" alt="Producto 1" class="producto__imagen">
-                            <div class="producto__datos">
-                                <p class="producto__datos__precio">$4000</p>
-                                <p class="producto__datos__nombre">D'Addario EXL160BT (50-120)</p>
+            <div class="filtros_productos">
+                <div class="filtros">
+                    <div class="filtro">
+                        <label for="ordenar-productos">Ordenar por:</label>
+                        <select name="" id="ordenar-productos" class="form-control">
+                            <option value="0">--Ordenar por--</option>
+                            <option value="1">Precio mayor a menor</option>
+                            <option value="2">Precio menor a mayor</option>
+                            <option value="3">Más destacado</option>
+                            <option value="4">Lo más nuevo</option>
+                        </select>
+                    </div>
+
+                    <div class="filtro">
+                        <label for="tipo">Tipo de Producto</label>
+                        <select name="" id="tipo" class="form-control">
+                            <option value="0">--Elija un tipo de producto--</option>
+                            <option value="1">Cuerdas</option>
+                            <option value="2">Afinadores</option>
+                            <option value="3">Correas</option>
+                            <option value="4">Pie para bajo</option>
+                            <option value="5">Cables</option>
+                        </select>
+                    </div>
+
+                    <div class="filtro">
+                        <label for="marca">Marca</label>
+                        <select name="" id="marca" class=" form-control">
+                            <option value="0">--Elija una marca--</option>
+                            <option value="1">Ampeg</option>
+                            <option value="2">ESP</option>
+                            <option value="3">Fernandes</option>
+                            <option value="4">Ibanez</option>
+                            <option value="5">Gibson</option>
+                            <option value="6">G&L</option>
+                            <option value="7">Lakland</option>
+                            <option value="8">Rickenbacker</option>
+                            <option value="9">Schecter</option>
+                            <option value="10">Squier</option>
+                            <option value="11">Warwick</option>
+                            <option value="12">Washburn</option>
+                            <option value="13">Yamaha</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="productos-todo">
+                    <div class="contenedor__producto">
+                        <a class="producto" href="producto.html">
+                            <div class="producto__contenedor">
+                                <img src="../src/img/accesorios/D_Addario EXL160BT Balanced Tension (50-120).webp" alt="Producto 1" class="producto__imagen">
+                                <div class="producto__datos">
+                                    <p class="producto__datos__precio">$4000</p>
+                                    <p class="producto__datos__nombre">D'Addario EXL160BT (50-120)</p>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                </div>
-                    
-                <div class="contenedor__producto">
-                    <a class="producto" href="producto.html">
-                        <div class="producto__contenedor">
-                            <img src="../src/img/accesorios/Ernie Ball 2831 Slinky Round Wound.webp" alt="Producto 2" class="producto__imagen">
-                            <div class="producto__datos">
-                                <p class="producto__datos__precio">$3500</p>
-                                <p class="producto__datos__nombre">Ernie Ball Slinky Round Wound</p>
+                        </a>
+                    </div>
+                        
+                    <div class="contenedor__producto">
+                        <a class="producto" href="producto.html">
+                            <div class="producto__contenedor">
+                                <img src="../src/img/accesorios/Ernie Ball 2831 Slinky Round Wound.webp" alt="Producto 2" class="producto__imagen">
+                                <div class="producto__datos">
+                                    <p class="producto__datos__precio">$3500</p>
+                                    <p class="producto__datos__nombre">Ernie Ball Slinky Round Wound</p>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                </div>
-                    
-                <div class="contenedor__producto">
-                    <a class="producto" href="producto.html">
-                        <div class="producto__contenedor">
-                            <img src="../src/img/accesorios/Afinador clip Fender.webp" alt="Producto 3" class="producto__imagen">
-                            <div class="producto__datos">
-                                <p class="producto__datos__precio">$2500</p>
-                                <p class="producto__datos__nombre">Afinador clip Fender</p>
-                            </div>  
-                        </div>
-                    </a>
-                </div>
-                    
-                <div class="contenedor__producto">
-                    <a class="producto" href="producto.html">
-                        <div class="producto__contenedor">
-                            <img src="../src/img/accesorios/cable1.jpg" alt="Producto 4" class="producto__imagen">
-                            <div class="producto__datos">
-                                <p class="producto__datos__precio">$3000</p>
-                                <p class="producto__datos__nombre">Cable 3 metros</p>
+                        </a>
+                    </div>
+                        
+                    <div class="contenedor__producto">
+                        <a class="producto" href="producto.html">
+                            <div class="producto__contenedor">
+                                <img src="../src/img/accesorios/Afinador clip Fender.webp" alt="Producto 3" class="producto__imagen">
+                                <div class="producto__datos">
+                                    <p class="producto__datos__precio">$2500</p>
+                                    <p class="producto__datos__nombre">Afinador clip Fender</p>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                </div>
-                    
-                <div class="contenedor__producto">
-                    <a class="producto" href="producto.html">
-                        <div class="producto__contenedor">
-                            <img src="../src/img/accesorios/cable 5 metros.webp" alt="Producto 5" class="producto__imagen">
-                            <div class="producto__datos">
-                                <p class="producto__datos__precio">$4000</p>
-                                <p class="producto__datos__nombre">Cable 5 metros</p>
+                        </a>
+                    </div>
+                        
+                    <div class="contenedor__producto">
+                        <a class="producto" href="producto.html">
+                            <div class="producto__contenedor">
+                                <img src="../src/img/accesorios/cable1.jpg" alt="Producto 4" class="producto__imagen">
+                                <div class="producto__datos">
+                                    <p class="producto__datos__precio">$3000</p>
+                                    <p class="producto__datos__nombre">Cable 3 metros</p>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                </div>
-                    
-                <div class="contenedor__producto">
-                    <a class="producto" href="producto.html">
-                        <div class="producto__contenedor">
-                            <img src="../src/img/accesorios/Ernie Ball Regular Slinky Round Wound.webp" alt="Producto 6" class="producto__imagen">
-                            <div class="producto__datos">
-                                <p class="producto__datos__precio">$3500</p>
-                                <p class="producto__datos__nombre">Ernie Ball Regular Slinky Round Wound</p>
+                        </a>
+                    </div>
+                        
+                    <div class="contenedor__producto">
+                        <a class="producto" href="producto.html">
+                            <div class="producto__contenedor">
+                                <img src="../src/img/accesorios/cable 5 metros.webp" alt="Producto 5" class="producto__imagen">
+                                <div class="producto__datos">
+                                    <p class="producto__datos__precio">$4000</p>
+                                    <p class="producto__datos__nombre">Cable 5 metros</p>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                </div>
-                    
-                <div class="contenedor__producto">
-                    <a class="producto" href="producto.html">
-                        <div class="producto__contenedor">
-                            <img src="../src/img/accesorios/Pie para bajo.jpg" alt="Producto 7" class="producto__imagen">
-                            <div class="producto__datos">
-                                <p class="producto__datos__precio">$3000</p>
-                                <p class="producto__datos__nombre">Pie para Bajo</p>
+                        </a>
+                    </div>
+                        
+                    <div class="contenedor__producto">
+                        <a class="producto" href="producto.html">
+                            <div class="producto__contenedor">
+                                <img src="../src/img/accesorios/Ernie Ball Regular Slinky Round Wound.webp" alt="Producto 6" class="producto__imagen">
+                                <div class="producto__datos">
+                                    <p class="producto__datos__precio">$3500</p>
+                                    <p class="producto__datos__nombre">Ernie Ball Regular Slinky Round Wound</p>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                </div>
-                    
-                <div class="contenedor__producto">
-                    <a class="producto" href="producto.html">
-                        <div class="producto__contenedor">
-                            <img src="../src/img/accesorios/Fender strap.webp" alt="Producto 8" class="producto__imagen">
-                            <div class="producto__datos">
-                                <p class="producto__datos__precio">$5000</p>
-                                <p class="producto__datos__nombre">Fender Strap</p>
+                        </a>
+                    </div>
+                        
+                    <div class="contenedor__producto">
+                        <a class="producto" href="producto.html">
+                            <div class="producto__contenedor">
+                                <img src="../src/img/accesorios/Pie para bajo.jpg" alt="Producto 7" class="producto__imagen">
+                                <div class="producto__datos">
+                                    <p class="producto__datos__precio">$3000</p>
+                                    <p class="producto__datos__nombre">Pie para Bajo</p>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                </div>
-                    
-                <div class="contenedor__producto">
-                    <a class="producto" href="producto.html">
-                        <div class="producto__contenedor">
-                            <img src="../src/img/accesorios/ernie ball strap.webp" alt="Producto 9" class="producto__imagen">
-                            <div class="producto__datos">
-                                <p class="producto__datos__precio">$6000</p>
-                                <p class="producto__datos__nombre">Ernie Ball Strap</p>
+                        </a>
+                    </div>
+                        
+                    <div class="contenedor__producto">
+                        <a class="producto" href="producto.html">
+                            <div class="producto__contenedor">
+                                <img src="../src/img/accesorios/Fender strap.webp" alt="Producto 8" class="producto__imagen">
+                                <div class="producto__datos">
+                                    <p class="producto__datos__precio">$5000</p>
+                                    <p class="producto__datos__nombre">Fender Strap</p>
+                                </div>
                             </div>
-                        </div>
-                    </a>
+                        </a>
+                    </div>
+                        
+                    <div class="contenedor__producto">
+                        <a class="producto" href="producto.html">
+                            <div class="producto__contenedor">
+                                <img src="../src/img/accesorios/ernie ball strap.webp" alt="Producto 9" class="producto__imagen">
+                                <div class="producto__datos">
+                                    <p class="producto__datos__precio">$6000</p>
+                                    <p class="producto__datos__nombre">Ernie Ball Strap</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                        
                 </div>
-                    
             </div>
 
             <ul class="pagination">

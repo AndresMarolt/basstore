@@ -52,7 +52,7 @@
             </nav>
 
             <div class="buscar">
-                <input type="text" placeholder="Buscar..." class="buscar__barra">
+                <input type="text" placeholder="&#x1F50D;Buscar..." class="buscar__barra">
             </div>
 
             <div class="inicio-sesion">
@@ -70,123 +70,164 @@
             
             <h1 class="titulo">Amplificadores</h1>
 
-            <select name="" id="ordenar-productos">
-                <option value="0">--Ordenar por--</option>
-                <option value="1">Precio mayor a menor</option>
-                <option value="2">Precio menor a mayor</option>
-                <option value="3">Más destacado</option>
-                <option value="4">Lo más nuevo</option>
-            </select>
-            
-            <div class="productos-todo">
-                <div class="contenedor__producto">
-                    <a class="producto" href="producto.html">
-                        <div class="producto__contenedor">
-                            <img src="../src/img/amplificadores/Fender Rumble 15 1x8 15W.jpg" alt="Producto 1" class="producto__imagen">
-                            <div class="producto__datos">
-                                <p class="producto__datos__precio">$30000</p>
-                                <p class="producto__datos__nombre">Fender Rumble 15 1x8 15W</p>
+            <div class="filtros_productos">
+                <div class="filtros">
+                    <div class="filtro">
+                        <label for="ordenar-productos">Ordenar por:</label>
+                        <select name="" id="ordenar-productos" class="form-control">
+                            <option value="0">--Ordenar por--</option>
+                            <option value="1">Precio mayor a menor</option>
+                            <option value="2">Precio menor a mayor</option>
+                            <option value="3">Más destacado</option>
+                            <option value="4">Lo más nuevo</option>
+                        </select>
+                    </div>
+
+                    <div class="filtro">
+                        <label for="tipo">Tipo de Producto</label>
+                        <select name="" id="tipo" class="form-control">
+                            <option value="0">--Elija un tipo de amplificador--</option>
+                            <option value="1">Combos a transistores</option>
+                            <option value="2">Combos valvulares</option>
+                            <option value="3">Cabezales a transistores</option>
+                            <option value="4">Cabezales valvulares</option>
+                            <option value="5">Cajas 1x15</option>
+                            <option value="6">Cajas 2x10</option>
+                            <option value="7">Cajas 4x10</option>
+                        </select>
+                    </div>
+
+                    <div class="filtro">
+                        <label for="marca">Marca</label>
+                        <select name="" id="marca" class=" form-control">
+                            <option value="0">--Elija una marca--</option>
+                            <option value="1">Ampeg</option>
+                            <option value="2">ESP</option>
+                            <option value="3">Fernandes</option>
+                            <option value="4">Ibanez</option>
+                            <option value="5">Gibson</option>
+                            <option value="6">G&L</option>
+                            <option value="7">Lakland</option>
+                            <option value="8">Rickenbacker</option>
+                            <option value="9">Schecter</option>
+                            <option value="10">Squier</option>
+                            <option value="11">Warwick</option>
+                            <option value="12">Washburn</option>
+                            <option value="13">Yamaha</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="productos-todo">
+                    <div class="contenedor__producto">
+                        <a class="producto" href="producto.html">
+                            <div class="producto__contenedor">
+                                <img src="../src/img/amplificadores/Fender Rumble 15 1x8 15W.jpg" alt="Producto 1" class="producto__imagen">
+                                <div class="producto__datos">
+                                    <p class="producto__datos__precio">$30000</p>
+                                    <p class="producto__datos__nombre">Fender Rumble 15 1x8 15W</p>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                </div>
-                    
-                <div class="contenedor__producto">
-                    <a class="producto" href="producto.html">
-                        <div class="producto__contenedor">
-                            <img src="../src/img/amplificadores/destacado2.jpg" alt="Producto 2" class="producto__imagen">
-                            <div class="producto__datos">
-                                <p class="producto__datos__precio">$70000</p>
-                                <p class="producto__datos__nombre">Warwick Sweet 15</p>
+                        </a>
+                    </div>
+                        
+                    <div class="contenedor__producto">
+                        <a class="producto" href="producto.html">
+                            <div class="producto__contenedor">
+                                <img src="../src/img/amplificadores/destacado2.jpg" alt="Producto 2" class="producto__imagen">
+                                <div class="producto__datos">
+                                    <p class="producto__datos__precio">$70000</p>
+                                    <p class="producto__datos__nombre">Warwick Sweet 15</p>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                </div>
-                    
-                <div class="contenedor__producto">
-                    <a class="producto" href="producto.html">
-                        <div class="producto__contenedor">
-                            <img src="../src/img/amplificadores/Orange Crush Bass 50W 1x12.webp" alt="Producto 3" class="producto__imagen">
-                            <div class="producto__datos">
-                                <p class="producto__datos__precio">$60000</p>
-                                <p class="producto__datos__nombre">Orange Crush Bass 50W 1x12</p>
-                            </div>  
-                        </div>
-                    </a>
-                </div>
-                    
-                <div class="contenedor__producto">
-                    <a class="producto" href="producto.html">
-                        <div class="producto__contenedor">
-                            <img src="../src/img/amplificadores/Markbass Mini CMD 121P 1x12.webp" alt="Producto 4" class="producto__imagen">
-                            <div class="producto__datos">
-                                <p class="producto__datos__precio">$130000</p>
-                                <p class="producto__datos__nombre">Markbass Mini CMD 121P 1x12</p>
+                        </a>
+                    </div>
+                        
+                    <div class="contenedor__producto">
+                        <a class="producto" href="producto.html">
+                            <div class="producto__contenedor">
+                                <img src="../src/img/amplificadores/Orange Crush Bass 50W 1x12.webp" alt="Producto 3" class="producto__imagen">
+                                <div class="producto__datos">
+                                    <p class="producto__datos__precio">$60000</p>
+                                    <p class="producto__datos__nombre">Orange Crush Bass 50W 1x12</p>
+                                </div> 
                             </div>
-                        </div>
-                    </a>
-                </div>
-                    
-                <div class="contenedor__producto">
-                    <a class="producto" href="producto.html">
-                        <div class="producto__contenedor">
-                            <img src="../src/img/amplificadores/destacado5.jpg" alt="Producto 5" class="producto__imagen">
-                            <div class="producto__datos">
-                                <p class="producto__datos__precio">$120000</p>
-                                <p class="producto__datos__nombre">Cabezal GR Bass Mini One</p>
+                        </a>
+                    </div>
+                        
+                    <div class="contenedor__producto">
+                        <a class="producto" href="producto.html">
+                            <div class="producto__contenedor">
+                                <img src="../src/img/amplificadores/Markbass Mini CMD 121P 1x12.webp" alt="Producto 4" class="producto__imagen">
+                                <div class="producto__datos">
+                                    <p class="producto__datos__precio">$130000</p>
+                                    <p class="producto__datos__nombre">Markbass Mini CMD 121P 1x12</p>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                </div>
-                    
-                <div class="contenedor__producto">
-                    <a class="producto" href="producto.html">
-                        <div class="producto__contenedor">
-                            <img src="../src/img/amplificadores/Markbass CMD Ninja 102P.webp" alt="Producto 6" class="producto__imagen">
-                            <div class="producto__datos">
-                                <p class="producto__datos__precio">$320000</p>
-                                <p class="producto__datos__nombre">Markbass CMD Ninja 102P</p>
+                        </a>
+                    </div>
+                        
+                    <div class="contenedor__producto">
+                        <a class="producto" href="producto.html">
+                            <div class="producto__contenedor">
+                                <img src="../src/img/amplificadores/destacado5.jpg" alt="Producto 5" class="producto__imagen">
+                                <div class="producto__datos">
+                                    <p class="producto__datos__precio">$120000</p>
+                                    <p class="producto__datos__nombre">Cabezal GR Bass Mini One</p>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                </div>
-                    
-                <div class="contenedor__producto">
-                    <a class="producto" href="producto.html">
-                        <div class="producto__contenedor">
-                            <img src="../src/img/amplificadores/Acoustic B100C 1X12 100W.webp" alt="Producto 7" class="producto__imagen">
-                            <div class="producto__datos">
-                                <p class="producto__datos__precio">$30000</p>
-                                <p class="producto__datos__nombre">Acoustic B100C 1X12 100W</p>
+                        </a>
+                    </div>
+                        
+                    <div class="contenedor__producto">
+                        <a class="producto" href="producto.html">
+                            <div class="producto__contenedor">
+                                <img src="../src/img/amplificadores/Markbass CMD Ninja 102P.webp" alt="Producto 6" class="producto__imagen">
+                                <div class="producto__datos">
+                                    <p class="producto__datos__precio">$320000</p>
+                                    <p class="producto__datos__nombre">Markbass CMD Ninja 102P</p>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                </div>
-                    
-                <div class="contenedor__producto">
-                    <a class="producto" href="producto.html">
-                        <div class="producto__contenedor">
-                            <img src="../src/img/amplificadores/amplificador2.jpg" alt="Producto 8" class="producto__imagen">
-                            <div class="producto__datos">
-                                <p class="producto__datos__precio">$95000</p>
-                                <p class="producto__datos__nombre">Amplificador Acus OneforBass Black</p>
+                        </a>
+                    </div>
+                        
+                    <div class="contenedor__producto">
+                        <a class="producto" href="producto.html">
+                            <div class="producto__contenedor">
+                                <img src="../src/img/amplificadores/Acoustic B100C 1X12 100W.webp" alt="Producto 7" class="producto__imagen">
+                                <div class="producto__datos">
+                                    <p class="producto__datos__precio">$30000</p>
+                                    <p class="producto__datos__nombre">Acoustic B100C 1X12 100W</p>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                </div>
-                    
-                <div class="contenedor__producto">
-                    <a class="producto" href="producto.html">
-                        <div class="producto__contenedor">
-                            <img src="../src/img/amplificadores/cabezal.jpg" alt="Producto 9" class="producto__imagen">
-                            <div class="producto__datos">
-                                <p class="producto__datos__precio">$350000</p>
-                                <p class="producto__datos__nombre">Cabezal Epifani UL502</p>
+                        </a>
+                    </div>
+                        
+                    <div class="contenedor__producto">
+                        <a class="producto" href="producto.html">
+                            <div class="producto__contenedor">
+                                <img src="../src/img/amplificadores/amplificador2.jpg" alt="Producto 8" class="producto__imagen">
+                                <div class="producto__datos">
+                                    <p class="producto__datos__precio">$95000</p>
+                                    <p class="producto__datos__nombre">Amplificador Acus OneforBass Black</p>
+                                </div>
                             </div>
-                        </div>
-                    </a>
+                        </a>
+                    </div>
+                        
+                    <div class="contenedor__producto">
+                        <a class="producto" href="producto.html">
+                            <div class="producto__contenedor">
+                                <img src="../src/img/amplificadores/cabezal.jpg" alt="Producto 9" class="producto__imagen">
+                                <div class="producto__datos">
+                                    <p class="producto__datos__precio">$350000</p>
+                                    <p class="producto__datos__nombre">Cabezal Epifani UL502</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                        
                 </div>
-                    
             </div>
 
             <ul class="pagination">

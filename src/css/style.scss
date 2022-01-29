@@ -734,7 +734,7 @@ footer {
     width: 100%;
 
     .local {
-        @include flex-dgja(row, 5rem, flex-start, flex-start);
+        @include flex-dgja(row, 5rem, flex-start, center);
         width: 100%;
 
         img {
@@ -746,7 +746,7 @@ footer {
         }
 
         &__info {
-            @include flex-dgja(column, 0, center, flex-start);
+            @include flex-dgja(column, 0, flex-start, flex-start);
 
             p {
                 align-items: center;
@@ -773,6 +773,7 @@ footer {
 
         &__info {
             font-size: 1.5rem;
+            @include flex-dgja(column, 0, center, center);
         }
     }   
 }
@@ -785,6 +786,7 @@ footer {
 
         .local__info {
             font-size: 1.5rem;
+            @include flex-dgja(column, 0, center, center);
         }
     }
 
@@ -929,14 +931,49 @@ form {
     padding-top: 10rem;
 }
 
-.productos-todo {
-    width: 80%;
-    margin: 10rem auto;
-    padding: 10rem;
-    background-color: rgb(233, 233, 233);
-    border: none;
-    @include  grid-crgaj(repeat(3, 1fr), repeat(3, 1fr), 2rem, start, center);
+.filtros_productos {
+    margin: 10rem 0;
+    border: 1px solid black;
+    border-radius: 10px;
+    @include grid-crgaj(.25fr .75fr, repeat(1, 1fr), 0, start, space-between);
+    
+    .filtros {
+        padding: 10rem 0;
+        background-color: rgb(233, 233, 233);
+        height: 100%;
+        border-radius: 10px;
+
+        .filtro {
+            margin: 0 auto;
+            width: 75%;
+            padding-bottom: 3rem;
+
+            label {
+                font-weight: bold;
+            }
+
+            .form-control {
+                font-size: 1.4rem;
+            }
+
+            &:not(:last-child) {
+                border-bottom: 1px solid rgb(194, 194, 194);
+            }
+
+            &:not(:first-child) {
+                padding-top: 1rem;
+            }
+        }
+    }
+
+    .productos-todo {
+        border-left: 1px solid black;
+        padding: 10rem;
+        @include  grid-crgaj(repeat(3, 1fr), repeat(3, 1fr), 2rem, start, center);
+    }
 }
+
+
 
 .producto {
     @include sizes(20%, 25%);
@@ -948,8 +985,8 @@ form {
         @include sizes(100%, 100%);
 
         .producto__imagen {
-            height: 180px;
-            width: 50%;
+            height: 150px;
+            width: 60%;
         }
 
         .producto__datos p {
@@ -959,26 +996,42 @@ form {
     }
 }
 
-#ordenar-productos {
-    margin: 4rem 0 0 4rem;
-}
-
 .pagination {
     @include flex-dgja(row, 0, flex-end, flex-start);
 }
 
 
-@media(max-width: 1023px) {
+
+@media/* (min-width: 768px) and  */(max-width: 1023px) {
     .pagination {
         display: none;
     }
 
-    .productos-todo {
-        width: 95%;
-        padding: .5rem;
-        background-color: unset;
-        @include grid-crgaj(1fr, repeat(9, 1fr), 1.5rem, flex-start, flex-start);
-        font-size: 1.6rem;
+    .filtros_productos {
+        border: none;
+
+        .filtros {
+            width: 100%;
+            margin: 0 auto;
+            padding: 3rem 0;
+            @include grid-crgaj(1fr, repeat(2, 1fr), 0, center, center);
+            
+            .filtro {
+                padding-bottom: 1rem;
+                width: 50%;
+            }
+        }
+
+        @include grid-crgaj(1fr, .15fr .85fr, 0, center, center,);
+        
+        .productos-todo {
+            margin-top: 5rem;
+            padding: .5rem;
+            background-color: unset;
+            @include grid-crgaj(1fr, repeat(9, 1fr), 1.5rem, flex-start, flex-start);
+            font-size: 1.6rem;
+            border: none;
+        }
     }
 
     .contenedor__producto:not(:last-child) {
@@ -986,16 +1039,27 @@ form {
     }
 
     .producto__contenedor {
-        @include flex-dgja(row, 5rem, flex-start, flex-start);
+        @include flex-dgja(row, 5rem, center, center);
         
         .producto__imagen {
-            @include sizes(30%, 80%);
+            width: 30%;
+            height: 180px;
+            padding: 2.5rem;
         }
         .producto__datos {
             @include flex-dgja(column, 0, flex-start, center);
             margin: 0 auto;
         }
     }
+}
+
+@media(max-width: 768px) {
+
+    .producto__contenedor .producto__imagen {
+            width: 50%;
+            height: 200px;
+            padding: 2.5rem;
+        }
 }
 
 

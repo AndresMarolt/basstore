@@ -52,7 +52,7 @@
             </nav>
 
             <div class="buscar">
-                <input type="text" placeholder="Buscar..." class="buscar__barra">
+                <input type="text" placeholder="&#x1F50D;Buscar..." class="buscar__barra">
             </div>
 
             <div class="inicio-sesion">
@@ -69,125 +69,163 @@
 
             
             <h1 class="titulo">Studio</h1>
-
-            <select name="" id="ordenar-productos">
-                <option value="0">--Ordenar por--</option>
-                <option value="1">Precio mayor a menor</option>
-                <option value="2">Precio menor a mayor</option>
-                <option value="3">Más destacado</option>
-                <option value="4">Lo más nuevo</option>
-            </select>
             
-            <div class="productos-todo">
-                <div class="contenedor__producto">
-                    <a class="producto" href="producto.html">
-                        <div class="producto__contenedor">
-                            <img src="../src/img/studio/Empire Ears Odin.jpg" alt="Producto 1" class="producto__imagen">
-                            <div class="producto__datos">
-                                <p class="producto__datos__precio">$120000</p>
-                                <p class="producto__datos__nombre">Empire Ears Odin</p>
+            <div class="filtros_productos">
+                <div class="filtros">
+                    <div class="filtro">
+                        <label for="ordenar-productos">Ordenar por:</label>
+                        <select name="" id="ordenar-productos" class="form-control">
+                            <option value="0">--Ordenar por--</option>
+                            <option value="1">Precio mayor a menor</option>
+                            <option value="2">Precio menor a mayor</option>
+                            <option value="3">Más destacado</option>
+                            <option value="4">Lo más nuevo</option>
+                        </select>
+                    </div>
+
+                    <div class="filtro">
+                        <label for="tipo">Tipo de Producto</label>
+                        <select name="" id="tipo" class="form-control">
+                            <option value="0">--Elija un tipo de producto--</option>
+                            <option value="1">Auriculares</option>
+                            <option value="2">Interfaces</option>
+                            <option value="3">Mixers</option>
+                        </select>
+                    </div>
+
+                    <div class="filtro">
+                        <label for="marca">Marca</label>
+                        <select name="" id="marca" class=" form-control">
+                            <option value="0">--Elija una marca--</option>
+                            <option value="1">Ampeg</option>
+                            <option value="2">ESP</option>
+                            <option value="3">Fernandes</option>
+                            <option value="4">Ibanez</option>
+                            <option value="5">Gibson</option>
+                            <option value="6">G&L</option>
+                            <option value="7">Lakland</option>
+                            <option value="8">Rickenbacker</option>
+                            <option value="9">Schecter</option>
+                            <option value="10">Squier</option>
+                            <option value="11">Warwick</option>
+                            <option value="12">Washburn</option>
+                            <option value="13">Yamaha</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="productos-todo">
+                    <div class="contenedor__producto">
+                        <a class="producto" href="producto.html">
+                            <div class="producto__contenedor">
+                                <img src="../src/img/studio/Empire Ears Odin.jpg" alt="Producto 1" class="producto__imagen">
+                                <div class="producto__datos">
+                                    <p class="producto__datos__precio">$120000</p>
+                                    <p class="producto__datos__nombre">Empire Ears Odin</p>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                </div>
-                    
-                <div class="contenedor__producto">
-                    <a class="producto" href="producto.html">
-                        <div class="producto__contenedor">
-                            <img src="../src/img/studio/Symphonium Helios in Ear.jpg" alt="Producto 2" class="producto__imagen">
-                            <div class="producto__datos">
-                                <p class="producto__datos__precio">$70000</p>
-                                <p class="producto__datos__nombre">Symphonium Helios in-Ear</p>
+                        </a>
+                    </div>
+                        
+                    <div class="contenedor__producto">
+                        <a class="producto" href="producto.html">
+                            <div class="producto__contenedor">
+                                <img src="../src/img/studio/Symphonium Helios in Ear.jpg" alt="Producto 2" class="producto__imagen">
+                                <div class="producto__datos">
+                                    <p class="producto__datos__precio">$70000</p>
+                                    <p class="producto__datos__nombre">Symphonium Helios in-Ear</p>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                </div>
-                    
-                <div class="contenedor__producto">
-                    <a class="producto" href="producto.html">
-                        <div class="producto__contenedor">
-                            <img src="../src/img/studio/Audient id4.webp" alt="Producto 3" class="producto__imagen">
-                            <div class="producto__datos">
-                                <p class="producto__datos__precio">$200000</p>
-                                <p class="producto__datos__nombre">Audient iD4 MkII</p>
-                            </div>  
-                        </div>
-                    </a>
-                </div>
-                    
-                <div class="contenedor__producto">
-                    <a class="producto" href="producto.html">
-                        <div class="producto__contenedor">
-                            <img src="../src/img/studio/Sennheiser hd 800s.png" alt="Producto 4" class="producto__imagen">
-                            <div class="producto__datos">
-                                <p class="producto__datos__precio">$80000</p>
-                                <p class="producto__datos__nombre">Sennheiser HD 800s</p>
+                        </a>
+                    </div>
+                        
+                    <div class="contenedor__producto">
+                        <a class="producto" href="producto.html">
+                            <div class="producto__contenedor">
+                                <img src="../src/img/studio/Audient id4.webp" alt="Producto 3" class="producto__imagen">
+                                <div class="producto__datos">
+                                    <p class="producto__datos__precio">$200000</p>
+                                    <p class="producto__datos__nombre">Audient iD4 MkII</p>
+                                </div>  
                             </div>
-                        </div>
-                    </a>
-                </div>
-                    
-                <div class="contenedor__producto">
-                    <a class="producto" href="producto.html">
-                        <div class="producto__contenedor">
-                            <img src="../src/img/studio/SSL 2+ audio interface.webp" alt="Producto 5" class="producto__imagen">
-                            <div class="producto__datos">
-                                <p class="producto__datos__precio">60000</p>
-                                <p class="producto__datos__nombre">SSL 2+ audio interface</p>
+                        </a>
+                    </div>
+                        
+                    <div class="contenedor__producto">
+                        <a class="producto" href="producto.html">
+                            <div class="producto__contenedor">
+                                <img src="../src/img/studio/Sennheiser hd 800s.png" alt="Producto 4" class="producto__imagen">
+                                <div class="producto__datos">
+                                    <p class="producto__datos__precio">$80000</p>
+                                    <p class="producto__datos__nombre">Sennheiser HD 800s</p>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                </div>
-                    
-                <div class="contenedor__producto">
-                    <a class="producto" href="producto.html">
-                        <div class="producto__contenedor">
-                            <img src="../src/img/studio/Audeze Mobius Wireless.jpg" alt="Producto 6" class="producto__imagen">
-                            <div class="producto__datos">
-                                <p class="producto__datos__precio">$85000</p>
-                                <p class="producto__datos__nombre">Audeze Mobius Wireless</p>
+                        </a>
+                    </div>
+                        
+                    <div class="contenedor__producto">
+                        <a class="producto" href="producto.html">
+                            <div class="producto__contenedor">
+                                <img src="../src/img/studio/SSL 2+ audio interface.webp" alt="Producto 5" class="producto__imagen">
+                                <div class="producto__datos">
+                                    <p class="producto__datos__precio">60000</p>
+                                    <p class="producto__datos__nombre">SSL 2+ audio interface</p>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                </div>
-                    
-                <div class="contenedor__producto">
-                    <a class="producto" href="producto.html">
-                        <div class="producto__contenedor">
-                            <img src="../src/img/studio/Audeze LCD-2 Classic Planar.jpg" alt="Producto 7" class="producto__imagen">
-                            <div class="producto__datos">
-                                <p class="producto__datos__precio">$50000</p>
-                                <p class="producto__datos__nombre">Audeze LCD-2 Classic Planar</p>
+                        </a>
+                    </div>
+                        
+                    <div class="contenedor__producto">
+                        <a class="producto" href="producto.html">
+                            <div class="producto__contenedor">
+                                <img src="../src/img/studio/Audeze Mobius Wireless.jpg" alt="Producto 6" class="producto__imagen">
+                                <div class="producto__datos">
+                                    <p class="producto__datos__precio">$85000</p>
+                                    <p class="producto__datos__nombre">Audeze Mobius Wireless</p>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                </div>
-                    
-                <div class="contenedor__producto">
-                    <a class="producto" href="producto.html">
-                        <div class="producto__contenedor">
-                            <img src="../src/img/studio/Empire Ears Valkyrie MK II.png" alt="Producto 8" class="producto__imagen">
-                            <div class="producto__datos">
-                                <p class="producto__datos__precio">$200000</p>
-                                <p class="producto__datos__nombre">Empire Ears Valkyrie MK II</p>
+                        </a>
+                    </div>
+                        
+                    <div class="contenedor__producto">
+                        <a class="producto" href="producto.html">
+                            <div class="producto__contenedor">
+                                <img src="../src/img/studio/Audeze LCD-2 Classic Planar.jpg" alt="Producto 7" class="producto__imagen">
+                                <div class="producto__datos">
+                                    <p class="producto__datos__precio">$50000</p>
+                                    <p class="producto__datos__nombre">Audeze LCD-2 Classic Planar</p>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                </div>
-                    
-                <div class="contenedor__producto">
-                    <a class="producto" href="producto.html">
-                        <div class="producto__contenedor">
-                            <img src="../src/img/studio/64 Audio U18S In-Ear Monitor.jpg" alt="Producto 9" class="producto__imagen">
-                            <div class="producto__datos">
-                                <p class="producto__datos__precio">$350000</p>
-                                <p class="producto__datos__nombre">64 Audio U18S In-Ear Monitor</p>
+                        </a>
+                    </div>
+                        
+                    <div class="contenedor__producto">
+                        <a class="producto" href="producto.html">
+                            <div class="producto__contenedor">
+                                <img src="../src/img/studio/Empire Ears Valkyrie MK II.png" alt="Producto 8" class="producto__imagen">
+                                <div class="producto__datos">
+                                    <p class="producto__datos__precio">$200000</p>
+                                    <p class="producto__datos__nombre">Empire Ears Valkyrie MK II</p>
+                                </div>
                             </div>
-                        </div>
-                    </a>
+                        </a>
+                    </div>
+                        
+                    <div class="contenedor__producto">
+                        <a class="producto" href="producto.html">
+                            <div class="producto__contenedor">
+                                <img src="../src/img/studio/64 Audio U18S In-Ear Monitor.jpg" alt="Producto 9" class="producto__imagen">
+                                <div class="producto__datos">
+                                    <p class="producto__datos__precio">$350000</p>
+                                    <p class="producto__datos__nombre">64 Audio U18S In-Ear Monitor</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                        
                 </div>
-                    
             </div>
+            
 
             <ul class="pagination">
                 <li class="page-item"><a class="page-link" href="#">Anterior</a></li>
