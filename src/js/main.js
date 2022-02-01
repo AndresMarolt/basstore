@@ -84,6 +84,10 @@ while(!validacion("number", cuotas) || cuotas!=3 && cuotas!=6 && cuotas!=12 && c
 }
 cuotas = parseInt(cuotas);
 
+// DECLARA UN OBJETO DATE
+const hoy = new Date()
+const fechayhora = "\nFecha: " + hoy.getDate() + "/" + (hoy.getMonth()+1) + "/" + hoy.getFullYear() + 
+            "\nHora: " + hoy.getHours() + ":" + hoy.getMinutes() + ":" + hoy.getSeconds();
 
  // ORDENA EL ARRAY SEGUN EL PRECIO DE CADA PRODUCTO (DE MENOR A MAYOR)
 productos.sort((a, b) => {             
@@ -115,5 +119,7 @@ if(cuotas===3 || cuotas===6 || cuotas===12) {
     "\nInterés: " + interes*100 + "%" +
     "\nArancel de la cuota: $" + arancelCuotas);
 }
+
+console.log(fechayhora);
 
 alert("Revise la consola para ver el resumen de su compra");
