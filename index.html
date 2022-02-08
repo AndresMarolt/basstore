@@ -28,9 +28,9 @@
 
 <body>
 
-    <header>                                                            <!-- Encabezado que contiene Logo+Barra de navegación, Barra de búsqueda y Login/Signup-->
+    <header>
         <div class="container">
-            <nav class="row">                                               <!-- Fila que contiene Logo + Barra de Navegación-->
+            <nav class="row">
                 <a href="/" class="col-lg-6 logo">BASSTORE</a>
                 <ul class="nav col-lg-6 ">
                     <div class="dropdown">
@@ -66,26 +66,29 @@
     
 
     <main>
-        <section class="categorias">                                        <!-- Sección de navegación por tarjetas -->
+        <!-- ============= NAVEGACION POR TARJETAS ============= -->
+        <section class="categorias">                                        
             <div class="contenedor">
             
-                <h1 class="titulo">Categorías</h1>                              <!-- Titular -->
-                <div class="categorias__secciones">                             <!-- Conjunto de tarjetas -->
+                <h1 class="titulo">Categorías</h1>
+                <div class="categorias__secciones">
 
-                    <div class="seccion" id="seccion-bajos">                        <!-- Tarjeta -->
-                        <a href="paginas/bajos.html">                                   <!-- Enlace a la página de la categoría correspondiente a la tarjeta -->
+                    <!-- ============= TARJETA ============= -->
+                    <div class="seccion" id="seccion-bajos">                        
+                        <a href="paginas/bajos.html">
     
                             <div class="seccion__contenedorImagen">                         
-                                <img src="src/img/bajos.webp" alt="bajos">                  <!-- Imagen de la tarjeta -->
+                                <img src="src/img/bajos.webp" alt="bajos">
 
                                 <div class="seccion__overlay">
-                                    <p>Bajos</p>                                                <!-- Texto que va encima de la imagen -->
+                                    <p>Bajos</p>
                                 </div>
                             </div>
                             
                         </a>
                     </div>
                     
+                    <!-- ============= TARJETA ============= -->
                     <div class="seccion">
                         <a href="paginas/pedales.html">
                             <div class="seccion__contenedorImagen">
@@ -99,6 +102,7 @@
                         
                     </div>
 
+                    <!-- ============= TARJETA ============= -->
                     <div class="seccion">
                         <a href="paginas/studio.html">
                             <div class="seccion__contenedorImagen">
@@ -111,6 +115,7 @@
                         </a>
                     </div>
 
+                    <!-- ============= TARJETA ============= -->
                     <div class="seccion" id="seccion-amplificadores">
                         <a href="paginas/amplificadores.html">
                             <div class="seccion__contenedorImagen">
@@ -126,6 +131,7 @@
                         </a>
                     </div>
 
+                    <!-- ============= TARJETA ============= -->
                     <div class="seccion"  id="seccion-accesorios">
                         <a href="paginas/accesorios.html">
 
@@ -141,6 +147,7 @@
                         </a>
                     </div>
 
+                    <!-- ============= TARJETA ============= -->
                     <div class="seccion">
                         <a href="paginas/gift-cards.html">
                             <div class="seccion__contenedorImagen">
@@ -159,21 +166,23 @@
 
 
     
-    
-        <section class="destacados">                                        <!-- Sección de productos destacados -->
+        <!-- ============= PRODUCTOS DESTACADOS ============= -->
+        <section class="destacados">
             <div class="contenedor">
-                <h1 class="destacados__titulo">                                 <!-- Titular -->
+                <h1 class="destacados__titulo">
                     Productos Destacados
                 </h1>
     
-                <div class="destacados__secciones">                             <!-- Conjunto de destacados -->
+                <div class="destacados__secciones">
+                    <!-- ============= DESTACADO ============= -->
                     <a href="#">
-                        <div class="destacado">                                                                     <!-- Producto destacado -->
-                            <img src="src/img/bajos/destacado1.jpg" alt="Destacado 1" class="destacado__imagen">            <!-- Imagen del producto destacado -->
-                            <p class="destacado__nombre">Fender American Standard Jazz Bass</p>                             <!-- Texto del producto destacado -->
+                        <div class="destacado">
+                            <img src="src/img/bajos/destacado1.jpg" alt="Destacado 1" class="destacado__imagen">
+                            <p class="destacado__nombre">Fender American Standard Jazz Bass</p>
                         </div>
                     </a>     
                     
+                    <!-- ============= DESTACADO ============= -->
                     <a href="#">
                         <div class="destacado">
                             <img src="src/img/amplificadores/destacado2.jpg" alt="Destacado 2" class="destacado__imagen"> 
@@ -181,6 +190,7 @@
                         </div>
                     </a>     
                     
+                    <!-- ============= DESTACADO ============= -->
                     <a href="#">
                         <div class="destacado">
                             <img src="src/img/bajos/destacado3.jpg" alt="Destacado 3" class="destacado__imagen"> 
@@ -188,6 +198,7 @@
                         </div>
                     </a>  
 
+                    <!-- ============= DESTACADO ============= -->
                     <a href="#">
                         <div class="destacado">
                             <img src="src/img/bajos/destacado4.jpg" alt="Destacado 4" class="destacado__imagen"> 
@@ -195,6 +206,7 @@
                         </div>
                     </a>  
 
+                    <!-- ============= DESTACADO ============= -->
                     <a href="#">
                         <div class="destacado">
                             <img src="src/img/amplificadores/destacado5.jpg" alt="Destacado 5" class="destacado__imagen"> 
@@ -202,6 +214,7 @@
                         </div>
                     </a>  
 
+                    <!-- ============= DESTACADO ============= -->
                     <a href="#">
                         <div class="destacado">
                             <img src="src/img/bajos/destacado6.jpg" alt="Destacado 6" class="destacado__imagen"> 
@@ -213,18 +226,21 @@
             </div>
         </section>
     
-        <section>                                   <!-- Seccion de extras -->
+
+        <!-- ============= EXTRAS ============= -->
+        <section>
             <div class="contenedor">
                 <div class="extras">
-                    <div class="extra"><a href="paginas/nuevos.html">Nuevos Productos</a></div>     <!-- Extra 1 -->
-                    <div class="extra"><a href="paginas/ofertas.html">Ofertas</a></div>             <!-- Extra 2 -->
-                    <div class="extra"><a href="paginas/mas-vendidos.html">Más Vendidos</a></div>   <!-- Extra 3 -->
+                    <div class="extra"><a href="paginas/nuevos.html">Nuevos Productos</a></div>
+                    <div class="extra"><a href="paginas/ofertas.html">Ofertas</a></div>
+                    <div class="extra"><a href="paginas/mas-vendidos.html">Más Vendidos</a></div>
                 </div>
             </div>
         </section>
 
+        <!-- ============= PRE-FOOTER GRIS ============= -->
         <section class="fondo-pie-previo">
-            <div class="contenedor ">
+            <div class="contenedor">
                 <div class="pie-previo">
                     <a href="index.html" class="logo-pie">Basstore</a>
 
@@ -266,7 +282,7 @@
 
     </main>
 
-
+    <!-- ============= FOOTER ============= -->
     <footer>
         <div class="contenedor footer">
             <p class="footer__texto">Todos los derechos reservados BASSTORE 2021 &copy;</p>

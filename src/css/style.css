@@ -32,12 +32,9 @@ body {
   margin: 0;
 }
 
-main {
-  background: linear-gradient(to bottom, #000 0%, #FFF 10px);
-}
-
 header {
   background-image: url(../img/5.jpg);
+  box-shadow: 0 4px 4px rgba(10, 10, 10, 0.8);
   height: 30rem;
   background-size: cover;
   background-repeat: no-repeat;
@@ -933,13 +930,17 @@ form .campos .form-group .form-control {
   justify-content: center;
 }
 
-.producto {
+.producto__enlace {
   width: 20%;
   height: 25%;
   color: #000;
   text-decoration: none;
 }
-.producto__contenedor {
+.producto__enlace:hover .producto__contenedor {
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+  transition: 0.3s ease;
+}
+.producto__enlace .producto__contenedor {
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -947,12 +948,13 @@ form .campos .form-group .form-control {
   justify-content: center;
   width: 100%;
   height: 100%;
+  padding: 1rem;
 }
-.producto__contenedor .producto__imagen {
+.producto__enlace .producto__contenedor .producto__imagen {
   height: 150px;
   width: 60%;
 }
-.producto__contenedor .producto__datos p {
+.producto__enlace .producto__contenedor .producto__datos p {
   margin: 0;
   text-align: center;
 }
@@ -966,10 +968,6 @@ form .campos .form-group .form-control {
 }
 
 @media (max-width: 1023px) {
-  .pagination {
-    display: none;
-  }
-
   .filtros_productos {
     border: none;
     display: grid;
@@ -1007,24 +1005,25 @@ form .campos .form-group .form-control {
     font-size: 1.6rem;
     border: none;
   }
-
-  .contenedor__producto:not(:last-child) {
+  .filtros_productos .productos-todo .publicacion:not(:last-child) {
     border-bottom: 1px solid #c2c2c2;
   }
-
-  .producto__contenedor {
+  .filtros_productos .productos-todo .publicacion .producto__enlace:hover .producto__contenedor {
+    box-shadow: unset;
+  }
+  .filtros_productos .productos-todo .publicacion .producto__enlace .producto__contenedor {
     display: flex;
     flex-direction: row;
     gap: 5rem;
     align-items: center;
     justify-content: center;
   }
-  .producto__contenedor .producto__imagen {
+  .filtros_productos .productos-todo .publicacion .producto__enlace .producto__contenedor .producto__imagen {
     width: 30%;
     height: 180px;
     padding: 2.5rem;
   }
-  .producto__contenedor .producto__datos {
+  .filtros_productos .productos-todo .publicacion .producto__enlace .producto__contenedor .producto__datos {
     display: flex;
     flex-direction: column;
     gap: 0;
@@ -1034,7 +1033,7 @@ form .campos .form-group .form-control {
   }
 }
 @media (max-width: 768px) {
-  .producto__contenedor .producto__imagen {
+  .filtros_productos .productos-todo .publicacion .producto__enlace .producto__contenedor .producto__imagen {
     width: 50%;
     height: 200px;
     padding: 2.5rem;
@@ -1050,7 +1049,7 @@ form .campos .form-group .form-control {
   font-family: "Montserrat", sans-serif;
 }
 
-.prod {
+.producto__data {
   display: flex;
   flex-direction: row;
   gap: 10rem;
@@ -1059,27 +1058,30 @@ form .campos .form-group .form-control {
   margin: 10rem auto;
   width: 75%;
 }
-.prod__imagen {
+.producto__data .prod {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+}
+.producto__data .prod__imagen {
   width: 50%;
   padding-right: 10rem;
   border-right: 1px solid black;
 }
-.prod .prod__info__precio {
+.producto__data .prod__info__precio {
   font-weight: bold;
   font-size: 2rem;
 }
-
-.boton-carrito {
-  background-color: #00be00;
-  font-weight: bold;
-  color: #FFF;
-  border: none;
-  transition: 0.3s ease;
-  padding: 1rem;
+.producto__data .prod__cantidad {
+  align-self: flex-start;
+  padding-bottom: 2rem;
 }
 
 @media (max-width: 767px) {
-  .prod {
+  .producto__data {
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -1087,22 +1089,29 @@ form .campos .form-group .form-control {
     justify-content: center;
     max-width: 80%;
   }
-  .prod__imagen {
+  .producto__data .prod__cantidad {
+    align-self: center;
+    padding-bottom: 2rem;
+  }
+  .producto__data .prod__cantidad input {
+    font-size: 1.4rem;
+  }
+  .producto__data .prod__imagen {
     width: 100%;
     border: none;
     padding: 0;
   }
-  .prod__info {
+  .producto__data .prod__info {
     text-align: center;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
-  .prod {
+  .producto__data {
     display: flex;
     gap: 3rem;
     max-width: 80%;
   }
-  .prod__imagen {
+  .producto__data .prod__imagen {
     padding-right: 3rem;
   }
 }

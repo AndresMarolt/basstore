@@ -84,13 +84,9 @@ body{
     margin: 0;
 }
 
-main {
-    background: linear-gradient(to bottom, $negro 0%, $blanco 10px);
-}
-
-
 header {
     background-image: url(../img/5.jpg);
+    box-shadow: 0 4px 4px hsla(0%, 0%, 4%, .8);
     height: 30rem;
     background-size: cover;
     background-repeat: no-repeat;
@@ -973,16 +969,21 @@ form {
     }
 }
 
-
-
-.producto {
+.producto__enlace {
     @include sizes(20%, 25%);
     color: $negro;
     text-decoration: none;
 
-    &__contenedor {
+    &:hover .producto__contenedor {
+        box-shadow: 0 4px 4px hsla(0%, 0%, 0%, .3);
+        transition: .3s ease;
+    }
+
+    .producto__contenedor {
         @include flex-dgja(column, 2rem, center, center);
         @include sizes(100%, 100%);
+        padding: 1rem;
+        
 
         .producto__imagen {
             height: 150px;
@@ -1003,9 +1004,6 @@ form {
 
 
 @media/* (min-width: 768px) and  */(max-width: 1023px) {
-    .pagination {
-        display: none;
-    }
 
     .filtros_productos {
         border: none;
@@ -1022,7 +1020,7 @@ form {
             }
         }
 
-        @include grid-crgaj(1fr, .15fr .85fr, 0, center, center,);
+        @include grid-crgaj(1fr, .15fr .85fr, 0, center, center);
         
         .productos-todo {
             margin-top: 5rem;
@@ -1031,31 +1029,39 @@ form {
             @include grid-crgaj(1fr, repeat(9, 1fr), 1.5rem, flex-start, flex-start);
             font-size: 1.6rem;
             border: none;
-        }
-    }
 
-    .contenedor__producto:not(:last-child) {
-        border-bottom: 1px solid rgb(194, 194, 194);
-    }
+            .publicacion {
+                &:not(:last-child) {
+                    border-bottom: 1px solid rgb(194, 194, 194);
+                }
 
-    .producto__contenedor {
-        @include flex-dgja(row, 5rem, center, center);
-        
-        .producto__imagen {
-            width: 30%;
-            height: 180px;
-            padding: 2.5rem;
-        }
-        .producto__datos {
-            @include flex-dgja(column, 0, flex-start, center);
-            margin: 0 auto;
+                .producto__enlace {
+                    &:hover .producto__contenedor {
+                        box-shadow: unset;
+                    }
+    
+                    .producto__contenedor {
+                        @include flex-dgja(row, 5rem, center, center);
+    
+                        .producto__imagen {
+                            width: 30%;
+                            height: 180px;
+                            padding: 2.5rem;
+                        }
+                        .producto__datos {
+                            @include flex-dgja(column, 0, flex-start, center);
+                            margin: 0 auto;
+                        }
+                    }
+                }
+            }
         }
     }
 }
 
 @media(max-width: 768px) {
 
-    .producto__contenedor .producto__imagen {
+    .filtros_productos .productos-todo .publicacion .producto__enlace .producto__contenedor .producto__imagen {
             width: 50%;
             height: 200px;
             padding: 2.5rem;
@@ -1074,55 +1080,71 @@ form {
     font-family: $fuenteHeading;
 }
 
-.prod {
+.producto__data {
     @include flex-dgja(row, 10rem, flex-start, center);
+        
     margin: 10rem auto;
     width: 75%;
 
-    &__imagen {
-        width: 50%;
-        padding-right: 10rem;
-        border-right: 1px solid black;
-    }
+    .prod {
+        @include flex-dgja(column, 1rem, center, center);
+        text-align: left;
 
-    .prod__info {
-        &__precio {
+        &__imagen {
+            width: 50%;
+            padding-right: 10rem;
+            border-right: 1px solid black;
+        }
+        &__info__precio {
             font-weight: bold;
             font-size: 2rem;
         }
+
+        &__cantidad {
+            align-self: flex-start;
+            padding-bottom: 2rem;
+        }
     }
-    
 }
 
-.boton-carrito {
-    @include boton(rgb(0, 190, 0));
-}
 
 
 @media(max-width: 767px) {
-    .prod {
+    .producto__data {
         @include flex-dgja(column, 2rem, center, flex-start);
         max-width: 80%;
 
-        &__imagen {
-            width: 100%;
-            border: none;
-            padding: 0;
+        .prod {
+            &__cantidad {
+                align-self: center;
+                padding-bottom: 2rem;
+
+                input {
+                    font-size: 1.4rem;
+                }
+            }
+
+            &__imagen {
+                width: 100%;
+                border: none;
+                padding: 0;
+            }
+        
+            &__info {
+                text-align: center;
+            }
         }
 
-        &__info {
-            text-align: center;
-        }
     }
 }
 
 @media(min-width: 768px) and (max-width: 1023px) {
-    .prod {
+    .producto__data {
         display: flex;
         gap: 3rem;
         max-width: 80%;
 
-        &__imagen {
+        .prod__imagen {
             padding-right: 3rem;
         }
     }
