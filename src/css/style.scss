@@ -990,9 +990,26 @@ form {
             width: 60%;
         }
 
-        .producto__datos p {
+        .producto__datos {
+
+            @include flex-dgja(column, 1.5rem, space-between, center);
+            height: 12rem;
+            width: 100%;
+
+            .boton-verde {
+                font-size: 1.3rem;
+                padding: 0.2rem 2rem;
+                width: 100%;
+            }
+
+            &__precio {
+                font-weight: bold;
+            }
+            
+            p {
             margin: 0;
             text-align: center;
+            }
         }
     }
 }
@@ -1026,7 +1043,7 @@ form {
             margin-top: 5rem;
             padding: .5rem;
             background-color: unset;
-            @include grid-crgaj(1fr, repeat(9, 1fr), 1.5rem, flex-start, flex-start);
+            @include grid-crgaj(1fr, repeat(9, 1fr), 1.5rem, start, start);
             font-size: 1.6rem;
             border: none;
 
@@ -1041,7 +1058,7 @@ form {
                     }
     
                     .producto__contenedor {
-                        @include flex-dgja(row, 5rem, center, center);
+                        @include flex-dgja(row, 3rem, center, center);
     
                         .producto__imagen {
                             width: 30%;
@@ -1049,7 +1066,7 @@ form {
                             padding: 2.5rem;
                         }
                         .producto__datos {
-                            @include flex-dgja(column, 0, flex-start, center);
+                            @include flex-dgja(column, 1.5rem, flex-start, center);
                             margin: 0 auto;
                         }
                     }
@@ -1067,7 +1084,6 @@ form {
             padding: 2.5rem;
         }
 }
-
 
 /* ---------------------------------------------------------------*/
 /* PRODUCTO */
@@ -1202,4 +1218,3 @@ form {
         }
     }
 }
-

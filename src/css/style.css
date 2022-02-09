@@ -954,6 +954,23 @@ form .campos .form-group .form-control {
   height: 150px;
   width: 60%;
 }
+.producto__enlace .producto__contenedor .producto__datos {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: space-between;
+  height: 12rem;
+  width: 100%;
+}
+.producto__enlace .producto__contenedor .producto__datos .boton-verde {
+  font-size: 1.3rem;
+  padding: 0.2rem 2rem;
+  width: 100%;
+}
+.producto__enlace .producto__contenedor .producto__datos__precio {
+  font-weight: bold;
+}
 .producto__enlace .producto__contenedor .producto__datos p {
   margin: 0;
   text-align: center;
@@ -1000,8 +1017,8 @@ form .campos .form-group .form-control {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(9, 1fr);
     gap: 1.5rem;
-    align-items: flex-start;
-    justify-content: flex-start;
+    align-items: start;
+    justify-content: start;
     font-size: 1.6rem;
     border: none;
   }
@@ -1014,7 +1031,7 @@ form .campos .form-group .form-control {
   .filtros_productos .productos-todo .publicacion .producto__enlace .producto__contenedor {
     display: flex;
     flex-direction: row;
-    gap: 5rem;
+    gap: 3rem;
     align-items: center;
     justify-content: center;
   }
@@ -1026,7 +1043,7 @@ form .campos .form-group .form-control {
   .filtros_productos .productos-todo .publicacion .producto__enlace .producto__contenedor .producto__datos {
     display: flex;
     flex-direction: column;
-    gap: 0;
+    gap: 1.5rem;
     align-items: center;
     justify-content: flex-start;
     margin: 0 auto;
