@@ -124,12 +124,25 @@ header {
     }
 }
 
+.contenedor-carrito-login {
+    padding-top: 15rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+li#dropdown-carrito-li {
+    display: inline-block;
+
+    i {
+        font-size: 4rem;
+    }
+}
 
 .inicio-sesion {
     display: flex;
     gap: 2rem;
     justify-content: flex-end;
-    padding-top: 16.75rem;
 
     img {
         display: inline;
@@ -140,6 +153,10 @@ header {
     .log {
         display: inline;
         color: $blanco;
+    }
+    .bx-cart {
+        color: white;
+        font-size: 30px;
     }
 }
 
@@ -986,15 +1003,17 @@ form {
         
 
         .producto__imagen {
-            height: 150px;
-            width: 60%;
+            height: 18rem;
+            width: 75%;
         }
 
         .producto__datos {
 
-            @include flex-dgja(column, 1.5rem, space-between, center);
-            height: 12rem;
+            @include flex-dgja(column, 0, flex-start, center);
+            height: 10rem;
             width: 100%;
+            font-weight: normal;
+            font-size: 1.4rem;
 
             .boton-verde {
                 font-size: 1.3rem;
@@ -1048,6 +1067,8 @@ form {
             border: none;
 
             .publicacion {
+                height: 100%;
+
                 &:not(:last-child) {
                     border-bottom: 1px solid rgb(194, 194, 194);
                 }
@@ -1068,6 +1089,8 @@ form {
                         .producto__datos {
                             @include flex-dgja(column, 1.5rem, flex-start, center);
                             margin: 0 auto;
+                            height: 100%;
+                            padding: 5rem 0;
                         }
                     }
                 }
@@ -1218,3 +1241,4 @@ form {
         }
     }
 }
+

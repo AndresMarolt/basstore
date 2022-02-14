@@ -9,6 +9,8 @@
   
 
     <link rel="stylesheet" href="../src/css/style.css">
+    
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>        <!-- BOXICONS -->
 
     <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- FUENTE MONTSERRAT -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,7 +21,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
-    <title>Producto | Basstore</title>
 </head>
 
 
@@ -53,9 +54,36 @@
                 <input type="text" placeholder="&#x1F50D;Buscar..." class="buscar__barra">
             </div>
 
-            <div class="inicio-sesion">
-                <a href="" class="log">Login</a>
-                <a href="" class="log">SignUp</a>
+            <div class="contenedor-carrito-login">
+                <!-- BOTON DESPLEGABLE PARA VER CARRITO-->
+                <li class="nav-item dropdown" id="dropdown-carrito-li">
+                    <i class='bx bx-cart nav-link dropdown-toggle img-fluid' id="dropdown01" height="70px"
+                    width="70px" href="#" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false"></i>
+                    <div id="carrito" class="dropdown-menu" aria-labelledby="navbarCollapse">
+                        <table id="lista-carrito" class="table">
+                            <thead>
+                                <tr>
+                                    <th>Imagen</th>
+                                    <th>Nombre</th>
+                                    <th>Precio</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+
+                        <a href="#" id="vaciar-carrito" class="btn btn-primary btn-block">Vaciar Carrito</a>
+                        <a href="#" id="procesar-pedido" class="btn btn-danger btn-block">Procesar
+                            Compra</a>
+                    </div>
+                </li>
+
+
+                <div class="inicio-sesion">                                     <!-- Login/Signup -->              
+                    <a href="" class="log">Login</a>
+                    <a href="" class="log">SignUp</a>
+                </div>
             </div>
         </div>
         
@@ -64,25 +92,7 @@
 
     <main>
         <div class="contenedor" id="contenedor-prod">
-            <!-- <h1 class="producto__titulo" id="nombre">Fender American Standard Jazz Bass (2008)</h1> -->
-            <div class="producto__data" id="prod-data">
-                
-                <!-- <img src="../src/img/bajos/destacado1.jpg" alt="producto" class="prod__imagen"> -->
-                <div class="prod" id="producto">
-                    <div class="prod__info" id="prod-info">
-                        <!-- <p class="prod__info__precio" id="precio">$230000</p>
-                        <p class="prod__info__descripcion" id="descripcion">Bajo Jazz Bass de 4 cuerdas made in USA, con cuerpo de fresno, mastil de palorrosa y diapasón de arce. Micrófonos DiMarzio DP149 Ultra Jazz y clavijas Hipshot. </p> -->
-                    </div>
-    
-                    <div class="prod__cantidad">
-                        <label for="cantidad">Cantidad: </label>
-                        <input type="number" value="1" id="cantidad" min="1">
-                    </div>
-
-                    <button type="submit" class="boton-verde">Agregar al Carrito</button>
-                </div>
-                
-            </div>
+            
         </div>
 
 

@@ -1,14 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
-    agregarProdsAlDOM();
-});
 
-class Producto {
-    constructor(nombre, precio, descripcion) {
-        this.nombre = nombre;
-        this.precio = precio;
-        this.descripcion = descripcion;
-    }
-}
 
 const articulosArray = [
     {
@@ -298,29 +288,108 @@ const articulosArray = [
         precio: 30000,
         descripcion: "Pedal",
         imagen: "../src/img/pedales/FENDER_The_Bends.jpg"
+    },
+    {
+        id: 37,
+        tipo: "accesorios",
+        nombre: "D'Addario EXL160BT (50-120)",
+        precio: 4000,
+        descripcion: "Accesorio",
+        imagen: "../src/img/accesorios/DAddario_EXL160BT_Balanced_Tension_(50-120).webp"
+    },
+    {
+        id: 38,
+        tipo: "accesorios",
+        nombre: "Ernie Ball Slinky Round Wound",
+        precio: 3500,
+        descripcion: "Accesorio",
+        imagen: "../src/img/accesorios/Ernie_Ball_2831_Slinky_Round_Wound.webp"
+    },
+    {
+        id: 39,
+        tipo: "accesorios",
+        nombre: "Afinador clip Fender",
+        precio: 2500,
+        descripcion: "Accesorio",
+        imagen: "../src/img/accesorios/Afinador_clip_Fender.webp"
+    },
+    {
+        id: 40,
+        tipo: "accesorios",
+        nombre: "Cable 3 metros",
+        precio: 3000,
+        descripcion: "Accesorio",
+        imagen: "../src/img/accesorios/cable1.jpg"
+    },
+    {
+        id: 41,
+        tipo: "accesorios",
+        nombre: "Cable 5 metros",
+        precio: 4000,
+        descripcion: "Accesorio",
+        imagen: "../src/img/accesorios/cable_5_metros.webp"
+    },
+    {
+        id: 42,
+        tipo: "accesorios",
+        nombre: "Ernie Ball Regular Slinky Round Wound",
+        precio: 3500,
+        descripcion: "Accesorio",
+        imagen: "../src/img/accesorios/Ernie_Ball_Regular_Slinky_Round_Wound.webp"
+    },
+    {
+        id: 43,
+        tipo: "accesorios",
+        nombre: "Pie para Bajo",
+        precio: 3000,
+        descripcion: "Accesorio",
+        imagen: "../src/img/accesorios/Pie_para_bajo.jpg"
+    },
+    {
+        id: 44,
+        tipo: "accesorios",
+        nombre: "Fender Strap",
+        precio: 5000,
+        descripcion: "Accesorio",
+        imagen: "../src/img/accesorios/Fender_strap.webp"
+    },
+    {
+        id: 45,
+        tipo: "accesorios",
+        nombre: "Ernie Ball Strap",
+        precio: 6000,
+        descripcion: "Accesorio",
+        imagen: "../src/img/accesorios/ernie_ball_strap.webp"
     }
 ];
 
+document.addEventListener('DOMContentLoaded', () => {
+    let path = window.location.pathname;
+    let pagina = path.split("/").pop();
+    if((pagina === "bajos.html") || (pagina === "amplificadores.html") || (pagina === "accesorios.html") || (pagina === "studio.html") || (pagina === "pedales.html") || (pagina === "ofertas.html") || (pagina === "mas-vendidos.html") || (pagina === "nuevos.html")) {
+        agregarProdsAlDOM();
+    } else if(pagina === "producto.html") {
+        visualizarDetallesProd();
+        iniciarCompra();
+    }
+});
+
 function agregarProdsAlDOM() {
+    
     const divPadre = document.querySelector('.productos-todo');
 
-    const publicaciones = articulosArray.filter(function(art) {
-        if(typeof art.tipo === "object" ) {
+    const publicaciones = articulosArray.filter(art => {
+        if(typeof art.tipo === "object" ) {                 // En caso de que el producto tenga más de una categoría...
 
-            const cantidadTipos = art.tipo.length;
-            console.log(cantidadTipos);
-            for(let i=0; i<cantidadTipos; i++) {
-                console.log(art.tipo[i]);
-                if(art.tipo[i] === divPadre.id) {
-                    console.log(art.tipo[i] + " | " + divPadre.id);
-                    return art.tipo[i] === divPadre.id;
+            const cantidadTipos = art.tipo.length;          // ... averigua cuantas categorías tiene, ...
+            for(let i=0; i<cantidadTipos; i++) {            // ... itera a través de todas ellas, ...
+                if(art.tipo[i] === divPadre.id) {           // ... y si una de las categorías que tiene el producto es la misma categoría que la que se pretende mostrar en la página actual...
+                    return art.tipo[i] === divPadre.id;     // ... añade el producto al nuevo array filtrado     
                 };
             }
         }
-        return art.tipo === divPadre.id;
+        return art.tipo === divPadre.id;                    
     });     // Por ejemplo al abrir bajos.html se crea un array con todos los bajos
-
-    console.log(publicaciones);
 
     publicaciones.forEach(publi => {
         const nuevoElemento = document.createElement("DIV");
@@ -329,22 +398,68 @@ function agregarProdsAlDOM() {
         nuevoElemento.setAttribute("id", publi.id);
 
         nuevoElemento.innerHTML = `
-        <a class="producto__enlace" href="producto.html">
-            <div class="producto__contenedor">
-                <img src= ${publi.imagen} alt="Producto" class="producto__imagen">
-                <div class="producto__datos">
-                    <p class="producto__datos__precio">$${publi.precio}</p>
-                    <p class="producto__datos__nombre">${publi.nombre}</p>
-                    <button class="boton-verde submit-carrito">Agregar al Carrito</button>
+            <a class="producto__enlace" href="producto.html">
+                <div class="producto__contenedor">
+                    <img src= ${publi.imagen} alt="Producto" class="producto__imagen">
+                    <div class="producto__datos">
+                        <p class="producto__datos__precio">$${publi.precio}</p>
+                        <p class="producto__datos__nombre">${publi.nombre}</p>
+                    </div>
                 </div>
-            </div>
-        </a>
+            </a>
         `;
 
         divPadre.appendChild(nuevoElemento);
     });
+
+    const productosDOM = document.querySelectorAll('.publicacion');     // productosDOM es un array de objetos (publicaciones)
+    for(const p of productosDOM) {                                      // ... itera sobre el array de publicaciones...
+        p.addEventListener('click', () => {                             // ... y queda a la espera de que se clickee alguna publicacion.
+            localStorage.setItem('publicacionId', p.id);                // Cuando alguna es clickeada se guarda el id de la misma en localStorage
+        })
+    }
+
+}
+function visualizarDetallesProd() {
+
+    const prodSeleccionado = articulosArray.find(x => x.id === parseInt(localStorage.getItem('publicacionId')));
+    const prodContenedor = document.querySelector('#contenedor-prod');
+
+    prodContenedor.innerHTML = `
+        <h1 class="producto__titulo" id="nombre">${prodSeleccionado.nombre}</h1>
+        <div class="producto__data" id="prod-data">
+            
+            <img src=${prodSeleccionado.imagen} alt="producto" class="prod__imagen">
+            <div class="prod" id="producto">
+                <div class="prod__info" id="prod-info">
+                    <p class="prod__info__precio" id="precio">$${prodSeleccionado.precio}</p>
+                    <p class="prod__info__descripcion" id="descripcion">${prodSeleccionado.descripcion}</p>
+                </div>
+
+                <div class="prod__cantidad">
+                    <label for="cantidad">Cantidad: </label>
+                    <input type="number" value="1" id="cantidad" min="1">
+                </div>
+
+                <button type="submit" class="boton-verde" id="boton-carrito">Agregar al Carrito</button>
+            </div>
+            
+        </div>
+    `
+
+    document.title = prodSeleccionado.nombre + " | Basstore";
+}
+function iniciarCarrito() {
+    
 }
 
+// Hacer pagina de login y signup
+// Hacer pagina de checkout
+
+// crear clase Carrito con métodos como el de sumar IVA, descontar giftCard, calcular total, remover X producto, etc y un array de productos
+
+// Añadir eventListener al boton de Agregar al Carrito para que Cuando le demos click se busque su ID en el array de productos
+// almacenados y se cree un new Producto(productoAgregado) y este sea pusheado al array de productos del carrito.
 
 
 
@@ -357,135 +472,30 @@ function agregarProdsAlDOM() {
 
 
 
+// const carritoDeCompras = new Carrito();
 
+// const botonAgregarAlCarrito = document.getElementById('boton-carrito');
 
+// botonAgregarAlCarrito.addEventListener('click', () => {                                          // Cuando le demos click a Agregar al Carrito
+//     let productoId = parseInt(localStorage.getItem('publicacionId'));                                // ... se va a tomar el ID de ese producto,
 
+//     let productoComprado = articulosArray.find(x => x.id === productoId);                        // ... se va a buscar ese producto en el array de productos,
+//     let compra = new Compra(productoComprado.id, productoComprado.nombre, productoComprado.precio, document.getElementById('cantidad').value);  // ... y se va a crear un nuevo objeto de la clase Compra, con los datos del producto que acabamos de elegir...
 
-
-
-
-
-// // VARIABLES
-// let interes = 0.08;
-// let flag;
-// // ARRAY VACIO AL QUE VAMOS A IR AGREGANDOLE OBJETOS
-// let carrito = [];
-
-// //FUNCIONES
-// function restarGiftcard(gc) {
-//     if(gc) {
-//         console.log("Gift Card: $" + gc);
-//         total -= gc;
-//     }
-// }
-// function calcularCuotas(total, interes, cuotas) {
-//     let costoCuotas = (total + total * interes) / cuotas;
-//     return costoCuotas;
-// }
-// function esEntero(n) {
-//     if((n - Math.floor(n)) ===0) return true; else return false
-// }
-// function isNumeric(n) {
-//     return !isNaN(parseFloat(n)) && isFinite(n);
-//   }
-// function validacion(tipo, variable) {
-//     if(variable==="") {
-//         return false;
-//     } else if(tipo === "number" && !isNumeric(variable)) {
-//         return false;
-//     } else if (tipo === "number" && variable<0) {
-//         return false;
-//     }
-
-//     return true;
-// }
-
-// // CLASE
-// class Producto {
-//     constructor(nombre, precio, cantidad) {
-//         this.nombre = nombre;
-//         this.precio = precio;
-//         this.cantidad = cantidad;
-//     }
-
-//     total() {
-//         this.monto = this.precio * this.cantidad;
-//     }
-// }
-
-// // INGRESO DE DATOS DE LOS PRODUCTOS COMPRADOS
-// do {
-//     let nombre = document.getElementById("nombre");
-
-//     let precio = document.getElementById("precio");
-//     precio = parseFloat(precio);
-
-//     let cantidad = document.getElementById("cantidad").value;
-//     while(!esEntero(cantidad)) {
-//         console.log("HOLA");
-//         let alertaCantidad = document.createElement("P");
-//         alertaCantidad.innerText = "La cantidad no puede ser un número decimal";
-
-//         let padreProd = document.getElementById("producto");
-//         padreProd.appendChild(alertaCantidad);
-//     }
-
-//     const producto = new Producto(nombre, precio, cantidad);
     
-//     producto.total();
-//     carrito.push(producto);
 
-//     /* flag = parseInt(prompt("Si desea terminar su compra ingrese 0. Si desea agregar más productos al carrito ingrese 1")); */
-// } while(flag);
+//     if(carritoDeCompras.productos.find(x => x.id === compra.id)) {                              // Se va a buscar si el producto seleccionado no fue ya agregado al carrito anteriormente...
+//         console.log("EL PRODUCTO YA FUE AGREGADO AL CARRITO");
+//         return;
+//     } else {             
+//         carritoDeCompras.productos.push(compra);                                                                       // ... y en caso de que no lo hubiese sido...
+//         let key = 'carritoProductosLS';
+//         let value = compra;
 
-// let total = carrito.reduce( (acumulador, elemento) => acumulador + elemento.monto, 0 );
-
-// /* let giftcard = prompt("¿Posee una gift card? En ese caso ingrese el monto de la misma. Caso contrario ingrese 0");
-// while(!validacion("number", giftcard)) {
-//     giftcard = prompt("Debe ingresar el monto de su gift card y 0 si no tiene. Intente nuevamente");
-// }
-// giftcard = parseFloat(giftcard); */
-
-// /* let cuotas = prompt("¿En cuantas cuotas va a comprar? Puede elegir entre 3, 6 y 12 cuotas. Si va a comprar en un único pago ingrese 0 (A saber: el interés en las compras en cuotas es del 8%)");
-// while(!validacion("number", cuotas) || cuotas!=3 && cuotas!=6 && cuotas!=12 && cuotas!=0) {
-//     cuotas = prompt("El número de cuotas puede ser 3, 6 o 12. Si desea abonar en un único pago ingrese 0. Intente nuevamente");
-// }
-// cuotas = parseInt(cuotas); */
-
-// // DECLARA UN OBJETO DATE
-// const hoy = new Date()
-// const fechayhora = "\nFecha: " + hoy.getDate() + "/" + (hoy.getMonth()+1) + "/" + hoy.getFullYear() + 
-//             "\nHora: " + hoy.getHours() + ":" + hoy.getMinutes() + ":" + hoy.getSeconds();
-
-//  // ORDENA EL ARRAY SEGUN EL PRECIO DE CADA PRODUCTO (DE MENOR A MAYOR)
-// carrito.sort((a, b) => {             
-//     if(a.precio > b.precio) {
-//         return 1;
-//     } else if(a.precio < b.precio) {
-//         return -1;
+//         if(localStorage.getItem(key)){                                                          
+//             localStorage.setItem(key, localStorage.getItem(key) + JSON.stringify(value));       // ... se agregará el producto al localStorage junto a los demás...
+//         }else{                                      
+//             localStorage.setItem(key, JSON.stringify(value));                                          // ... o en caso de que sea el primer producto seleccionado, se va a crear la key del LS donde se guardarán los productos elegidos.
+//         }
 //     }
-
-//     return 0;
 // })
-
-// // IMPRIME EN CONSOLA CADA UNO DE LOS ELEMENTOS DEL ARRAY PRODUCTOS
-// carrito.forEach((prod)=> {
-//     console.log("Artículo: " + prod.nombre);
-//     console.log("precio: " + prod.precio);
-//     console.log("Cantidad: " + prod.cantidad);
-//     console.log("Total: $" + prod.monto);
-//     console.log("\n\n");
-// })
-
-// restarGiftcard(giftcard);
-
-// console.log("MONTO TOTAL EN UN SOLO PAGO: $" + total);
-
-// if(cuotas===3 || cuotas===6 || cuotas===12) {
-//     let arancelCuotas = calcularCuotas(total,interes, cuotas);
-//     console.log("\nCuotas: " + cuotas +
-//     "\nInterés: " + interes*100 + "%" +
-//     "\nArancel de la cuota: $" + arancelCuotas);
-// }
-
-// console.log(fechayhora);
