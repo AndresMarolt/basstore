@@ -366,11 +366,11 @@ const articulosArray = [
 document.addEventListener('DOMContentLoaded', () => {
     let path = window.location.pathname;
     let pagina = path.split("/").pop();
+    
     if((pagina === "bajos.html") || (pagina === "amplificadores.html") || (pagina === "accesorios.html") || (pagina === "studio.html") || (pagina === "pedales.html") || (pagina === "ofertas.html") || (pagina === "mas-vendidos.html") || (pagina === "nuevos.html")) {
         agregarProdsAlDOM();
     } else if(pagina === "producto.html") {
         visualizarDetallesProd();
-        iniciarCompra();
     }
 });
 
@@ -448,54 +448,6 @@ function visualizarDetallesProd() {
     `
 
     document.title = prodSeleccionado.nombre + " | Basstore";
+
+    localStorage.setItem('productoEnPantalla', JSON.stringify(prodSeleccionado));
 }
-function iniciarCarrito() {
-    
-}
-
-// Hacer pagina de login y signup
-// Hacer pagina de checkout
-
-// crear clase Carrito con métodos como el de sumar IVA, descontar giftCard, calcular total, remover X producto, etc y un array de productos
-
-// Añadir eventListener al boton de Agregar al Carrito para que Cuando le demos click se busque su ID en el array de productos
-// almacenados y se cree un new Producto(productoAgregado) y este sea pusheado al array de productos del carrito.
-
-
-
-
-
-
-
-
-
-
-
-
-// const carritoDeCompras = new Carrito();
-
-// const botonAgregarAlCarrito = document.getElementById('boton-carrito');
-
-// botonAgregarAlCarrito.addEventListener('click', () => {                                          // Cuando le demos click a Agregar al Carrito
-//     let productoId = parseInt(localStorage.getItem('publicacionId'));                                // ... se va a tomar el ID de ese producto,
-
-//     let productoComprado = articulosArray.find(x => x.id === productoId);                        // ... se va a buscar ese producto en el array de productos,
-//     let compra = new Compra(productoComprado.id, productoComprado.nombre, productoComprado.precio, document.getElementById('cantidad').value);  // ... y se va a crear un nuevo objeto de la clase Compra, con los datos del producto que acabamos de elegir...
-
-    
-
-//     if(carritoDeCompras.productos.find(x => x.id === compra.id)) {                              // Se va a buscar si el producto seleccionado no fue ya agregado al carrito anteriormente...
-//         console.log("EL PRODUCTO YA FUE AGREGADO AL CARRITO");
-//         return;
-//     } else {             
-//         carritoDeCompras.productos.push(compra);                                                                       // ... y en caso de que no lo hubiese sido...
-//         let key = 'carritoProductosLS';
-//         let value = compra;
-
-//         if(localStorage.getItem(key)){                                                          
-//             localStorage.setItem(key, localStorage.getItem(key) + JSON.stringify(value));       // ... se agregará el producto al localStorage junto a los demás...
-//         }else{                                      
-//             localStorage.setItem(key, JSON.stringify(value));                                          // ... o en caso de que sea el primer producto seleccionado, se va a crear la key del LS donde se guardarán los productos elegidos.
-//         }
-//     }
-// })

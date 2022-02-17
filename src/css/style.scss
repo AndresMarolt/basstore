@@ -139,6 +139,20 @@ li#dropdown-carrito-li {
     }
 }
 
+.dropdown-menu {
+    max-height: 300px;
+    width: 380px;
+    overflow-y: auto;
+
+    tbody {
+        
+        img {
+        height: 100px;
+        }
+    }
+}
+
+
 .inicio-sesion {
     display: flex;
     gap: 2rem;
@@ -698,7 +712,7 @@ footer {
 
     /* Add a hover effect if you want */
     &:hover {
-        opacity: 0.7;
+        
         transition: .5s;
     }
 
@@ -706,6 +720,11 @@ footer {
         &-#{$red} {
             color: $blanco;
             background: $bg;
+        }
+
+        &-#{$red}:hover {
+            color: $bg;
+            background: $blanco;
         }
     }
 }
