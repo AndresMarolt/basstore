@@ -66,19 +66,20 @@
                     <div class="dropdown-menu carrito" aria-labelledby="navbarCollapse">
                         <table class="table lista-carrito">
                             <thead>
-                                <tr>
+                                <tr class="">
                                     <th>Imagen</th>
                                     <th>Nombre</th>
                                     <th>Precio</th>
+                                    <th>Cantidad</th>
+                                    <th>Total</th>
                                     <th></th>
                                 </tr>
                             </thead>
                             <tbody></tbody>
                         </table>
 
-                        <a href="#" id="vaciar-carrito" class="btn btn-primary btn-block">Vaciar Carrito</a>
-                        <a href="#" id="procesar-pedido" class="btn btn-danger btn-block">Procesar
-                            Compra</a>
+                        <a href="#" id="vaciar-carrito" class="btn btn-primary w-100">Vaciar Carrito</a>
+                        <a href="#" id="procesar-pedido" class="btn btn-danger w-100">Procesar Compra</a>
                     </div>
                 </li>
 
@@ -94,18 +95,56 @@
 
 
     <main>
-        <div class="contenedor">
+        <div class="contenedor padding-top">
+
+            <h1 class="titulo">Finalizar compra</h1>
             <table id="lista-compra" class="table">
                 <thead>
                     <tr>
                         <th>Imagen</th>
                         <th>Nombre</th>
                         <th>Precio</th>
+                        <th>Cantidad</th>
+                        <th>Total</th>
                         <th></th>
                     </tr>
                 </thead>
                 <tbody></tbody>
+
+                
+                <tbody id="tabla-resumen">
+                    <tr>
+                        <th colspan="6">
+                            <label class="form-check-label" for="giftcard">INGRESE EL MONTO DE SU GIFTCARD (SI NO POSEE UNA INGRESE 0)</label>
+                            <input type="number" name="gc" id="giftcard">
+                        </th>
+                    </tr>
+    
+                    <tr>
+                        <th colspan="4" scope="col" class="text-right">SUB TOTAL :</th>
+                        <th scope="col">
+                            <p id="subtotal"></p>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th colspan="4" scope="col" class="text-right">GIFTCARD :</th>
+                        <th scope="col">
+                            <p id="descuento"></p>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th colspan="4" scope="col" class="text-right">TOTAL :</th>
+                        <th scope="col">
+                            <p id="total-compra"></p>
+                        </th>
+                    </tr>
+                </tbody>
+                
             </table>
+
+            <div id="checkout-container">
+
+            </div>
         </div>
 
 
@@ -149,10 +188,8 @@
                 </div>
             </div>
         </section>
-        
     </main>
     
-
     <footer>
         <div class="contenedor footer">
             <p class="footer__texto">Todos los derechos reservados BASSTORE 2021 &copy;</p>

@@ -125,7 +125,7 @@ header {
 }
 
 .contenedor-carrito-login {
-    padding-top: 15rem;
+    padding-top: 16rem;
     display: flex;
     justify-content: space-between;
     align-items: baseline;
@@ -135,20 +135,33 @@ li#dropdown-carrito-li {
     display: inline-block;
 
     i {
-        font-size: 4rem;
+        font-size: 3.5rem;
     }
 }
 
 .dropdown-menu {
     max-height: 300px;
-    width: 380px;
+    width: 450px;
     overflow-y: auto;
 
-    tbody {
-        
-        img {
-        height: 100px;
+    
+}
+
+tbody {
+
+    font-size: 1.4rem;
+
+    tr {
+        vertical-align: middle;
+        td .borrar-producto{
+            text-decoration: none;
+            font-size: 2rem;
         }
+    }
+    
+    img {
+    height: 100px;
+    width: 70px;
     }
 }
 
@@ -253,12 +266,20 @@ li#dropdown-carrito-li {
             }
         }
 
-        .inicio-sesion {
-            display: flex;
-            gap: 2rem;
-            justify-content: flex-end;
-            padding-top: 2rem;
-            font-size: 1.2rem;
+        .contenedor-carrito-login {
+            padding-top: 0;
+
+            li#dropdown-carrito-li i{
+                font-size: 2.5rem;
+            }
+
+            .inicio-sesion {
+                display: flex;
+                gap: 2rem;
+                justify-content: flex-end;
+                padding-top: 2rem;
+                font-size: 1.2rem;
+            }
         }
     }
 
@@ -1261,3 +1282,18 @@ form {
     }
 }
 
+
+/* ---------------------------------------------------------------*/
+/* CHECKOUT */
+
+#lista-compra {
+    margin-top: 5rem;
+}
+
+.text-right {
+    text-align: right;
+}
+
+#subtotal {
+    color: black;
+}

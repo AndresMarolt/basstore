@@ -14,6 +14,7 @@ class Compra {
         this.imagen = obj.imagen;
         this.precio = obj.precio;
         this.cantidad = cantidad;
+        this.total = obj.precio * cantidad;
     }
 }
 
@@ -40,11 +41,12 @@ class Carrito {
                 }
     
                 if (contenidoCarrito.find(x => x.id === compra.id)) {
-                    console.log("EL PRODUCTO YA FUE AGREGADO AL CARRITO");
+                    alert("ERROR: El producto que seleccionó ya se encontraba en el carrito");
                     return;
                 } else {
                     contenidoCarrito.push(compra);
                     localStorage.setItem('carrito', JSON.stringify(contenidoCarrito));
+                    alert("Producto agregado al carrito correctamente");
                 }
             })
 
@@ -53,17 +55,16 @@ class Carrito {
     }
 
     eliminarProducto() {
-        let carritoDesplegado = document.querySelector(".carrito");              // marca el icono del carrito
         let contenidoCarrito = [];
         let carritoActualizado = [];
 
-        carritoDesplegado.addEventListener("click", (carr) => {          
+        document.addEventListener("click", (e) => {          
             let producto, productoID;
-            if(carr.target.classList.contains("borrar-producto")) {
+            if(e.target.classList.contains("borrar-producto")) {
                 console.log("DISTE CLICK EN BORRAR");
-                carr.target.parentElement.parentElement.remove();
-                /* console.log(carr.target.parentElement.parentElement); */
-                producto = carr.target.parentElement.parentElement;
+                e.target.parentElement.parentElement.remove();
+                /* console.log(e.target.parentElement.parentElement); */
+                producto = e.target.parentElement.parentElement;
                 console.log(producto);
                 productoID = parseInt(producto.querySelector('a').getAttribute('data-id'));
                 console.log(productoID);
@@ -98,6 +99,8 @@ class Carrito {
                     </td>
                     <td>${element.nombre}</td>
                     <td>${element.precio}</td>
+                    <td>${element.cantidad}</td>
+                    <td>${element.total}</td>
                     <td>
                         <a href="#" class="borrar-producto fas fa-times-circle" data-id="${element.id}"></a>
                     </td>
@@ -115,13 +118,65 @@ class Carrito {
         })
     }
 
-    procesarCompra() {
+    abrirCheckout() {
         document.addEventListener("click", e => {
             if(e.target.id === "procesar-pedido") {
-                // ====================================================================================================================
+                let path = window.location.pathname;
+                let pagina = path.split("/").pop();
+
+                console.log(pagina);
+
+                if(pagina === "") {
+                    location.href = "paginas/checkout.html";
+                } else {
+                    location.href = "../paginas/checkout.html";
+                }                
             }
         })
-    }  
+    }
+
+    insertarCkeckoutDOM() {
+        const contenidoCarrito = JSON.parse(localStorage.getItem('carrito'));
+        const listaCompra = document.querySelector("#lista-compra tbody");
+        const subtotal = contenidoCarrito.map(item => item.total).reduce((a, b) => a + b);
+        
+        console.log(subtotal);
+
+        listaCompra.innerHTML = '';  
+        
+        contenidoCarrito.forEach(element => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>
+                    <img src="${element.imagen}" width=100>
+                </td>
+                <td>${element.nombre}</td>
+                <td>${element.precio}</td>
+                <td>${element.cantidad}</td>
+                <td>${element.total}</td>
+                <td>
+                    <a href="#" class="borrar-producto fas fa-times-circle" data-id="${element.id}"></a>
+                </td>
+            `;
+            listaCompra.appendChild(row);
+        })
+
+        let subtotalParrafo = document.getElementById("subtotal");
+        subtotalParrafo.innerText = "$" + subtotal;
+
+        let inputGiftCard = document.getElementById("giftcard");
+        inputGiftCard.addEventListener('focusout', () => {
+            let giftcard = inputGiftCard.value;
+            console.log(giftcard);
+
+            let descuentoParrafo = document.getElementById("descuento");
+            descuentoParrafo.innerText = "$" + giftcard;
+
+            let totalCompra = document.getElementById("total-compra");
+            totalCompra.innerText = "$" + (subtotal - giftcard);
+        })
+        
+    }
 }
 
 function iniciarCompra() {
@@ -131,5 +186,6 @@ function iniciarCompra() {
     carritoDeCompras.eliminarProducto();
     carritoDeCompras.insertarCarritoDOM();
     carritoDeCompras.vaciarCarrito();
-    carritoDeCompras.procesarCompra();
+    carritoDeCompras.abrirCheckout();
+    carritoDeCompras.insertarCkeckoutDOM();
 }
