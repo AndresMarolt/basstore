@@ -9,8 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
 class Compra {
     constructor(obj, cantidad) {
         this.id = obj.id;
-        this.nombre = obj.nombre;
-        this.tipo = obj.tipo;
+        this.nombre = `${obj.marca} ${obj.modelo}`;
         this.imagen = obj.imagen;
         this.precio = obj.precio;
         this.cantidad = cantidad;
@@ -31,15 +30,15 @@ class Carrito {
             const botonAgregarAlCarrito = document.getElementById('boton-carrito');
             let contenidoCarrito = [];
 
+
+
             botonAgregarAlCarrito.addEventListener('click', () => {
                             
                 const productoComprado = JSON.parse(localStorage.getItem('productoEnPantalla'));
                 const compra = new Compra(productoComprado, parseInt(document.getElementById('cantidad').value));
     
-                if(localStorage.getItem('carrito')) {                                               // Si ya hay productos en carrito
-                    contenidoCarrito = JSON.parse(localStorage.getItem('carrito'));            // Leer todos los productos en carrito (LS)
-                }
-    
+                contenidoCarrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
                 if (contenidoCarrito.find(x => x.id === compra.id)) {
                     alert("ERROR: El producto que seleccionó ya se encontraba en el carrito");
                     return;
@@ -78,9 +77,7 @@ class Carrito {
                 console.log(carritoActualizado);
                 localStorage.setItem('carrito', JSON.stringify(carritoActualizado)); 
 
-                if(document.getElementById('listado-resumen')) {
-                    location.reload();
-                }
+                document.getElementById('listado-resumen') && location.reload();   
             }
         })
     }
@@ -94,6 +91,12 @@ class Carrito {
 
             listaProductos.innerHTML = '';  
             
+            if(!contenidoCarrito || contenidoCarrito.length === 0) {
+                const row = document.createElement('tr');
+                row.innerHTML = `<td>Carrito Vacío</td>`
+                listaProductos.appendChild(row);
+                return;
+            } 
             
             contenidoCarrito.forEach(element => {
                 const row = document.createElement('tr');
@@ -116,10 +119,7 @@ class Carrito {
 
     vaciarCarrito() {
         document.addEventListener("click", (e) => {
-            if(e.target.id === "vaciar-carrito") {
-                localStorage.removeItem('carrito');
-                location.reload();
-            }
+            e.target.id === "vaciar-carrito" && ( localStorage.removeItem('carrito'), location.reload() );
         })
     }
 
@@ -128,14 +128,7 @@ class Carrito {
             if(e.target.id === "procesar-pedido") {
                 let path = window.location.pathname;
                 let pagina = path.split("/").pop();
-
-                console.log(pagina);
-
-                if(pagina === "") {
-                    location.href = "paginas/checkout.html";
-                } else {
-                    location.href = "../paginas/checkout.html";
-                }                
+                pagina === "" ? location.href = "paginas/checkout.html" : location.href = "../paginas/checkout.html";                
             }
         })
     }
@@ -145,8 +138,6 @@ class Carrito {
         const listaCompra = document.querySelector("#listado-resumen");
         const subtotal = contenidoCarrito.map(item => item.total).reduce((a, b) => a + b);
         
-        console.log(subtotal);
-
         listaCompra.innerHTML = '';  
         
         contenidoCarrito.forEach(element => {
