@@ -77,6 +77,10 @@ class Carrito {
                 carritoActualizado = contenidoCarrito.filter( x => x.id !== productoID);
                 console.log(carritoActualizado);
                 localStorage.setItem('carrito', JSON.stringify(carritoActualizado)); 
+
+                if(document.getElementById('listado-resumen')) {
+                    location.reload();
+                }
             }
         })
     }
@@ -114,6 +118,7 @@ class Carrito {
         document.addEventListener("click", (e) => {
             if(e.target.id === "vaciar-carrito") {
                 localStorage.removeItem('carrito');
+                location.reload();
             }
         })
     }
@@ -137,7 +142,7 @@ class Carrito {
 
     insertarCkeckoutDOM() {
         const contenidoCarrito = JSON.parse(localStorage.getItem('carrito'));
-        const listaCompra = document.querySelector("#lista-compra tbody");
+        const listaCompra = document.querySelector("#listado-resumen");
         const subtotal = contenidoCarrito.map(item => item.total).reduce((a, b) => a + b);
         
         console.log(subtotal);
@@ -160,6 +165,35 @@ class Carrito {
             `;
             listaCompra.appendChild(row);
         })
+
+        const tablaCompra = document.querySelector("#tabla-resumen");
+        tablaCompra.innerHTML = `
+                    <tr>
+                        <th colspan="6">
+                            <label class="form-check-label" for="giftcard">INGRESE EL MONTO DE SU GIFTCARD (SI NO POSEE UNA INGRESE 0)</label>
+                            <input type="number" name="gc" id="giftcard">
+                        </th>
+                    </tr>
+    
+                    <tr>
+                        <th colspan="4" scope="col" class="text-right">SUB TOTAL :</th>
+                        <th scope="col">
+                            <p id="subtotal"></p>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th colspan="4" scope="col" class="text-right">GIFTCARD :</th>
+                        <th scope="col">
+                            <p id="descuento"></p>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th colspan="4" scope="col" class="text-right">TOTAL :</th>
+                        <th scope="col">
+                            <p id="total-compra"></p>
+                        </th>
+                    </tr>
+        `
 
         let subtotalParrafo = document.getElementById("subtotal");
         subtotalParrafo.innerText = "$" + subtotal;

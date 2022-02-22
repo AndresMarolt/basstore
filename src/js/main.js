@@ -364,31 +364,30 @@ const articulosArray = [
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
-    let path = window.location.pathname;
-    let pagina = path.split("/").pop();
+    agregarProdsAlDOM();
+    visualizarDetallesProd();
     
-    if((pagina === "bajos.html") || (pagina === "amplificadores.html") || (pagina === "accesorios.html") || (pagina === "studio.html") || (pagina === "pedales.html") || (pagina === "ofertas.html") || (pagina === "mas-vendidos.html") || (pagina === "nuevos.html")) {
-        agregarProdsAlDOM();
-    } else if(pagina === "producto.html") {
-        visualizarDetallesProd();
-    }
 });
 
 function agregarProdsAlDOM() {
     
     const divPadre = document.querySelector('.productos-todo');
 
-    const publicaciones = articulosArray.filter(art => {
-        if(typeof art.tipo === "object" ) {                 // En caso de que el producto tenga más de una categoría...
+    if(!divPadre) {
+        return;
+    }
 
-            const cantidadTipos = art.tipo.length;          // ... averigua cuantas categorías tiene, ...
-            for(let i=0; i<cantidadTipos; i++) {            // ... itera a través de todas ellas, ...
+    const publicaciones = articulosArray.filter(art => {
+        
+        if(typeof art.tipo === "object" ) {                 // En caso de que el producto tenga más de una categoría...
+            for(let i=0; i<art.tipo.length; i++) {            // ... itera a través de todas ellas, ...
                 if(art.tipo[i] === divPadre.id) {           // ... y si una de las categorías que tiene el producto es la misma categoría que la que se pretende mostrar en la página actual...
-                    return art.tipo[i] === divPadre.id;     // ... añade el producto al nuevo array filtrado     
+                   return art.tipo[i] === divPadre.id;     // ... añade el producto al nuevo array filtrado     
                 };
+                
             }
         }
-        return art.tipo === divPadre.id;                    
+        return art.tipo === divPadre.id;
     });     // Por ejemplo al abrir bajos.html se crea un array con todos los bajos
 
     publicaciones.forEach(publi => {
@@ -419,11 +418,16 @@ function agregarProdsAlDOM() {
         })
     }
 
+    ordenarProds(publicaciones);
 }
-function visualizarDetallesProd() {
 
+function visualizarDetallesProd() {
     const prodSeleccionado = articulosArray.find(x => x.id === parseInt(localStorage.getItem('publicacionId')));
     const prodContenedor = document.querySelector('#contenedor-prod');
+
+    if(!prodContenedor || !prodSeleccionado) {
+        return;
+    }
 
     prodContenedor.innerHTML = `
         <h1 class="producto__titulo" id="nombre">${prodSeleccionado.nombre}</h1>
@@ -450,4 +454,50 @@ function visualizarDetallesProd() {
     document.title = prodSeleccionado.nombre + " | Basstore";
 
     localStorage.setItem('productoEnPantalla', JSON.stringify(prodSeleccionado));
+}
+
+// *************************************************************************************************************
+
+function ordenarProds(publicaciones) {
+    /* document.addEventListener("click", x => console.log(x.target)); */
+
+    // =================================== PRECIO ===========================================
+    console.log("HOLA DESDE ordenarProds");
+    filtroPrecio = document.querySelector("#ordenar-productos-precio");
+    filtroPrecio.addEventListener("click", e => {
+        if(filtroPrecio.value != 0) {
+            ordenarPrecio(filtroPrecio.value, publicaciones);
+        }
+    })
+    
+}
+
+function ordenarPrecio(elegido, arr) {
+    console.log(arr);
+    console.log("HICISTE CLICK");
+    if(elegido === "1") {
+        arr.sort( (a, b) => (a.precio > b.precio) ? 1 : -1);                    // Ordena de mayor a menor
+
+        const divPadre = document.querySelector('.productos-todo');             // Selecciona al div padre en el DOM
+        publicaciones.forEach(publi => {                                        // Itera por cada publicacion ya ordenada e imprime en el DOM
+            const nuevoElemento = document.createElement("DIV");                    // <div class="publicacion" id=publi.id> </div>
+
+            nuevoElemento.setAttribute("class", "publicacion");
+            nuevoElemento.setAttribute("id", publi.id);
+
+            nuevoElemento.innerHTML = `
+                <a class="producto__enlace" href="producto.html">
+                    <div class="producto__contenedor">
+                        <img src= ${publi.imagen} alt="Producto" class="producto__imagen">
+                        <div class="producto__datos">
+                            <p class="producto__datos__precio">$${publi.precio}</p>
+                            <p class="producto__datos__nombre">${publi.nombre}</p>
+                        </div>
+                    </div>
+                </a>
+            `;
+
+            divPadre.appendChild(nuevoElemento);
+        }
+    )}
 }
