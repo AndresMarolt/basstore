@@ -1,5 +1,3 @@
-
-
 const articulosArray = [
     {
         id: 1,
@@ -459,21 +457,21 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-function imprimirPublicacionesEnDOM(elemento) {
+function imprimirPublicacionesEnDOM( {imagen, precio, marca, modelo, id}) {
 
     const divPadre = document.querySelector('.productos-todo');
     const nuevoElemento = document.createElement("DIV");
 
     nuevoElemento.setAttribute("class", "publicacion");
-    nuevoElemento.setAttribute("id", elemento.id);
+    nuevoElemento.setAttribute("id", id);
 
     nuevoElemento.innerHTML = `
         <a class="producto__enlace" href="producto.html">
             <div class="producto__contenedor">
-                <img src= ${elemento.imagen} alt="Producto" class="producto__imagen">
+                <img src= ${imagen} alt="Producto" class="producto__imagen">
                 <div class="producto__datos">
-                    <p class="producto__datos__precio">$${elemento.precio}</p>
-                    <p class="producto__datos__nombre">${elemento.marca} ${elemento.modelo}</p>
+                    <p class="producto__datos__precio">$${precio}</p>
+                    <p class="producto__datos__nombre">${marca} ${modelo}</p>
                 </div>
             </div>
         </a>
@@ -484,11 +482,10 @@ function imprimirPublicacionesEnDOM(elemento) {
 
 function cargarIDenLocalStorage() {
     
+    console.log("HI");
     const productosDOM = document.querySelectorAll('.publicacion');     // productosDOM es un array de objetos (publicaciones)
-    console.log(productosDOM);
     for(const p of productosDOM) {                                      // ... itera sobre el array de publicaciones...
         p.addEventListener('click', () => {                             // ... y queda a la espera de que se clickee alguna publicacion.
-            console.log(":D");
             localStorage.setItem('publicacionId', p.id);                // Cuando alguna es clickeada se guarda el id de la misma en localStorage
         })
     }
@@ -504,14 +501,15 @@ function agregarProdsAlDOM() {
 
     const publicaciones = articulosArray.filter(art => {
         
-        if(typeof art.categoria === "object" ) {                 // En caso de que el producto tenga más de una categoría...
-            for(let i=0; i<art.categoria.length; i++) {            // ... itera a través de todas ellas, ...
-                if(art.categoria[i] === divPadre.id) {           // ... y si una de las categorías que tiene el producto es la misma categoría que la que se pretende mostrar en la página actual...
-                   return art.categoria[i] === divPadre.id;     // ... añade el producto al nuevo array filtrado     
+        const {categoria} = art;
+        if(typeof categoria === "object" ) {                 // En caso de que el producto tenga más de una categoría...
+            for(let i=0;  i < categoria.length; i++) {            // ... itera a través de todas ellas, ...
+                if(categoria[i] === divPadre.id) {           // ... y si una de las categorías que tiene el producto es la misma categoría que la que se pretende mostrar en la página actual...
+                   return categoria[i] === divPadre.id;     // ... añade el producto al nuevo array filtrado     
                 };
             }
         }
-        return art.categoria === divPadre.id;
+        return categoria === divPadre.id;
     });     // Por ejemplo al abrir bajos.html se crea un array con todos los bajos
 
     publicaciones.forEach(publi => {
@@ -531,15 +529,17 @@ function visualizarDetallesProd() {
         return;
     }
 
+    const {marca, modelo, imagen, precio, descripcion} = prodSeleccionado;
+
     prodContenedor.innerHTML = `
-        <h1 class="producto__titulo" id="nombre">${prodSeleccionado.marca} ${prodSeleccionado.modelo}</h1>
+        <h1 class="producto__titulo" id="nombre">${marca} ${modelo}</h1>
         <div class="producto__data" id="prod-data">
             
-            <img src=${prodSeleccionado.imagen} alt="producto" class="prod__imagen">
+            <img src=${imagen} alt="producto" class="prod__imagen">
             <div class="prod" id="producto">
                 <div class="prod__info" id="prod-info">
-                    <p class="prod__info__precio" id="precio">$${prodSeleccionado.precio}</p>
-                    <p class="prod__info__descripcion" id="descripcion">${prodSeleccionado.descripcion}</p>
+                    <p class="prod__info__precio" id="precio">$${precio}</p>
+                    <p class="prod__info__descripcion" id="descripcion">${descripcion}</p>
                 </div>
 
                 <div class="prod__cantidad">
@@ -567,19 +567,19 @@ function ordenarProds(publicaciones) {
     // console.log("HOLA DESDE ordenarProds");
     let filtroPrecio = document.querySelector("#ordenar-productos-precio");
     filtroPrecio.addEventListener("click", () => {
-        (filtroPrecio.value != 0) && ordenarPrecio(filtroPrecio.value, publicaciones);
+        if(filtroPrecio.value !=0) { ordenarPrecio(filtroPrecio.value, publicaciones)};
     })
 
     // =================================== TIPO ===========================================
     let filtroTipo = document.querySelector('#ordenar-productos-tipo');
     filtroTipo.addEventListener("click", () => {
-        (filtroTipo.value != 0) && ordenarTipo(filtroTipo.value, publicaciones);
+        if(filtroTipo.value !=0) { ordenarTipo(filtroTipo.value, publicaciones)};
     })
 
     // =================================== MARCA ===========================================
     let filtroMarca = document.querySelector('#ordenar-productos-marca');
     filtroMarca.addEventListener("click", e => {
-        (filtroMarca.value != 0) && ordenarMarca(filtroMarca.value, publicaciones);
+        if(filtroMarca.value !=0) { ordenarMarca(filtroMarca.value, publicaciones)};
     })
 }
 
@@ -621,7 +621,6 @@ function ordenarTipo(elegido, arr) {
             
             divPadre.innerHTML = '';
             arrayFiltrado.forEach(producto => { imprimirPublicacionesEnDOM(producto) } );
-            return;
         }
     }
 
@@ -633,10 +632,11 @@ function ordenarMarca(elegido, arr) {
     const divPadre = document.querySelector('.productos-todo');
 
     selectores.forEach(sel => {
-        if(sel.value === elegido) {
+        const {value, outerText} = sel;
+        if(value === elegido) {
             let arrayFiltrado = arr.filter(articulo => {
                 let {marca} = articulo;
-                return marca === sel.outerText;
+                return marca === outerText;
             })
 
             if(arrayFiltrado.length === 0) {
@@ -652,6 +652,6 @@ function ordenarMarca(elegido, arr) {
             return;
         } 
     })
-
     cargarIDenLocalStorage();
 }
+

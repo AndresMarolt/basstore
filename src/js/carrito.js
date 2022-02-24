@@ -30,8 +30,6 @@ class Carrito {
             const botonAgregarAlCarrito = document.getElementById('boton-carrito');
             let contenidoCarrito = [];
 
-
-
             botonAgregarAlCarrito.addEventListener('click', () => {
                             
                 const productoComprado = JSON.parse(localStorage.getItem('productoEnPantalla'));
@@ -40,12 +38,24 @@ class Carrito {
                 contenidoCarrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
                 if (contenidoCarrito.find(x => x.id === compra.id)) {
-                    alert("ERROR: El producto que seleccionó ya se encontraba en el carrito");
+                    Swal.fire({
+                        title: 'Atención!',
+                        icon: 'error',
+                        text: 'El producto que seleccionó ya se encontraba en el carrito',
+                        timer: 1500
+                      })
                     return;
                 } else {
                     contenidoCarrito.push(compra);
                     localStorage.setItem('carrito', JSON.stringify(contenidoCarrito));
-                    alert("Producto agregado al carrito correctamente");
+                    Swal.fire({
+                        title: 'Bien!',
+                        icon: 'success',
+                        text: 'Producto agregado al carrito correctamente',
+                        timer: 1500
+                    })
+                    let botonesCarrito = document.querySelectorAll(".carrito a");
+                    botonesCarrito.forEach(bot => bot.style.display = 'inline-block');
                 }
             })
 
@@ -60,21 +70,15 @@ class Carrito {
         document.addEventListener("click", (e) => {          
             let producto, productoID;
             if(e.target.classList.contains("borrar-producto")) {
-                console.log("DISTE CLICK EN BORRAR");
                 e.target.parentElement.parentElement.remove();
-                /* console.log(e.target.parentElement.parentElement); */
                 producto = e.target.parentElement.parentElement;
-                console.log(producto);
                 productoID = parseInt(producto.querySelector('a').getAttribute('data-id'));
-                console.log(productoID);
 
                 // LEER LOCAL STORAGE
                 contenidoCarrito = JSON.parse(localStorage.getItem('carrito'));
-                console.log(contenidoCarrito);
                 // 
                 contenidoCarrito.forEach(x => console.log(x.id)) ;
                 carritoActualizado = contenidoCarrito.filter( x => x.id !== productoID);
-                console.log(carritoActualizado);
                 localStorage.setItem('carrito', JSON.stringify(carritoActualizado)); 
 
                 document.getElementById('listado-resumen') && location.reload();   
@@ -94,22 +98,25 @@ class Carrito {
             if(!contenidoCarrito || contenidoCarrito.length === 0) {
                 const row = document.createElement('tr');
                 row.innerHTML = `<td>Carrito Vacío</td>`
+                let botonesCarrito = document.querySelectorAll(".carrito a");
+                botonesCarrito.forEach(bot => bot.style.display = 'none');
                 listaProductos.appendChild(row);
                 return;
             } 
             
             contenidoCarrito.forEach(element => {
+                const {id, nombre, precio, imagen, cantidad, total} = element;
                 const row = document.createElement('tr');
                 row.innerHTML = `
                     <td>
-                        <img src="${element.imagen}" width=100>
+                        <img src="${imagen}" width=100>
                     </td>
-                    <td>${element.nombre}</td>
-                    <td>${element.precio}</td>
-                    <td>${element.cantidad}</td>
-                    <td>${element.total}</td>
+                    <td>${nombre}</td>
+                    <td>${precio}</td>
+                    <td>${cantidad}</td>
+                    <td>${total}</td>
                     <td>
-                        <a href="#" class="borrar-producto fas fa-times-circle" data-id="${element.id}"></a>
+                        <a href="#" class="borrar-producto fas fa-times-circle" data-id="${id}"></a>
                     </td>
                 `;
                 listaProductos.appendChild(row);
@@ -119,7 +126,22 @@ class Carrito {
 
     vaciarCarrito() {
         document.addEventListener("click", (e) => {
-            e.target.id === "vaciar-carrito" && ( localStorage.removeItem('carrito'), location.reload() );
+            if(e.target.id === "vaciar-carrito") {
+                Swal.fire({
+                    title: "Seguro que quiere vaciar el carrito?",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonText: 'Sí, estoy seguro',
+                    cancelButtonText: 'No, no vaciarlo'
+                }) .then((result => {
+                    if(result.isConfirmed) {
+                        localStorage.removeItem('carrito');
+                        location.reload();
+                    }
+                }))
+                
+            }
+            
         })
     }
 
@@ -141,17 +163,19 @@ class Carrito {
         listaCompra.innerHTML = '';  
         
         contenidoCarrito.forEach(element => {
+
+            const {id, imagen, nombre, precio, cantidad, total} = element;
             const row = document.createElement('tr');
             row.innerHTML = `
                 <td>
-                    <img src="${element.imagen}" width=100>
+                    <img src="${imagen}" width=100>
                 </td>
-                <td>${element.nombre}</td>
-                <td>${element.precio}</td>
-                <td>${element.cantidad}</td>
-                <td>${element.total}</td>
+                <td>${nombre}</td>
+                <td>${precio}</td>
+                <td>${cantidad}</td>
+                <td>${total}</td>
                 <td>
-                    <a href="#" class="borrar-producto fas fa-times-circle" data-id="${element.id}"></a>
+                    <a href="#" class="borrar-producto fas fa-times-circle" data-id="${id}"></a>
                 </td>
             `;
             listaCompra.appendChild(row);
@@ -190,7 +214,7 @@ class Carrito {
         subtotalParrafo.innerText = "$" + subtotal;
 
         let inputGiftCard = document.getElementById("giftcard");
-        inputGiftCard.addEventListener('focusout', () => {
+        inputGiftCard.addEventListener('input', () => {
             let giftcard = inputGiftCard.value;
             console.log(giftcard);
 
