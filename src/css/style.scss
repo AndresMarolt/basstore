@@ -444,9 +444,34 @@ tbody {
 }
 
 /* ---------------------------------------------------------------*/
-/* DESTACADOS */
+
+.carousel-item {
+    img {
+        margin: 0 auto;
+        height: 55rem;
+    }
+}
 
 .destacados {
+    margin-top: 10rem;
+    padding: 5rem 0 12rem 0;
+    background: linear-gradient(to bottom, white, black 1%, black 99%, white);
+    color: $blanco;
+
+    &__titulo {
+        margin: 0 0 10rem 0;
+        text-align: center;
+        text-transform: uppercase;
+        padding: 4rem 0;
+        border-top: 2px solid $blanco;
+        border-bottom: 2px solid $blanco;
+        color: $blanco;
+        @include font-fsw($fuenteHeading, 4rem, normal);
+    }
+}
+/* DESTACADOS */
+
+/* .destacados {
     margin-top: 10rem;
     padding: 5rem 0 12rem 0;
     background: linear-gradient(to bottom, white, black 1%, black 99%, white);
@@ -538,7 +563,7 @@ tbody {
         }
     }
     
-}
+} */
 
 
 /* ---------------------------------------------------------------*/

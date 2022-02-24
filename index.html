@@ -200,62 +200,57 @@
 
     
         <!-- ============= PRODUCTOS DESTACADOS ============= -->
+        <!-- ============= PRODUCTOS DESTACADOS ============= -->
         <section class="destacados">
             <div class="contenedor">
+                
                 <h1 class="destacados__titulo">
                     Productos Destacados
                 </h1>
-    
-                <div class="destacados__secciones">
-                    <!-- ============= DESTACADO ============= -->
-                    <a href="#">
-                        <div class="destacado">
-                            <img src="src/img/bajos/destacado1.jpg" alt="Destacado 1" class="destacado__imagen">
-                            <p class="destacado__nombre">Fender American Standard Jazz Bass</p>
-                        </div>
-                    </a>     
-                    
-                    <!-- ============= DESTACADO ============= -->
-                    <a href="#">
-                        <div class="destacado">
-                            <img src="src/img/amplificadores/destacado2.jpg" alt="Destacado 2" class="destacado__imagen"> 
-                            <p class="destacado__nombre">Warwick Sweet 15</p>                        
-                        </div>
-                    </a>     
-                    
-                    <!-- ============= DESTACADO ============= -->
-                    <a href="#">
-                        <div class="destacado">
-                            <img src="src/img/bajos/destacado3.jpg" alt="Destacado 3" class="destacado__imagen"> 
-                            <p class="destacado__nombre">F Bass AC5 Violin Burst</p>                        
-                        </div>
-                    </a>  
 
-                    <!-- ============= DESTACADO ============= -->
-                    <a href="#">
-                        <div class="destacado">
-                            <img src="src/img/bajos/destacado4.jpg" alt="Destacado 4" class="destacado__imagen"> 
-                            <p class="destacado__nombre">Warwick Rockbass Corvette 5</p>                        
-                        </div>
-                    </a>  
+                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                    </div>
 
-                    <!-- ============= DESTACADO ============= -->
-                    <a href="#">
-                        <div class="destacado">
-                            <img src="src/img/amplificadores/destacado5.jpg" alt="Destacado 5" class="destacado__imagen"> 
-                            <p class="destacado__nombre">Cabezal GR Bass Mini One</p>                        
-                        </div>
-                    </a>  
-
-                    <!-- ============= DESTACADO ============= -->
-                    <a href="#">
-                        <div class="destacado">
-                            <img src="src/img/bajos/destacado6.jpg" alt="Destacado 6" class="destacado__imagen"> 
-                            <p class="destacado__nombre">Ernie Ball Musicman Stingray 5</p>                        
-                        </div>
-                    </a>
                     
-                </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <a href="#" class="d-block w-100">
+                                <img src="src/img/carousel/fender_the_bends.jpg" alt="Destacado 1" class="d-block w-100" >
+                            </a>  
+                        </div>
+
+                        <div class="carousel-item">
+                            <a href="#" class="d-block w-100">
+                                <img src="src/img/carousel/audient_id4_mk2.jpg" alt="Destacado 2" class="d-block w-100" >
+                            </a>  
+                        </div>
+
+                        <div class="carousel-item">
+                            <a href="#" class="d-block w-100">
+                                <img src="src/img/carousel/01_P1430566a.jpg" alt="Destacado 3" class="d-block w-100" >
+                            </a>  
+                        </div>
+
+                        <div class="carousel-item">
+                            <a href="#" class="d-block w-100">
+                                <img src="src/img/carousel/EBS-BassIQ-1190x640.jpg" alt="Destacado 3" class="d-block w-100" >
+                            </a>  
+                        </div>
+                    </div>
+
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>      
             </div>
         </section>
     
@@ -330,9 +325,9 @@
     </footer>
 
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.4/dist/sweetalert2.all.min.js"></script>
     <script src="src/js/main.js"></script>
