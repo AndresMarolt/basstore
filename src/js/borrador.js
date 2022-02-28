@@ -85,37 +85,3 @@ pedirProductos()
         renderProductos(productos);
     })
 
-
-
-// ========================== FETCH ================================
-
-fetch('https://jsonplaceholder.typicode.com/posts')
-    .then(respuesta => respuesta.json() )
-    .then(data => console.log(data[0].title));
-
-fetch('https://jsonplaceholder.typicode.com/posts', {
-    method: 'POST',
-    body: JSON.stringify({title: 'Coderhouse', body: 'Post de prueba', userId: 1,}),
-    headers: {'Content-type': 'application/json; charset=UTF-8',},
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-
-
-    
-const pedirPosts = async () => {
-    const resp = await fetch('https://jsonplaceholder.typicode.com/posts');
-
-    const data = await resp.json();
-
-    data.forEach(post => {
-        const li = document.createElement('li');
-        li.innerHTML = `
-            <h4>${post.title}</h4>
-            <p>${post.body}</p>    
-        `
-        sadasd.appendchild(li);
-    });
-}
-
-pedirPosts();

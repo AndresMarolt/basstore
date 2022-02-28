@@ -24,40 +24,43 @@ let contenidoLocalStorage;
 class Carrito {
     
     agregarProducto() {
-
-        const botonAgregarAlCarrito = document.getElementById('boton-carrito');
-        console.log(botonAgregarAlCarrito);
         
-        let contenidoCarrito = [];
+        if(document.getElementById('boton-carrito')) {
 
-        botonAgregarAlCarrito.addEventListener('click', () => {
-                        
-            const productoComprado = JSON.parse(localStorage.getItem('productoEnPantalla'));
-            const compra = new Compra(productoComprado, parseInt(document.getElementById('cantidad').value));
+            const botonAgregarAlCarrito = document.getElementById('boton-carrito');
+            let contenidoCarrito = [];
 
-            contenidoCarrito = JSON.parse(localStorage.getItem('carrito')) || [];
+            botonAgregarAlCarrito.addEventListener('click', () => {
+                            
+                const productoComprado = JSON.parse(localStorage.getItem('productoEnPantalla'));
+                const compra = new Compra(productoComprado, parseInt(document.getElementById('cantidad').value));
+    
+                contenidoCarrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
-            if (contenidoCarrito.find(x => x.id === compra.id)) {
-                Swal.fire({
-                    title: 'Atención!',
-                    icon: 'error',
-                    text: 'El producto que seleccionó ya se encontraba en el carrito',
-                    timer: 1500
+                if (contenidoCarrito.find(x => x.id === compra.id)) {
+                    Swal.fire({
+                        title: 'Atención!',
+                        icon: 'error',
+                        text: 'El producto que seleccionó ya se encontraba en el carrito',
+                        timer: 1500
+                      })
+                    return;
+                } else {
+                    contenidoCarrito.push(compra);
+                    localStorage.setItem('carrito', JSON.stringify(contenidoCarrito));
+                    Swal.fire({
+                        title: 'Bien!',
+                        icon: 'success',
+                        text: 'Producto agregado al carrito correctamente',
+                        timer: 1500
                     })
-                return;
-            } else {
-                contenidoCarrito.push(compra);
-                localStorage.setItem('carrito', JSON.stringify(contenidoCarrito));
-                Swal.fire({
-                    title: 'Bien!',
-                    icon: 'success',
-                    text: 'Producto agregado al carrito correctamente',
-                    timer: 1500
-                })
-                let botonesCarrito = document.querySelectorAll(".carrito a");
-                botonesCarrito.forEach(bot => bot.style.display = 'inline-block');
-            }
-        })
+                    let botonesCarrito = document.querySelectorAll(".carrito a");
+                    botonesCarrito.forEach(bot => bot.style.display = 'inline-block');
+                }
+            })
+
+            
+        }
     }
 
     eliminarProducto() {
