@@ -445,10 +445,14 @@ tbody {
 
 /* ---------------------------------------------------------------*/
 
+.slide {
+    margin: 0 auto;
+    text-align: center;
+}
+
 .carousel-item {
     img {
-        margin: 0 auto;
-        height: 55rem;
+        height: 40rem;
     }
 }
 
