@@ -1,4 +1,4 @@
-
+/* 
 // // ====== SET INTERVAL Y SET TIMOUT ===========
 
 console.log("Hola");
@@ -85,3 +85,4 @@ pedirProductos()
         renderProductos(productos);
     })
 
+ */

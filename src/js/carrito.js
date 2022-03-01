@@ -23,44 +23,42 @@ let contenidoLocalStorage;
 
 class Carrito {
     
-    agregarProducto() {
-        
-        if(document.getElementById('boton-carrito')) {
+    async agregarProducto() {
+        await visualizarDetallesProd();
+        const botonAgregarAlCarrito = document.getElementById('boton-carrito');
+        let contenidoCarrito = [];
 
-            const botonAgregarAlCarrito = document.getElementById('boton-carrito');
-            let contenidoCarrito = [];
+        botonAgregarAlCarrito.addEventListener('click', () => {
 
-            botonAgregarAlCarrito.addEventListener('click', () => {
-                            
-                const productoComprado = JSON.parse(localStorage.getItem('productoEnPantalla'));
-                const compra = new Compra(productoComprado, parseInt(document.getElementById('cantidad').value));
-    
-                contenidoCarrito = JSON.parse(localStorage.getItem('carrito')) || [];
+            const productoComprado = JSON.parse(localStorage.getItem('productoEnPantalla'));
+            const compra = new Compra(productoComprado, parseInt(document.getElementById('cantidad').value));
 
-                if (contenidoCarrito.find(x => x.id === compra.id)) {
-                    Swal.fire({
-                        title: 'Atención!',
-                        icon: 'error',
-                        text: 'El producto que seleccionó ya se encontraba en el carrito',
-                        timer: 1500
-                      })
-                    return;
-                } else {
-                    contenidoCarrito.push(compra);
-                    localStorage.setItem('carrito', JSON.stringify(contenidoCarrito));
-                    Swal.fire({
-                        title: 'Bien!',
-                        icon: 'success',
-                        text: 'Producto agregado al carrito correctamente',
-                        timer: 1500
-                    })
-                    let botonesCarrito = document.querySelectorAll(".carrito a");
-                    botonesCarrito.forEach(bot => bot.style.display = 'inline-block');
-                }
-            })
+            contenidoCarrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+            if (contenidoCarrito.find(x => x.id === compra.id)) {
+                Swal.fire({
+                    title: 'Atención!',
+                    icon: 'error',
+                    text: 'El producto que seleccionó ya se encontraba en el carrito',
+                    timer: 1500
+                });
+                return;
+            } else {
+                contenidoCarrito.push(compra);
+                localStorage.setItem('carrito', JSON.stringify(contenidoCarrito));
+                Swal.fire({
+                    title: 'Bien!',
+                    icon: 'success',
+                    text: 'Producto agregado al carrito correctamente',
+                    timer: 1500
+                });
+                let botonesCarrito = document.querySelectorAll(".carrito a");
+                botonesCarrito.forEach(bot => bot.style.display = 'inline-block');
+            }
+        })
 
             
-        }
+    
     }
 
     eliminarProducto() {
@@ -74,10 +72,7 @@ class Carrito {
                 producto = e.target.parentElement.parentElement;
                 productoID = parseInt(producto.querySelector('a').getAttribute('data-id'));
 
-                // LEER LOCAL STORAGE
                 contenidoCarrito = JSON.parse(localStorage.getItem('carrito'));
-                // 
-                contenidoCarrito.forEach(x => console.log(x.id)) ;
                 carritoActualizado = contenidoCarrito.filter( x => x.id !== productoID);
                 localStorage.setItem('carrito', JSON.stringify(carritoActualizado)); 
 
@@ -156,6 +151,7 @@ class Carrito {
     }
 
     insertarCkeckoutDOM() {
+        if(!document.querySelector("#listado-resumen")) return;
         const contenidoCarrito = JSON.parse(localStorage.getItem('carrito'));
         const listaCompra = document.querySelector("#listado-resumen");
         const subtotal = contenidoCarrito.map(item => item.total).reduce((a, b) => a + b);
@@ -216,7 +212,6 @@ class Carrito {
         let inputGiftCard = document.getElementById("giftcard");
         inputGiftCard.addEventListener('input', () => {
             let giftcard = inputGiftCard.value;
-            console.log(giftcard);
 
             let descuentoParrafo = document.getElementById("descuento");
             descuentoParrafo.innerText = "$" + giftcard;
