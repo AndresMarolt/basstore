@@ -1,9 +1,35 @@
+(function() {
+    // https://dashboard.emailjs.com/admin/integration
+    emailjs.init('nnPpPbFrfLhXUKKfs');
+})();
 
+window.onload = () => {
+    const formulario = document.getElementById('contact-form');
+    formulario.addEventListener('submit', event => {
+        event.preventDefault();
+        // generate a five digit number for the contact_number variable
+        const id_cont = document.getElementById('nro_cont');
+        id_cont.value = Math.random() * 100000 | 0;
+        // these IDs from the previous steps
+        emailjs.sendForm('servicio_contacto', 'formulario_contacto', formulario)
+            .then( () => {
+                console.log('SUCCESS!');
+            }, error => {
+                console.log('FAILED...', error);
+            });
+        
+        Swal.fire({
+            title: "Listo!",
+            icon: "success",
+            text: "Email enviado correctamente. A la brevedad nos estaremos comunicando",
+            timer: 3000
+        })
+    });
+}
 const vaciarForm = document.querySelector(".botones .boton-rojo");
-const enviarForm = document.querySelector(".botones .boton-verde");
 
 vaciarForm.addEventListener("click", e => {
-    e.preventDefault;
+    e.preventDefault();
     Swal.fire({
         title: "Seguro que quiere vaciar todos los campos?",
         icon: "warning",

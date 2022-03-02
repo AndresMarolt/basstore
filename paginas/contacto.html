@@ -99,60 +99,57 @@
         <div class="container formulario-todo">
             <h1 class="titulo">Contacto</h1>
 
-            <form action="">
-                <div class="campos">
-                    <div class="row">               <!-- ROW n1 -->
-                        <div class="form-group col-md-12 col-lg-6 mb-3">
-                            <label for="nombre">Nombre</label>
-                            <input type="text" placeholder="Tu Nombre" id="nombre" class=" form-control">
-                        </div>
-                        <div class="form-group col-md-12 col-lg-6">
-                            <div class="campo form-group mb-3">
-                                <label for="email">E-mail</label>
-                                <input type="email" placeholder="Tu E-mail" id="email" class=" form-control">
-                            </div>
-                        </div>  
+            <form action="" id="contact-form">
+                <div class="row">
+                    <input type="hidden" name="nro_contacto" id="nro_cont">
+                    <div class="form-group col-md-12 col-lg-6 mb-3">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" placeholder="Tu Nombre" id="nombre" name="user_name" class=" form-control">
                     </div>
-                    
-                    <div class="row">               <!-- ROW n2 -->
-                        <div class="campo form-group col-md-12 col-lg-6 mb-3">
-                            <label for="telefono">Teléfono</label>
-                            <input type="tel" id="telefono" value="" class=" form-control">
+                    <div class="form-group col-md-12 col-lg-6">
+                        <div class="campo form-group mb-3">
+                            <label for="email">E-mail</label>
+                            <input type="email" placeholder="Tu E-mail" id="email" name="user_email" class=" form-control">
                         </div>
-                        <div class="campo form-group col-md-12 col-lg-6 mb-3">
-                            <label for="asunto">Asunto</label>
-                            <select name="" id="asunto" class=" form-control">
-                                <option value="0">--Elija una opción--</option>
-                                <option value="1">Consulta por stock</option>
-                                <option value="2">Hay un problema con mi producto</option>
-                                <option value="3">Hay un problema con mi compra</option>
-                                <option value="4">Otro</option>
-                            </select>
-                        </div>
+                    </div>  
+                </div>
+                
+                <div class="row">
+                    <div class="campo form-group col-md-12 col-lg-6 mb-3">
+                        <label for="telefono">Teléfono</label>
+                        <input type="tel" id="telefono" name="user_phone" value="" class=" form-control">
                     </div>
-    
-                    <div class="row">
-                        <div class="campo form-group mb-3" id="campo__mensaje">
-                            <label for="mensaje">Mensaje</label>
-                            <textarea name="" id="mensaje" class=" form-control"></textarea>
-                        </div>
+                    <div class="campo form-group col-md-12 col-lg-6 mb-3">
+                        <label for="asunto">Asunto</label>
+                        <select name="subject" id="asunto" class=" form-control">
+                            <option value="0">--Elija una opción--</option>
+                            <option value="1">Consulta por stock</option>
+                            <option value="2">Hay un problema con mi producto</option>
+                            <option value="3">Hay un problema con mi compra</option>
+                            <option value="4">Otro</option>
+                        </select>
                     </div>
-                    
-                    <div class="row">
-                        <div class="campo form-check mb-3" id="campo__newsletter">
-                            <label class="form-check-label" for="newsletter">Suscribirse al newsletter?</label>
-                            <input type="checkbox" id="newsletter" value="" class=" form-check-input">
-                        </div>
+                </div>
+
+                <div class="row">
+                    <div class="campo form-group mb-3" id="campo__mensaje">
+                        <label for="mensaje">Mensaje</label>
+                        <textarea name="message" id="mensaje" class=" form-control"></textarea>
                     </div>
-    
-                    <div class="row">
-                        <div class="botones">
-                            <button type="button" class="boton-rojo col-md-6">Limpiar Campos</button>
-                            <button type="submit" class="boton-verde col-md-6">Enviar</button>
-                        </div>
+                </div>
+                
+                <div class="row">
+                    <div class="campo form-check mb-3" id="campo__newsletter">
+                        <label class="form-check-label" for="newsletter">Suscribirse al newsletter?</label>
+                        <input type="checkbox" name="newsletter" id="newsletter" value="" class=" form-check-input">
                     </div>
-                    
-                    
+                </div>
+
+                <div class="row">
+                    <div class="botones">
+                        <button type="button" class="boton-rojo col-md-6">Limpiar Campos</button>
+                        <button type="submit" class="boton-verde col-md-6">Enviar</button>
+                    </div>
                 </div>
             </form>
         </div>
@@ -217,8 +214,10 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.4/dist/sweetalert2.all.min.js"></script>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    
     <script src="../src/js/contacto.js"></script>
     <script src="../src/js/main.js"></script>
     <script src="../src/js/carrito.js"></script>

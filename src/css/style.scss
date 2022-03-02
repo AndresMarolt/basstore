@@ -897,22 +897,20 @@ form {
     padding: 4rem;
     border-radius: 5px;
     font-family: $fuenteParrafos;
+    color: $blanco;
 
-    .campos {
-        color: $blanco;
-        .form-group {
-            line-height: 4rem;
+    .form-group {
+        line-height: 4rem;
 
-            label {
-                font-weight: bold;
-                font-size: 2rem;
-            }
-            .form-control {
-                padding: 1rem;
-                border: none;
-                border-radius: 8px;
-                font-size: 1.5rem;
-            }
+        label {
+            font-weight: bold;
+            font-size: 2rem;
+        }
+        .form-control {
+            padding: 1rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.5rem;
         }
     }
 }
