@@ -29,7 +29,7 @@ function imprimirPublicacionesEnDOM( {imagen, precio, marca, modelo, id}) {
 function cargarIDenLocalStorage() {
     const productosDOM = document.querySelectorAll('.publicacion');     // productosDOM es un array de objetos (publicaciones)
     for(const p of productosDOM) {                                      // ... itera sobre el array de publicaciones...
-        p.addEventListener('click', () => {                             // ... y queda a la espera de que se clickee alguna publicacion.
+        p.addEventListener('mouseup', () => {                           // ... y queda a la espera de que se clickee alguna publicacion.
             localStorage.setItem('publicacionId', p.id);                // Cuando alguna es clickeada se guarda el id de la misma en localStorage
         })
     }
@@ -44,7 +44,7 @@ async function agregarProdsAlDOM() {
         
         const {categoria} = art;
         if(typeof categoria === "object" ) {                 // En caso de que el producto tenga más de una categoría...
-            for(let i=0;  i < categoria.length; i++) {            // ... itera a través de todas ellas, ...
+            for(let i=0;  i < categoria.length; i++) {       // ... itera a través de todas ellas, ...
                 if(categoria[i] === divPadre.id) {           // ... y si una de las categorías que tiene el producto es la misma categoría que la que se pretende mostrar en la página actual...
                    return categoria[i] === divPadre.id;     // ... añade el producto al nuevo array filtrado     
                 };

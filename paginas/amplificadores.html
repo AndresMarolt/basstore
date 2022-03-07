@@ -33,12 +33,12 @@
 <body>
     
     <header>
-        <div class="container">
+        <div class="contenedor">
             <nav class="row">
                 <a href="/" class="col-lg-6 logo">BASSTORE</a>
                 <ul class="nav col-lg-6 ">
                     <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle nav-link" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <button class="btn btn-secondary dropdown-toggle nav-link" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           Productos
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -64,7 +64,7 @@
                 <!-- BOTON DESPLEGABLE PARA VER CARRITO-->
                 <li class="nav-item dropdown" id="dropdown-carrito-li">
                     <i class='bx bx-cart nav-link dropdown-toggle img-fluid' id="dropdown01" height="70px"
-                    width="70px" href="#" data-toggle="dropdown" aria-haspopup="true"
+                    width="70px" href="#" data-bs-toggle="dropdown" aria-haspopup="true"
                     aria-expanded="false"></i>
                     <div class="dropdown-menu carrito" aria-labelledby="navbarCollapse">
                         <table class="table lista-carrito">
@@ -81,8 +81,8 @@
                             <tbody></tbody>
                         </table>
 
-                        <a href="#" id="vaciar-carrito" class="btn btn-primary w-100">Vaciar Carrito</a>
-                        <a href="#" id="procesar-pedido" class="btn btn-danger w-100">Procesar Compra</a>
+                        <a href="#" id="vaciar-carrito" class="btn boton-rojo w-100">Vaciar Carrito</a>
+                        <a href="#" id="procesar-pedido" class="btn boton-verde w-100">Procesar Compra</a>
                     </div>
                 </li>
 
@@ -230,10 +230,10 @@
 
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.4/dist/sweetalert2.all.min.js"></script>
+
     <script src="../src/js/main.js"></script>
     <script src="../src/js/carrito.js"></script>
 </body>

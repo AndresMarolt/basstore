@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 
-
 class Compra {
     constructor(obj, cantidad) {
         this.id = obj.id;
@@ -31,7 +30,28 @@ class Carrito {
         botonAgregarAlCarrito.addEventListener('click', () => {
 
             const productoComprado = JSON.parse(localStorage.getItem('productoEnPantalla'));
-            const compra = new Compra(productoComprado, parseInt(document.getElementById('cantidad').value));
+
+            const cantidad = parseFloat(document.getElementById('cantidad').value);
+            
+            if(cantidad < 1) {
+                Swal.fire({
+                    title: 'Atención!',
+                    icon: 'warning',
+                    text: 'La cantidad debe ser mayor o igual a 1',
+                    timer: 4000
+                })
+                return;
+            } else if(cantidad % 1 !== 0) {
+                Swal.fire({
+                    title: 'Atención!',
+                    icon: 'warning',
+                    text: 'La cantidad debe ser un número entero',
+                    timer: 4000
+                })
+                return;
+            }
+
+            const compra = new Compra(productoComprado, cantidad);
 
             contenidoCarrito = JSON.parse(localStorage.getItem('carrito')) || [];
 

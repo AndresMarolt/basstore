@@ -27,14 +27,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
     <title>Basstore</title>
-
 </head>
 
 
 <body>
 
     <header>
-        <div class="container">
+        <div class="contenedor">
             <nav class="row">
                 <a href="/" class="col-lg-6 logo">BASSTORE</a>
                 <ul class="nav col-lg-6 ">
@@ -59,14 +58,14 @@
             </nav>
 
             <div class="buscar">                                            <!-- Barra de búsqueda -->
-                <input type="text" placeholder="&#x1F50D;Buscar..." class="buscar__barra">
+                <input type="text" placeholder="Buscar productos, marcas y más..." class="buscar__barra">
             </div>
 
             <div class="contenedor-carrito-login">
                 <!-- BOTON DESPLEGABLE PARA VER CARRITO-->
                 <li class="nav-item dropdown" id="dropdown-carrito-li">
                     <i class='bx bx-cart nav-link dropdown-toggle img-fluid' id="dropdown01" height="70px"
-                    width="70px" href="#" data-toggle="dropdown" aria-haspopup="true"
+                    width="70px" href="#" data-bs-toggle="dropdown" aria-haspopup="true"
                     aria-expanded="false"></i>
                     <div class="dropdown-menu carrito" aria-labelledby="navbarCollapse">
                         <table class="table lista-carrito">
@@ -83,26 +82,87 @@
                             <tbody></tbody>
                         </table>
 
-                        <a href="#" id="vaciar-carrito" class="btn btn-primary w-100">Vaciar Carrito</a>
-                        <a href="#" id="procesar-pedido" class="btn btn-danger w-100">Procesar Compra</a>
+                        <a href="#" id="vaciar-carrito" class="btn boton-rojo w-100">Vaciar Carrito</a>
+                        <a href="#" id="procesar-pedido" class="btn boton-verde w-100">Procesar Compra</a>
                     </div>
                 </li>
 
 
                 <div class="inicio-sesion">                                     <!-- Login/Signup -->              
-                    <a href="" class="log">Login</a>
-                    <a href="" class="log">SignUp</a>
+                    <a href="paginas/login.html" class="log">Login</a>
+                    <a href="paginas/signup.html" class="log">SignUp</a>
                 </div>
             </div>
-            
-        </div>
-        
+        </div>        
     </header>
     
 
     <main>
+
+        
+        <!-- ============= PRODUCTOS DESTACADOS ============= -->
+        <section class="destacados">
+            <div class="">
+
+                <div id="carouselExampleIndicators" class="carousel slide w-100" data-bs-ride="carousel">
+                    <!-- <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                    </div> -->
+                    
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <a href="#" class="d-block w-100">
+                                <img src="src/img/carousel/slide-redforest.jpg" alt="Destacado 1" class="d-block w-100" >
+                            </a>  
+                        </div>
+
+                        <div class="carousel-item">
+                            <a href="#" class="d-block w-100">
+                                <img src="src/img/carousel/audient_id4_mk2.jpg" alt="Destacado 2" class="d-block w-100" >
+                            </a>  
+                        </div>
+
+                        <div class="carousel-item">
+                            <a href="#" class="d-block w-100">
+                                <img src="src/img/carousel/slider-3.jpg" alt="Destacado 3" class="d-block w-100" >
+                            </a>  
+                        </div>
+
+                        <div class="carousel-item">
+                            <a href="#" class="d-block w-100">
+                                <img src="src/img/carousel/hero-59-e1460387523303-1280x526.jpg" alt="Destacado 4" class="d-block w-100" >
+                            </a>  
+                        </div>
+
+                        <div class="carousel-item">
+                            <a href="#" class="d-block w-100">
+                                <img src="src/img/carousel/sdgr-banner.png" alt="Destacado 5" class="d-block w-100" >
+                            </a>  
+                        </div>
+
+                        <div class="carousel-item">
+                            <a href="#" class="d-block w-100">
+                                <img src="src/img/carousel/focusrite.jpg" alt="Destacado 5" class="d-block w-100" >
+                            </a>  
+                        </div>
+                    </div>
+
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>      
+            </div>
+        </section>
+
         <!-- ============= NAVEGACION POR TARJETAS ============= -->
-        <section class="categorias">                                        
+        <section class="categorias">
             <div class="contenedor">
             
                 <h1 class="titulo">Categorías</h1>
@@ -199,70 +259,44 @@
             </div>
         </section>
 
-        <!-- ============= PRODUCTOS DESTACADOS ============= -->
-        <section class="destacados">
-            <div class="contenedor">
-                
-                <h1 class="destacados__titulo">
-                    Productos Destacados
-                </h1>
-
-                <div id="carouselExampleIndicators" class="carousel slide w-50" data-bs-ride="carousel">
-                    <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
-                    </div>
-                    
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <a href="#" class="d-block w-100">
-                                <img src="src/img/carousel/fender_the_bends.jpg" alt="Destacado 1" class="d-block w-100" >
-                            </a>  
-                        </div>
-
-                        <div class="carousel-item">
-                            <a href="#" class="d-block w-100">
-                                <img src="src/img/carousel/audient_id4_mk2.jpg" alt="Destacado 2" class="d-block w-100" >
-                            </a>  
-                        </div>
-
-                        <div class="carousel-item">
-                            <a href="#" class="d-block w-100">
-                                <img src="src/img/carousel/01_P1430566a.jpg" alt="Destacado 3" class="d-block w-100" >
-                            </a>  
-                        </div>
-
-                        <div class="carousel-item">
-                            <a href="#" class="d-block w-100">
-                                <img src="src/img/carousel/EBS-BassIQ-1190x640.jpg" alt="Destacado 3" class="d-block w-100" >
-                            </a>  
-                        </div>
-                    </div>
-
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>      
-            </div>
-        </section>
     
 
         <!-- ============= EXTRAS ============= -->
         <section>
             <div class="contenedor">
                 <div class="extras">
-                    <div class="extra"><a href="paginas/nuevos.html">Nuevos Productos</a></div>
-                    <div class="extra"><a href="paginas/ofertas.html">Ofertas</a></div>
-                    <div class="extra"><a href="paginas/mas-vendidos.html">Más Vendidos</a></div>
+                    <a href="paginas/nuevos.html" class="extra"><p>Nuevos Productos</p></a>
+                    <a href="paginas/ofertas.html" class="extra"><p>Ofertas</p></a>
+                    <a href="paginas/nuevos.html" class="extra"><p>Más Vendidos</p></a>
                 </div>
             </div>
         </section>
+
+        <!-- ============= SHOPPING-INFO ============ -->
+        <section class="separador">
+            <div class="contenedor">
+                <div class="shopping-info">
+                    <div class="shopping-info_item">
+                        <img class="shopping-info_item-img" src="src/img/iconos/credit-card-svgrepo-com.svg">
+                        <h2 class="shopping-info_item-titulo">Pagá con tarjeta o MercadoPago</h2>
+                        <p class="shopping-info_item-text">Con Mercado Pago, tenés cuotas sin interés con tarjeta o efectivo en puntos de pago. ¡Y siempre es seguro!</p>
+                    </div>
+    
+                    <div class="shopping-info_item">
+                        <img class="shopping-info_item-img" src="src/img/iconos/box-svgrepo-com.svg">
+                        <h2 class="shopping-info_item-titulo">Envío rápido y seguro</h2>
+                        <p class="shopping-info_item-text">Elegí Mercado Envíos y seguí tu compra hasta que la recibas. Todos tus paquetes estarán protegidos.</p>
+                    </div>
+    
+                    <div class="shopping-info_item">
+                        <img class="shopping-info_item-img" src="src/img/iconos/security-shield-svgrepo-com.svg">
+                        <h2 class="shopping-info_item-titulo">Compra protegida</h2>
+                        <p class="shopping-info_item-text">Te acompañamos hasta que recibas lo que compraste. Y si no es lo que esperabas, te devolvemos el dinero.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
 
         <!-- ============= PRE-FOOTER GRIS ============= -->
         <section class="fondo-pie-previo">
