@@ -82,26 +82,66 @@ body{
     font-size: 1.6rem;
     line-height: 1.5;     /* Interlineado */
     margin: 0;
-    background-color: #eee;
 }
 
 header {
     // background-image: url(../img/5.jpg);
-    background-color: black;
+    // background-color: black;
+    background-color: #1a1a1a;
     border-bottom: 1px solid rgb(90, 90, 90);
     // height: 30rem;
-    height: 18rem;
+    height: 23rem;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
     position: relative;
+
+    .row {
+        gap: 1rem;
+    }
+    
+    .contenedor-header {
+        width: 95%;
+        margin: 0 auto;
+    }
 }
 
 .contenedor{
-    max-width: 120rem;
-    width: 90%;
+    width: 85%;
     margin: 0 auto;
 }
+
+.header__contacto {
+    text-align: end;
+
+    .fa {
+        padding: .5rem;
+        width: 2rem;
+        font-size: 1rem;
+        text-align: center;
+        text-decoration: none;
+    
+        /* Add a hover effect if you want */
+        &:hover {
+            transition: .5s;
+        }
+    
+        @each $red, $bg in $redes {
+            &-#{$red} {
+                color: $blanco;
+                background: $bg;
+            }
+    
+            &-#{$red}:hover {
+                color: $bg;
+                background: $blanco;
+            }
+        }
+    }
+}
+
+
+
 
 .logo {
     display: inline-block;
@@ -130,18 +170,15 @@ header {
     }
 }
 
-.contenedor-carrito-login {
-    padding-top: 14rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
+.contenedor-carrito {
+    padding-top: 2rem;
 }
 
 li#dropdown-carrito-li {
-    display: inline-block;
-
+    display: flex;
+    justify-content: flex-end;
     i {
-        font-size: 3.5rem;
+        font-size: 2.5rem;
     }
 }
 
@@ -177,6 +214,7 @@ tbody {
 
 
 .inicio-sesion {
+    padding-top: 1rem;
     display: flex;
     gap: 2rem;
     justify-content: flex-end;
@@ -227,7 +265,6 @@ tbody {
 .buscar {
     display: flex;
     justify-content: center;
-    padding-top: 2rem;
 
     &__barra {
         // background: transparent;
@@ -245,14 +282,20 @@ tbody {
         }
 
         &::placeholder {
-            color: $blanco;
             opacity: 0.5;
+            color: black;
+            font-weight: 700;
         }
     }
 }
 
 .contenedor-carrito-login {
     padding-top: 0;
+
+    .dropdown-menu {
+        max-height: 320px;
+        overflow-y: scroll;
+      }
 
     li#dropdown-carrito-li i{
         font-size: 2.5rem;
@@ -267,16 +310,47 @@ tbody {
     }
 }
 
-nav.row {
-    gap: 2rem;
-}
-
 @media(min-width: 991px) {
 
+    
     header {
-        height: 18rem;
+        height: 19rem;
+
+        .header__contacto {
+        
+            .fa {
+                margin-top: 1rem;
+                padding: 1rem;
+                width: 3rem;
+                font-size: 1rem;
+                text-align: center;
+                text-decoration: none;
+            
+                /* Add a hover effect if you want */
+                &:hover {
+                    transition: .5s;
+                }
+            
+                @each $red, $bg in $redes {
+                    &-#{$red} {
+                        color: $blanco;
+                        background: $bg;
+                    }
+            
+                    &-#{$red}:hover {
+                        color: $bg;
+                        background: $blanco;
+                    }
+                }
+            }
+        }
+
+        nav {
+            margin-top: 1rem;
+        }
 
         .nav {
+
             justify-content: flex-end;
             align-items: center;
 
@@ -291,34 +365,30 @@ nav.row {
 
         .logo {
             text-align: left;
-            font-size: 4.5rem;
+            font-size: 5.5rem;
         }
 
         .buscar {
             justify-content: center;
             padding-top: 0;
+            align-self: center;
 
             &__barra {
-                font-size: 1.5rem;
-                width: 40%;
+                font-size: 2rem;
+                width: 75%;
                 padding: 2rem;
-
-                &::placeholder {
-                    color: black;
-                    font-weight: 700;
-                }
             }
         }
 
-        .contenedor-carrito-login {
-            padding-top: 3rem;
+        .contenedor-carrito {
+            padding-top: 0rem;
 
             li#dropdown-carrito-li i {
-                font-size: 3.5rem;
+                font-size: 2.5rem;
             }
 
             .inicio-sesion {
-                font-size: 1.4rem;
+                font-size: 1.6rem;
             }
         }
     }
@@ -390,7 +460,7 @@ nav.row {
 
 .titulo {
     margin: 0;
-    // padding: 4rem 0 4rem 0;
+    padding: 1rem 0 1rem 0;
     text-align: center;
     text-transform: uppercase;
     border-bottom: 2px solid black;
@@ -475,6 +545,7 @@ nav.row {
     }
     
     .titulo {
+        padding: 2rem 0 2rem 0;
         font-size: 3rem;
     }
 }
@@ -484,39 +555,34 @@ nav.row {
 
 .carousel {
     width: 100%;
+
+    .carousel-indicators {
+        display: none;
+    }
     .carousel-item {
         img {
-            height: 15rem;
+            height: 18rem;
         }
 
     }
-} 
-
-.destacados {
-    
-    // padding: 5rem 0 12rem 0;
-    // background: linear-gradient(to bottom, white, black 1%, black 99%, white);
-    color: $blanco;
-
-    &__titulo {
-        @extend .titulo;
-        margin-bottom: 10rem;
-        border-top: 2px solid $blanco;
-        border-bottom: 2px solid $blanco;
-        color: $blanco;
-    }
 }
 
-@media(min-width: 768px) and (max-width: 1023px) {
-    .destacados .destacados__titulo {
-        font-size: 3rem;
+@media (min-width: 768px) {
+    .carousel .carousel-item img {
+        height: 30rem;
+    }
+
+    .carousel .carousel-indicators {
+        display: block;
+        text-align: center;
     }
 }
 
 @media(min-width: 1024px) {
     .carousel {
+        
         margin: 0 auto;
-        width: 90%;
+        
         .carousel-item {
             img {
                 height: 52rem;
@@ -525,9 +591,6 @@ nav.row {
         }
     }
     
-    .destacados .destacados__titulo {
-        font-size: 3.5rem;
-    }
 }
 
 
@@ -616,7 +679,7 @@ nav.row {
 .shopping-info {
     margin-top: 3rem;
     @include flex-dgja(column, 2rem, center, center);
-    width: 80%;
+    width: 100%;
     margin: 3rem auto;
 
     &_item {
@@ -645,10 +708,75 @@ nav.row {
     }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
+    .separador {
+        border-top: unset;
+    }
+
     .shopping-info {
         flex-direction: row;
-        iba por acá! :)
+        
+        &_item {
+            @include flex-dgja(column, .5rem, space-between, center);
+            font-size: 1.6rem;
+            
+            &:not(:last-child) {
+                border-bottom: unset;
+                padding-bottom: 0;
+            }
+
+            &-img {
+                width: 40%;
+                height: 18rem;
+            }
+
+            &-titulo {
+                font-weight: bold;
+                margin: 1rem 0;
+                width: 100%;
+            }
+    
+            &-text {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+    }
+}
+
+@media (min-width: 1024px) {
+
+    
+
+    .shopping-info {
+        flex-direction: row;
+        
+        &_item {
+            @include flex-dgja(column, .5rem, space-between, center);
+            font-size: 1.8rem;
+            
+            &:not(:last-child) {
+                border-bottom: unset;
+                padding-bottom: 0;
+            }
+
+            &-img {
+                width: 33%;
+                height: 18rem;
+            }
+
+            &-titulo {
+                font-weight: bold;
+                text-align: center;
+                margin: 1rem 0;
+            }
+    
+            &-text {
+                width: 90%;
+                margin: 0 auto;
+            }
+        }
 
     }
 
@@ -775,7 +903,7 @@ nav.row {
 /* ---------------------------------------------------------------*/
 
 footer {
-    background-color: $negro;
+    background-color: #1a1a1a;
     padding: 2rem 0;
     
     .footer {
@@ -1361,17 +1489,13 @@ form {
 
 // -------------------------------------------------- DROPDOWN SCROLL
 
-.contenedor-carrito-login .dropdown-menu {
-    max-height: 320px;
-    overflow-y: scroll;
-  }
-
 
 
 // LOGIN 
 
 #login-body {
-    background-color: rgb(235, 235, 235);
+    // background-color: rgb(235, 235, 235);
+    background-color: rgb(40, 40, 40);
 }
 
 #login-form {

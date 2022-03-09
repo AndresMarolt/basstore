@@ -33,14 +33,26 @@
 <body>
 
     <header>
-        <div class="contenedor">
+        <div class="contenedor-header">
+
+            <div class="header__contacto">
+                <a href="#" class="fa fa-whatsapp wp"></a>
+                <a href="#" class="fa fa-facebook fb"></a>
+                <a href="#" class="fa fa-twitter tw"></a>
+                <a href="#" class="fa fa-instagram ig"></a>
+            </div>
+
             <nav class="row">
-                <a href="/" class="col-lg-6 logo">BASSTORE</a>
-                <ul class="nav col-lg-6 ">
+                <a href="/" class="col-lg-4 logo">BASSTORE</a>
+
+                <div class="buscar col-lg-4">                                            <!-- Barra de búsqueda -->
+                    <input type="text" placeholder="Buscar productos, marcas y más..." class="buscar__barra">
+                </div>
+                <ul class="nav col-lg-4">
                     <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle nav-link" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          Productos
-                        </button>
+                        <a class="btn btn-secondary dropdown-toggle nav-link" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                            Productos
+                        </a>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                           <a class="dropdown-item" href="paginas/bajos.html">Bajos</a>
                           <a class="dropdown-item" href="paginas/pedales.html">Pedales</a>
@@ -57,11 +69,9 @@
                 </ul>
             </nav>
 
-            <div class="buscar">                                            <!-- Barra de búsqueda -->
-                <input type="text" placeholder="Buscar productos, marcas y más..." class="buscar__barra">
-            </div>
+            
 
-            <div class="contenedor-carrito-login">
+            <div class="contenedor-carrito">
                 <!-- BOTON DESPLEGABLE PARA VER CARRITO-->
                 <li class="nav-item dropdown" id="dropdown-carrito-li">
                     <i class='bx bx-cart nav-link dropdown-toggle img-fluid' id="dropdown01" height="70px"
@@ -86,33 +96,33 @@
                         <a href="#" id="procesar-pedido" class="btn boton-verde w-100">Procesar Compra</a>
                     </div>
                 </li>
+            </div>
 
-
-                <div class="inicio-sesion">                                     <!-- Login/Signup -->              
-                    <a href="paginas/login.html" class="log">Login</a>
-                    <a href="paginas/signup.html" class="log">SignUp</a>
-                </div>
+            <div class="inicio-sesion">                                     <!-- Login/Signup -->              
+                <a href="paginas/login.html" class="log">Login</a>
+                <a href="paginas/signup.html" class="log">SignUp</a>
             </div>
         </div>        
     </header>
     
 
     <main>
-
-        
         <!-- ============= PRODUCTOS DESTACADOS ============= -->
         <section class="destacados">
             <div class="">
 
                 <div id="carouselExampleIndicators" class="carousel slide w-100" data-bs-ride="carousel">
-                    <!-- <div class="carousel-indicators">
+                    <div class="carousel-indicators">
                         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
                         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
                         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
-                    </div> -->
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                    </div>
                     
                     <div class="carousel-inner">
+
                         <div class="carousel-item active">
                             <a href="#" class="d-block w-100">
                                 <img src="src/img/carousel/slide-redforest.jpg" alt="Destacado 1" class="d-block w-100" >
@@ -145,7 +155,7 @@
 
                         <div class="carousel-item">
                             <a href="#" class="d-block w-100">
-                                <img src="src/img/carousel/focusrite.jpg" alt="Destacado 5" class="d-block w-100" >
+                                <img src="src/img/carousel/focusrite.jpg" alt="Destacado 6" class="d-block w-100" >
                             </a>  
                         </div>
                     </div>
@@ -359,7 +369,6 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.4/dist/sweetalert2.all.min.js"></script>
 
 
