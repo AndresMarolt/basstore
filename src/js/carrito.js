@@ -108,13 +108,17 @@ class Carrito {
             const contenidoCarrito = JSON.parse(localStorage.getItem('carrito'));
             const listaProductos = document.querySelector(".lista-carrito tbody");
 
-            listaProductos.innerHTML = '';  
+            listaProductos.innerHTML = '';
             
             if(!contenidoCarrito || contenidoCarrito.length === 0) {
                 const row = document.createElement('tr');
                 row.innerHTML = `<td>Carrito Vacío</td>`
                 let botonesCarrito = document.querySelectorAll(".carrito a");
                 botonesCarrito.forEach(bot => bot.style.display = 'none');
+
+                let encabezadosCarrito = document.querySelector("#encabezado-carrito");
+                encabezadosCarrito.style.display = 'none';
+
                 listaProductos.appendChild(row);
                 return;
             } 
@@ -183,8 +187,8 @@ class Carrito {
             const {id, imagen, nombre, precio, cantidad, total} = element;
             const row = document.createElement('tr');
             row.innerHTML = `
-                <td>
-                    <img src="${imagen}" width=100>
+                <td class="td-imagen">
+                    <img src="${imagen}">
                 </td>
                 <td>${nombre}</td>
                 <td>${precio}</td>
@@ -229,17 +233,40 @@ class Carrito {
         let subtotalParrafo = document.getElementById("subtotal");
         subtotalParrafo.innerText = "$" + subtotal;
 
+        
         let inputGiftCard = document.getElementById("giftcard");
+        
+        let totalCompra = document.getElementById("total-compra");
+        totalCompra.innerText = "$" + subtotal;
+        
         inputGiftCard.addEventListener('input', () => {
             let giftcard = inputGiftCard.value;
 
             let descuentoParrafo = document.getElementById("descuento");
             descuentoParrafo.innerText = "$" + giftcard;
 
-            let totalCompra = document.getElementById("total-compra");
             totalCompra.innerText = "$" + (subtotal - giftcard);
         })
         
+
+        this.confirmacionCompra();
+    }
+
+
+    confirmacionCompra() {
+        let boton = document.getElementById("btn-finalizar");
+        console.log(boton);
+        boton.addEventListener("click", () => {
+
+            Swal.fire({
+                title: 'Su compra ha sido exitosa!',
+                icon: 'Success',
+                timer: 2000
+            }) .then( () => {
+                localStorage.removeItem('carrito');
+                location.reload();
+            })
+        })
     }
 }
 

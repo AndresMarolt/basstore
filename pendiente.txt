@@ -1,5 +1,3 @@
 COSAS PENDIENTES
 
-- Hacer que se puedan comprar giftcards (ofrecer poner un email a donde enviar el código)
-- Terminar de pasar todo el scss a mobile first (Llegué hasta Productos)
 - Agregar un botón de Finalizar Compra en el Checkout y hacer que envíe un mail al comprador con la confirmación

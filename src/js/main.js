@@ -40,8 +40,7 @@ async function agregarProdsAlDOM() {
     const resp = await fetch('../data.json');
     const articulosArray = await resp.json();
     const divPadre = document.querySelector('.productos-todo');
-    const publicaciones = articulosArray.filter(art => {
-        
+    const publicaciones = articulosArray.filter(art => {  
         const {categoria} = art;
         if(typeof categoria === "object" ) {                 // En caso de que el producto tenga más de una categoría...
             for(let i=0;  i < categoria.length; i++) {       // ... itera a través de todas ellas, ...
@@ -103,19 +102,19 @@ async function visualizarDetallesProd() {
 function ordenarProds(publicaciones) {
     // =================================== PRECIO ===========================================
     let filtroPrecio = document.querySelector("#ordenar-productos-precio");
-    filtroPrecio.addEventListener("click", () => {
+    filtroPrecio.addEventListener("mouseup", () => {
         if(filtroPrecio.value !=0) { ordenarPrecio(filtroPrecio.value, publicaciones)};
     })
 
     // =================================== TIPO ===========================================
     let filtroTipo = document.querySelector('#ordenar-productos-tipo');
-    filtroTipo.addEventListener("click", () => {
+    filtroTipo.addEventListener("mouseup", () => {
         if(filtroTipo.value !=0) { ordenarTipo(filtroTipo.value, publicaciones)};
     })
 
     // =================================== MARCA ===========================================
     let filtroMarca = document.querySelector('#ordenar-productos-marca');
-    filtroMarca.addEventListener("click", e => {
+    filtroMarca.addEventListener("mouseup", () => {
         if(filtroMarca.value !=0) { ordenarMarca(filtroMarca.value, publicaciones)};
     })
 }
@@ -191,4 +190,7 @@ function ordenarMarca(elegido, arr) {
     })
     cargarIDenLocalStorage();
 }
+
+
+// *************************************************************************************************************
 

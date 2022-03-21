@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
-    <title>Sign Up | Basstore</title>
+    <title>Login | Basstore</title>
 </head>
 
 
@@ -35,37 +35,51 @@
 
     <main>
         
-        <div class="container">
+        <div class="container formulario-todo">
             
-            <form action="" id="signup-form" name="signup-form" class="credenciales col-xs-12 col-sm-10 col-md-6 col-lg-6">
-                <h1>¡Ingrese sus datos para registrarse!</h1>
+
+            <form action="" id="giftcard-form" name="giftcard-form" class=" credenciales col-xs-12 col-sm-10 col-md-6 col-lg-6">
+                <h1>Compra de GiftCard</h1>
 
                 <div class="row">
-                    <div class="form-group col-sm-6">
-                        <input type="text" placeholder="Nombre" name="nombre" class=" form-control">
+                    <div class="campo form-group mb-3">
+                        <input type="email" placeholder="Email"  name="email" class=" form-control">
                     </div>
-                      
-                    <div class="form-group col-sm-6">
-                        <input type="text" placeholder="Apellido" name="apellido" class="form-control">
-                    </div>  
-                </div>
-
-
-                <div class="row">
-                    <div class="form-group">
-                        <input type="email" placeholder="Email" name="email" class="form-control">
-                    </div>                 
                 </div>
 
                 <div class="row">
-                    <div class="form-group">
-                        <input type="password" placeholder="Password" name="password" class="form-control">
-                    </div>                 
+                    <div class="campo form-group mb-3">
+                        <input type="text" placeholder="Nombre del receptor" name="receptor" class="form-control">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="campo form-group mb-3">
+                        <input type="text" placeholder="Tu nombre" name="emisor" class="form-control">
+                    </div>
+                </div>
+
+                <div class="row" >
+                    <div class="mb-12">
+                        <p id="valor-p" style="color: black"></p>
+                    </div>
+                </div>
+
+                <div class="row" style="display: none" >
+                    <div class="mb-12">
+                        <input type="text" id="valor-input" name="valor" style="color: black">
+                    </div>
+                </div>
+
+                <div class="row" style="display: none">
+                    <div class="mb-12">
+                        <input id="idcodigo" name="codigo" type="text">
+                    </div>
                 </div>
             
                 <div class="row">
                     <div class="botones">
-                        <button type="submit" id="boton-crear" class="boton-verde">Crear Cuenta</button>
+                        <button type="submit" id="boton-login" class="boton-verde">Enviar</button>
                     </div>
                 </div>
 
@@ -79,9 +93,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.4/dist/sweetalert2.all.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
-    <script src="../src/js/signup_login.js"></script>
-    
+
+    <script src="../src/js/contacto.js"></script>
+
 
 </body>
 

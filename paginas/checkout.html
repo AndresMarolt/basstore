@@ -74,7 +74,7 @@
                     aria-expanded="false"></i>
                     <div class="dropdown-menu carrito" aria-labelledby="navbarCollapse">
                         <table class="table lista-carrito">
-                            <thead>
+                            <thead id="encabezado-carrito">
                                 <tr class="">
                                     <th>Imagen</th>
                                     <th>Nombre</th>
@@ -102,7 +102,7 @@
 
 
     <main>
-        <div class="contenedor padding-top">
+        <div class="contenedor-expandido padding-top">
 
             <h1 class="titulo">Finalizar compra</h1>
             <table id="lista-compra" class="table">
@@ -128,7 +128,12 @@
             <div id="checkout-container">
 
             </div>
+            
+            <div id="contenedor-btn-finalizar">
+                <button id="btn-finalizar" class="boton-verde">Comprar</button>
+            </div>
         </div>
+
 
 
         <section class="fondo-pie-previo">
