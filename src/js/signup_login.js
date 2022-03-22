@@ -77,8 +77,11 @@ function login() {
             return
         } else {
             let usuariosExistentes = JSON.parse(localStorage.getItem('usuarios'));
+            let usuarioIngresado = null;
 
-            usuarioIngresado = usuariosExistentes.find(x => x.email === email_login);
+            if(usuariosExistentes) {
+                usuarioIngresado = usuariosExistentes.find(x => x.email === email_login);
+            } 
 
             console.log(usuarioIngresado);
 

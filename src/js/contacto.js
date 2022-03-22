@@ -61,8 +61,10 @@ function vaciarFormulario() {
     if(!document.querySelector(".botones .boton-rojo")) return;
 
     const vaciarForm = document.querySelector(".botones .boton-rojo");
+    
+    console.log(vaciarForm);
 
-    vaciarForm.addEventListener("click", () => {
+    vaciarForm.addEventListener("click", e => {
         e.preventDefault();
         Swal.fire({
             title: "Seguro que quiere vaciar todos los campos?",

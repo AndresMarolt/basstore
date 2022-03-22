@@ -120,6 +120,10 @@ function ordenarProds(publicaciones) {
 }
 
 function ordenarPrecio(elegido, arr) {
+    let ordMarca = document.getElementById("ordenar-productos-marca");
+    let ordTipo = document.getElementById("ordenar-productos-tipo");
+    ordMarca.value = 0;
+    ordTipo.value = 0;
 
     if(elegido === "1") {
         arr.sort( (a, b) => (a.precio < b.precio) ? 1 : -1);
@@ -137,6 +141,12 @@ function ordenarPrecio(elegido, arr) {
 }
 
 function ordenarTipo(elegido, arr) {
+
+    let ordPrecio = document.getElementById("ordenar-productos-precio");
+    let ordMarca = document.getElementById("ordenar-productos-marca");
+    ordPrecio.value = 0;
+    ordMarca.value = 0;
+
 
     let elegidoInt = parseInt(elegido);
     const divPadre = document.querySelector('.productos-todo');
@@ -164,6 +174,11 @@ function ordenarTipo(elegido, arr) {
 }
 
 function ordenarMarca(elegido, arr) {
+    let ordPrecio = document.getElementById("ordenar-productos-precio");
+    let ordTipo = document.getElementById("ordenar-productos-tipo");
+    ordPrecio.value = 0;
+    ordTipo.value = 0;
+
     let selectores = document.querySelectorAll("#ordenar-productos-marca option");
     const divPadre = document.querySelector('.productos-todo');
 
