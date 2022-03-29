@@ -5,7 +5,7 @@
         "marca": "Fender",
         "modelo": "American Standard Jazz Bass(2008)",
         "precio": 350000,
-        "tipo": 1,
+        "tipo": ["bajos", "bajos 4 cuerdas"],
         "descripcion": "Bajo Jazz Bass de 4 cuerdas made in USA, con cuerpo de fresno, mastil de palorrosa y diapasón de arce. Micrófonos DiMarzio DP149 Ultra Jazz y clavijas Hipshot.",
         "imagen": "../src/img/bajos/destacado1.jpg"
     },
@@ -13,10 +13,10 @@
         "id": 2,
         "categoria": "bajos",
         "marca": "Eastwood",
-        "modelo": "Classic Fretless Bass",
+        "modelo": "Classic 4 Fretless Bass",
         "precio": 70000,
-        "tipo": 4,
-        "descripcion": "Bajo 4 cuerdas",
+        "tipo": ["bajos", "bajos 4 cuerdas", "bajos fretless"],
+        "descripcion": "Este modelo llamado Classic 4 es el tributo al bajo 'Country Classic' de los 60. La escala corta de 30,5' permite que el bajo esté perfectamente balanceado y le da un sonido profundo y dulce.",
         "imagen": "../src/img/bajos/eastwood_classic_fretless.jpg" 
     },
     {
@@ -25,7 +25,7 @@
         "marca": "F Bass",
         "modelo": "AC5 Violin Burst",
         "precio": 500000,
-        "tipo": 2,
+        "tipo": ["bajos", "bajos 5 cuerdas", "bajos fretless"],
         "descripcion": "F Bass 5 cuerdas",
         "imagen": "../src/img/bajos/destacado3.jpg"
     },
@@ -35,8 +35,8 @@
         "marca": "Warwick",
         "modelo": "Rockbass Corvette 5",
         "precio": 80000,
-        "tipo": 2,
-        "descripcion": "Bajo 5 cuerdas",
+        "tipo": ["bajos", "bajos 5 cuerdas"],
+        "descripcion": "Los bajos Warwick Corvette constan de cuerpo de aliso y mástil de arce con franjas de ekanga haciéndolo ligero y permitiendo una tocada más cómoda y suave. Con sus pastillas MEC JJ pasivas y su electrónica pasiva el Corvette produce un gruñido bajo mientras que ofrece unos agudos claros y resonantes.",
         "imagen": "../src/img/bajos/destacado4.jpg"
     },
     {
@@ -45,7 +45,7 @@
         "marca": "Fender",
         "modelo": "Player JB",
         "precio": 120000,
-        "tipo": 1,
+        "tipo": ["bajos", "bajos 4 cuerdas"],
         "descripcion": "Jazz Bass con cuerpo de aliso, diapasón de palorrosa y dos micrófonos Player Series de bobina simple",
         "imagen": "../src/img/bajos/fender_player_jb.jpg"
     },
@@ -55,7 +55,7 @@
         "marca": "Ernie Ball Musicman",
         "modelo": "Stingray 5",
         "precio": 320000,
-        "tipo": 2,
+        "tipo": ["bajos", "bajos 5 cuerdas"],
         "descripcion": "Mics hambuckers de alnico, previo activo con ecualizador de 3 bandas y cejuela compensada.",
         "imagen": "../src/img/bajos/destacado6.jpg"
     },
@@ -65,8 +65,8 @@
         "marca": "NS",
         "modelo": "Design WAV4c",
         "precio": 30000,
-        "tipo": 1,
-        "descripcion": "Bajo 4 cuerdas",
+        "tipo": ["bajos", "bajos 4 cuerdas"],
+        "descripcion": "Este instrumento es el NS Design WAV4 Radius Electric Bass. Está hecho en la India y representa la línea más asequible de producto de esta marca, por debajo de las series NXT y CR. ",
         "imagen": "../src/img/bajos/NS_Design_WAV4c.jpg"
     },
     {
@@ -75,7 +75,7 @@
         "marca": "Sire",
         "modelo": "Marcus Miller V5 (Zurdo)",
         "precio": 95000,
-        "tipo": 2,
+        "tipo": ["bajos", "bajos 5 cuerdas"],
         "descripcion": "Jazz Bass 4 cuerdas zurdo",
         "imagen": "../src/img/bajos/sire_marcus_miller.jpg"
     },
@@ -85,7 +85,7 @@
         "marca": "Squier",
         "modelo": "Classic Vibe 60s JB",
         "precio": 350000,
-        "tipo": 1,
+        "tipo": ["bajos", "bajos 4 cuerdas"],
         "descripcion": "Jazz Bass inspirado en modelos Jazz Bass de los años 60. Cuerpo de álamo con acabado de poliuretano y diapasón de palorrosa",
         "imagen": "../src/img/bajos/squier_classic_vibe_60s_jb.jpg"
     },
@@ -95,8 +95,8 @@
         "marca": "Fender",
         "modelo": "Rumble 15 1x8 15W",
         "precio": 30000,
-        "tipo": 1,
-        "descripcion": "Amplificador",
+        "tipo": ["amplificadores", "combos a transistores"],
+        "descripcion": "Si lo que estás buscando es un equipo más ligero, resistente y potente, este amplificador de tipo transistor es ideal para vos.",
         "imagen": "../src/img/amplificadores/Fender_Rumble_15_1x8_15W.jpg"
     },
     {
@@ -105,8 +105,8 @@
         "marca": "Warwick",
         "modelo": "Sweet 15",
         "precio": 70000,
-        "tipo": 1,
-        "descripcion": "Amplificador",
+        "tipo": ["amplificadores", "combos a transistores"],
+        "descripcion": "Un combo muy manejable con un gran sonido y un bajo precio. Con el mismo previo de bajísimo ruido que los modelos más grandes de Warwick, este ampli cubre cantidad de situaciones con pegada y eficiencia gracias a su altavoz de 15”.",
         "imagen": "../src/img/amplificadores/destacado2.jpg"
     },
     {
@@ -115,8 +115,8 @@
         "marca": "Orange",
         "modelo": "Crush Bass 50W 1x12",
         "precio": 60000,
-        "tipo": 1,
-        "descripcion": "Amplificador",
+        "tipo": ["amplificadores", "combos a transistores"],
+        "descripcion": "Amplificador para bajo eléctrico con afinador integrado. Este amplificador extremadamente portátil cuenta con una salida de parlante, una entrada auxiliar para reproductores MP3 o CD, y lo más importante, un afinador incorporado.",
         "imagen": "../src/img/amplificadores/Orange_Crush_Bass_50W_1x12.webp"
     },
     {
@@ -125,8 +125,8 @@
         "marca": "MarkBass",
         "modelo": "Mini CMD 121P 1x12",
         "precio": 130000,
-        "tipo": 6,
-        "descripcion": "Amplificador",
+        "tipo": ["amplificadores", "combos a transistores"],
+        "descripcion": "El Mini CMD 121P IV de Markbass es un combo ultracompacto con un sonido sorprendentemente grande y opciones flexibles para dar forma al sonido perfecto. Con una etapa de potencia de 300 vatios MPT y un altavoz de 12', este práctico combo ofrece volúmenes listos para el escenario, mientras que dos preajustes de tono básicos junto con un ecualizador activo de 4 bandas y un filtro prometen sonidos flexibles",
         "imagen": "../src/img/amplificadores/Markbass_Mini_CMD_121P_1x12.webp"
     },
     {
@@ -135,8 +135,8 @@
         "marca": "GR",
         "modelo": "Mini One",
         "precio": 120000,
-        "tipo": 5,
-        "descripcion": "Amplificador",
+        "tipo": ["amplificadores", "cabezales clase d"],
+        "descripcion": "Este cabezal tiene un tono limpio y muy natural con muy poca compresión, que el principal problema de la clase D y que le hace perder peso. GR BASS ha logrado darle más profundidad al sonido ampliando el rango dinámico, generando así un tono más clásico y parecido al sonido de los Solid State. Además aporta una series de características interesantes. Añade también una salida de 9 volt con la que puedes alimentar entre 4-5 pedales sin problemas.",
         "imagen": "../src/img/amplificadores/destacado5.jpg"
     },
     {
@@ -145,8 +145,8 @@
         "marca": "MarkBass",
         "modelo": "CMD Ninja 102P",
         "precio": 320000,
-        "tipo": 8,
-        "descripcion": "Amplificador",
+        "tipo": ["amplificadores", "combos a transistores"],
+        "descripcion": "El combo CMD NINJA 102P - 500 IV tiene un TAMAÑO de alta portabilidad y pesa solo 35,71 libras (16,2 kg). Su sonido es un sonido profesional, con una profundidad asombrosa y una gran definición. El diseño vertical de este combo de 2x10 siempre permite encontrar espacio en el escenario, ¡incluso en clubes pequeños!",
         "imagen": "../src/img/amplificadores/Markbass_CMD_Ninja_102P.webp"
     },
     {
@@ -155,8 +155,8 @@
         "marca": "Acoustic",
         "modelo": "B100C 1X12 100W",
         "precio": 30000,
-        "tipo": 2,
-        "descripcion": "Amplificador",
+        "tipo": ["amplificadores", "combos valvulares"],
+        "descripcion": "El ecualizador de 4 bandas incorporado del Acoustic B100C brinda muchas opciones de esculpido de tono, y su control de muesca de frecuencia permite una manipulación precisa de las frecuencias medias.",
         "imagen": "../src/img/amplificadores/Acoustic_B100C_1X12_100W.webp"
     },
     {
@@ -165,8 +165,8 @@
         "marca": "Acus",
         "modelo": "OneforBass Black",
         "precio": 95000,
-        "tipo": 1,
-        "descripcion": "Amplificador",
+        "tipo": ["amplificadores", "combos a transistores"],
+        "descripcion": "ONE FORBASS es un amplificador diseñado para bajo, violonchelo y contrabajo y representa un producto único en su género en términos de calidad, dinámica y sonido. ONE FORBASS es un amplificador biamplificado de 350 Watts, con un Woofer de alta excursión de 10” y el compresor Tweeter.",
         "imagen": "../src/img/amplificadores/amplificador2.jpg"
     },
     {
@@ -175,8 +175,8 @@
         "marca": "Epifani",
         "modelo": "UL502",
         "precio": 350000,
-        "tipo": 5,
-        "descripcion": "Amplificador",
+        "tipo": ["amplificadores", "cabezales clase d"],
+        "descripcion": "El cabezal UL-502 de Epifani es el amplificador de bajo de 16 lb más potente y versátil disponible. Está repleto de características prácticas que el músico que actúa realmente puede usar, incluidos dos canales independientes conmutables con el pie, entradas de instrumentos duales y un interruptor de corte medio conmutable con el pie para un tono de bofetada asesino a pedido.",
         "imagen": "../src/img/amplificadores/cabezal.jpg"
     },
     {
@@ -185,7 +185,7 @@
         "marca": "Empire Ears",
         "modelo": "Odin",
         "precio": 120000,
-        "tipo": 1,
+        "tipo": ["studio", "auriculares"],
         "descripcion": "Studio",
         "imagen": "../src/img/studio/Empire_Ears_Odin.jpg"
     },
@@ -195,7 +195,7 @@
         "marca": "Symphonium",
         "modelo": "Helios",
         "precio": 70000,
-        "tipo": 1,
+        "tipo": ["studio", "auriculares"],
         "descripcion": "Studio",
         "imagen": "../src/img/studio/Symphonium_Helios_in_Ear.jpg"
     },
@@ -205,7 +205,7 @@
         "marca": "Audient",
         "modelo": "id4 MkII",
         "precio": 200000,
-        "tipo": 2,
+        "tipo": ["studio", "interfaces"],
         "descripcion": "Studio",
         "imagen": "../src/img/studio/Audient_id4.webp" 
     },
@@ -215,7 +215,7 @@
         "marca": "Sennheiser",
         "modelo": "HD 800s",
         "precio": 80000,
-        "tipo": 1,
+        "tipo": ["studio", "auriculares"],
         "descripcion": "Studio",
         "imagen": "../src/img/studio/Sennheiser_hd_800s.png"
     },
@@ -225,7 +225,7 @@
         "marca": "SSL 2+",
         "modelo": "audio interface",
         "precio": 60000,
-        "tipo": 2,
+        "tipo": ["studio", "interfaces"],
         "descripcion": "Studio",
         "imagen": "../src/img/studio/SSL2+audio_interface.webp"
     },
@@ -235,7 +235,7 @@
         "marca": "Audeze",
         "modelo": "Mobius Wireless",
         "precio": 85000,
-        "tipo": 1,
+        "tipo": ["studio", "auriculares"],
         "descripcion": "Studio",
         "imagen": "../src/img/studio/Audeze_Mobius_Wireless.jpg"
     },
@@ -245,7 +245,7 @@
         "marca": "Audeze",
         "modelo": "LCD-2 Classic Planar",
         "precio": 50000,
-        "tipo": 1,
+        "tipo": ["studio", "auriculares"],
         "descripcion": "Studio",
         "imagen": "../src/img/studio/Audeze_LCD-2_Classic_Planar.jpg"
     },
@@ -255,7 +255,7 @@
         "marca": "Empire Ears",
         "modelo": "Valkyrie MK II",
         "precio": 200000,
-        "tipo": 1,
+        "tipo": ["studio", "auriculares"],
         "descripcion": "Studio",
         "imagen": "../src/img/studio/Empire_Ears_Valkyrie_MK_II.png"
     },
@@ -265,7 +265,7 @@
         "marca": "64 Audio",
         "modelo": "U18S In-Ear Monitor",
         "precio": 350000,
-        "tipo": 1,
+        "tipo": ["studio", "auriculares"],
         "descripcion": "Studio",
         "imagen": "../src/img/studio/64_Audio_U18S_In-Ear_Monitor.jpg"
     },
@@ -275,7 +275,7 @@
         "marca": "EBS",
         "modelo": "Bass IQ Envelope Filter",
         "precio": 45000,
-        "tipo": 7,
+        "tipo": ["studio", "envelope filter"],
         "descripcion": "Pedal",
         "imagen": "../src/img/pedales/EBS_BassIQ.jpg"
     },
@@ -285,9 +285,9 @@
         "marca": "MXR",
         "modelo": "M288 Bass Octave Deluxe",
         "precio": 70000,
-        "tipo": 8,
+        "tipo": ["pedales", "octavador"],
         "descripcion": "Pedal",
-        "imagen": "../src/img/pedales/prueba.png"
+        "imagen": "../src/img/pedales/MXR_M288_Bass_Octave_Deluxe.jpg"
     },
     {
         "id": 30,
@@ -295,7 +295,7 @@
         "marca": "MXR",
         "modelo": "M82 Bass Filter Envelope",
         "precio": 500000,
-        "tipo": 7,
+        "tipo": ["pedales", "envelope filter"],
         "descripcion": "Pedal",
         "imagen": "../src/img/pedales/MXR_M82_Bass_Filter_Envelope.jpg"
     },
@@ -305,7 +305,7 @@
         "marca": "Boss",
         "modelo": "DD-7 Digital Delay",
         "precio": 80000,
-        "tipo": 5,
+        "tipo": ["pedales", "delay"],
         "descripcion": "Pedal",
         "imagen": "../src/img/pedales/Boss_DD-7.jpg"
     },
@@ -315,7 +315,7 @@
         "marca": "Boss",
         "modelo": "PS-6 Harmonist",
         "precio": 40000,
-        "tipo": 9,
+        "tipo": ["pedales", "armonizador"],
         "descripcion": "Pedal",
         "imagen": "../src/img/pedales/Boss_PS-6_Harmonist.jpg"
     },
@@ -325,7 +325,7 @@
         "marca": "Electro Harmonix",
         "modelo": "Freeze",
         "precio": 320000,
-        "tipo": 10,
+        "tipo": ["pedales", "reverb"],
         "descripcion": "Pedal",
         "imagen": "../src/img/pedales/Electro_Harmonix_Freeze.jpg"
     },
@@ -335,7 +335,7 @@
         "marca": "Boss",
         "modelo": "TR-2 Tremolo",
         "precio": 30000,
-        "tipo": 3,
+        "tipo": ["pedales", "tremolo"],
         "descripcion": "Pedal",
         "imagen": "../src/img/pedales/Boss_TR-2_Tremolo.jpg"
     },
@@ -345,7 +345,7 @@
         "marca": "Electro Harmonix",
         "modelo": "Nano Battalion",
         "precio": 45000,
-        "tipo": 1,
+        "tipo": ["pedales", "overdrive"],
         "descripcion": "Pedal",
         "imagen": "../src/img/pedales/Electro_Harmonix_Nano_Battalion.jpg"
     },
@@ -355,7 +355,7 @@
         "marca": "Fender",
         "modelo": "The Bends",
         "precio": 30000,
-        "tipo": 2,
+        "tipo": ["pedales", "compresor"],
         "descripcion": "Pedal",
         "imagen": "../src/img/pedales/FENDER_The_Bends.jpg"
     },
@@ -365,7 +365,7 @@
         "marca": "D'Addario",
         "modelo": "EXL160BT (50-120)",
         "precio": 4000,
-        "tipo": 1,
+        "tipo": ["accesorios", "cuerdas"],
         "descripcion": "Accesorio",
         "imagen": "../src/img/accesorios/DAddario_EXL160BT_Balanced_Tension_(50-120).webp"
     },
@@ -375,7 +375,7 @@
         "marca": "Ernie Ball",
         "modelo": "Slinky Round Wound",
         "precio": 3500,
-        "tipo": 1,
+        "tipo": ["accesorios", "cuerdas"],
         "descripcion": "Accesorio",
         "imagen": "../src/img/accesorios/Ernie_Ball_2831_Slinky_Round_Wound.webp"
     },
@@ -385,7 +385,7 @@
         "marca": "Fender",
         "modelo": "Clip Tuner",
         "precio": 2500,
-        "tipo": 2,
+        "tipo": ["accesorios", "afinadores"],
         "descripcion": "Accesorio",
         "imagen": "../src/img/accesorios/Afinador_clip_Fender.webp"
     },
@@ -395,7 +395,7 @@
         "marca": "Kirlin",
         "modelo": "Cable 3 metros",
         "precio": 3000,
-        "tipo": 5,
+        "tipo": ["accesorios", "cables"],
         "descripcion": "Accesorio",
         "imagen": "../src/img/accesorios/cable1.jpg"
     },
@@ -405,7 +405,7 @@
         "marca": "Kirlin",
         "modelo": "Cable 5 metros",
         "precio": 4000,
-        "tipo": 5,
+        "tipo": ["accesorios", "cables"],
         "descripcion": "Accesorio",
         "imagen": "../src/img/accesorios/cable_5_metros.webp"
     },
@@ -415,7 +415,7 @@
         "marca": "Ernie Ball",
         "modelo": "Regular Slinky Round Wound",
         "precio": 3500,
-        "tipo": 1,
+        "tipo": ["accesorios", "cuerdas"],
         "descripcion": "Accesorio",
         "imagen": "../src/img/accesorios/Ernie_Ball_Regular_Slinky_Round_Wound.webp"
     },
@@ -425,7 +425,7 @@
         "marca": "Fender",
         "modelo": "Bass Guitar Stand",
         "precio": 3000,
-        "tipo": 4,
+        "tipo": ["accesorios", "pies para bajo"],
         "descripcion": "Accesorio",
         "imagen": "../src/img/accesorios/Pie_para_bajo.jpg"
     },
@@ -435,7 +435,7 @@
         "marca": "Fender",
         "modelo": "Strap",
         "precio": 5000,
-        "tipo": 3,
+        "tipo": ["accesorios", "correas"],
         "descripcion": "Accesorio",
         "imagen": "../src/img/accesorios/Fender_strap.webp"
     },
@@ -445,7 +445,7 @@
         "marca": "Ernie Ball",
         "modelo": "Strap",
         "precio": 6000,
-        "tipo": 3,
+        "tipo": ["accesorios", "correas"],
         "descripcion": "Accesorio",
         "imagen": "../src/img/accesorios/ernie_ball_strap.webp"
     }

@@ -102,19 +102,19 @@ async function visualizarDetallesProd() {
 function ordenarProds(publicaciones) {
     // =================================== PRECIO ===========================================
     let filtroPrecio = document.querySelector("#ordenar-productos-precio");
-    filtroPrecio.addEventListener("mouseup", () => {
+    filtroPrecio.addEventListener("change", () => {
         if(filtroPrecio.value !=0) { ordenarPrecio(filtroPrecio.value, publicaciones)};
     })
 
     // =================================== TIPO ===========================================
     let filtroTipo = document.querySelector('#ordenar-productos-tipo');
-    filtroTipo.addEventListener("mouseup", () => {
+    filtroTipo.addEventListener("change", () => {
         if(filtroTipo.value !=0) { ordenarTipo(filtroTipo.value, publicaciones)};
     })
 
     // =================================== MARCA ===========================================
     let filtroMarca = document.querySelector('#ordenar-productos-marca');
-    filtroMarca.addEventListener("mouseup", () => {
+    filtroMarca.addEventListener("change", () => {
         if(filtroMarca.value !=0) { ordenarMarca(filtroMarca.value, publicaciones)};
     })
 }
@@ -148,13 +148,24 @@ function ordenarTipo(elegido, arr) {
     ordMarca.value = 0;
 
 
-    let elegidoInt = parseInt(elegido);
+    let selectores = document.querySelectorAll("#ordenar-productos-tipo option");
     const divPadre = document.querySelector('.productos-todo');
 
-    for(let i=1; i<15; i++) {
-        if(elegidoInt === i) {
-            let arrayFiltrado = arr.filter(articulo => {
-                return articulo.tipo === i;
+    selectores.forEach(sel => {                                     // Itera por cada selector
+        const {value, outerText} = sel;                             // A cada selector se le lee el valor y el texto
+        if(value === elegido) {                                     // Cuando encuentre el selector cuyo valor coincida con el del selector clickeado
+            let arrayFiltrado = arr.filter(articulo => {            // Se crea un array filtrado
+                let {tipo} = articulo;
+                // asdadasd
+                if(typeof tipo === "object" ) {                 // En caso de que el producto tenga más de una categoría...
+                    console.log(tipo);
+                    for(let i=0;  i < tipo.length; i++) {       // ... itera a través de todas ellas, ...
+                        if(tipo[i] === outerText.toLowerCase()) {           // ... y si una de las categorías que tiene el producto es la misma categoría que la que se pretende mostrar en la página actual...
+                           return tipo[i] === outerText.toLowerCase();     // ... añade el producto al nuevo array filtrado     
+                        };
+                    }
+                }
+                return tipo === outerText.toLowerCase();
             })
 
             if(arrayFiltrado.length === 0) {
@@ -164,11 +175,12 @@ function ordenarTipo(elegido, arr) {
                 divPadre.appendChild(nuevoElemento);
                 return;
             }
-            
+    
             divPadre.innerHTML = '';
             arrayFiltrado.forEach(producto => { imprimirPublicacionesEnDOM(producto) } );
-        }
-    }
+            return;
+        } 
+    })
 
     cargarIDenLocalStorage();
 }
