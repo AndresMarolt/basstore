@@ -1254,7 +1254,7 @@ form {
 @media(min-width: 1024px) {
     
     .filtros_productos {
-        border: 1px solid black;
+        border: 1px solid rgb(167, 167, 167);
         border-radius: 10px;
         @include grid-crgaj(.3fr .7fr, repeat(1, 1fr), 0, start, space-between);
 
@@ -1292,7 +1292,7 @@ form {
         }
 
         .productos-todo {
-            border-left: 1px solid black;
+            border-left: 1px solid rgb(167, 167, 167);
             padding: 3rem;
             @include  grid-crgaj(repeat(3, 1fr), repeat(3, 1fr), 2rem, start, center);
             margin-top: 0;

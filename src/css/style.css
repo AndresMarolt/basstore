@@ -1616,7 +1616,7 @@ form .form-group .form-control {
 
 @media (min-width: 1024px) {
   .filtros_productos {
-    border: 1px solid black;
+    border: 1px solid #a7a7a7;
     border-radius: 10px;
     display: -ms-grid;
     display: grid;
@@ -1660,7 +1660,7 @@ form .form-group .form-control {
     padding-top: 1rem;
   }
   .filtros_productos .productos-todo {
-    border-left: 1px solid black;
+    border-left: 1px solid #a7a7a7;
     padding: 3rem;
     display: -ms-grid;
     display: grid;

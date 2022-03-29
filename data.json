@@ -186,7 +186,7 @@
         "modelo": "Odin",
         "precio": 120000,
         "tipo": ["studio", "auriculares"],
-        "descripcion": "Studio",
+        "descripcion": "ODIN es la personificación del ADN de Empire en su forma más extrema: en diseño, rendimiento y amplitud de capacidades. ODIN redescubre el verdadero significado del compromiso entre el oyente y el IEM”.",
         "imagen": "../src/img/studio/Empire_Ears_Odin.jpg"
     },
     {
@@ -196,7 +196,7 @@
         "modelo": "Helios",
         "precio": 70000,
         "tipo": ["studio", "auriculares"],
-        "descripcion": "Studio",
+        "descripcion": "Helios fue diseñado para refutar los estereotipos asociados con los auriculares de armadura balanceada de múltiples controladores. Utilizando tecnologías recientemente desarrolladas, sus subwoofers de armadura balanceada producen un golpe de subgraves excepcionalmente limpio que golpea con fuerza, pero no colorea la presentación vocal.",
         "imagen": "../src/img/studio/Symphonium_Helios_in_Ear.jpg"
     },
     {
@@ -206,7 +206,7 @@
         "modelo": "id4 MkII",
         "precio": 200000,
         "tipo": ["studio", "interfaces"],
-        "descripcion": "Studio",
+        "descripcion": "Diseñado para llevar tus grabaciones al siguiente nivel en todos los sentidos, el iD4 (MKII) ofrece un rendimiento de audio profesional en un dispositivo de sobremesa compacto y moderno, que te brinda todo lo que necesitas para realizar grabaciones con calidad de estudio en casa.",
         "imagen": "../src/img/studio/Audient_id4.webp" 
     },
     {
@@ -216,7 +216,7 @@
         "modelo": "HD 800s",
         "precio": 80000,
         "tipo": ["studio", "auriculares"],
-        "descripcion": "Studio",
+        "descripcion": "El corazón de la HD 800 S y su sorprendente sonido es el transductor de radiador de anillo de 2.205 in. Aprovecha el desplazamiento de aire de un diafragma de altavoz grande sin perder la rigidez de uno más pequeño. El resultado es una respuesta hiperrápida para un detalle excelente en todo el rango de frecuencias. El chasis de amortiguación de vibraciones del auricular y la diadema inerte garantizan que lo que pones en el HD 800 S sea precisamente lo que obtendrás de él.",
         "imagen": "../src/img/studio/Sennheiser_hd_800s.png"
     },
     {
@@ -226,7 +226,7 @@
         "modelo": "audio interface",
         "precio": 60000,
         "tipo": ["studio", "interfaces"],
-        "descripcion": "Studio",
+        "descripcion": "La interfaz SSL2 presenta el sonido prístino y la calidad de construcción superior por la que se conoce a SSL. Equipado con dos entradas de micrófono/línea/instrumento líderes en su clase y convertidores de 24 bits/192 kHz del fabricante AKM de renombre en la industria, el SSL2 ofrece sonido de estudio profesional en un factor de forma pequeño.",
         "imagen": "../src/img/studio/SSL2+audio_interface.webp"
     },
     {
@@ -236,7 +236,7 @@
         "modelo": "Mobius Wireless",
         "precio": 85000,
         "tipo": ["studio", "auriculares"],
-        "descripcion": "Studio",
+        "descripcion": "Mobius es principalmente un auricular USB con cable que aparece como un dispositivo de salida de ocho canales (surround) para su computadora; cuenta con audio 3D y tecnología de seguimiento de la cabeza que no está incluida en Penrose. Penrose es principalmente un auricular inalámbrico de dos canales (estéreo) de baja latencia y sin pérdidas que utiliza un transmisor USB de 2,4 GHz.",
         "imagen": "../src/img/studio/Audeze_Mobius_Wireless.jpg"
     },
     {
@@ -246,7 +246,7 @@
         "modelo": "LCD-2 Classic Planar",
         "precio": 50000,
         "tipo": ["studio", "auriculares"],
-        "descripcion": "Studio",
+        "descripcion": "Audeze tomó los controladores magnéticos planares LCD-2 de la generación actual y eliminó los elementos Fazor, alineando el sonido del LCD-2 Classic con el del LCD-2 original lanzado en 2008. El resultado es una experiencia musical cálida y enérgica que se remonta a los primeros días de Audeze, sin sacrificar las mejoras de sonido o rendimiento realizadas durante la última década. Si usted es un viejo fanático del brillante LCD-2 original o un nuevo cliente de Audeze que busca una introducción asequible a la gama LCD origins, el LCD-2 Classic es una excelente opción para usted.",
         "imagen": "../src/img/studio/Audeze_LCD-2_Classic_Planar.jpg"
     },
     {
@@ -256,7 +256,7 @@
         "modelo": "Valkyrie MK II",
         "precio": 200000,
         "tipo": ["studio", "auriculares"],
-        "descripcion": "Studio",
+        "descripcion": "Equipado con un diseño de controlador tribrid patentado y una red de cruce synX de 4 vías rediseñada, el Valkyrie MKII muestra agudos emocionantes del controlador electrostático, voces realistas de la armadura equilibrada y una respuesta de graves inigualable de nuestro subwoofer W9 + de próxima generación.",
         "imagen": "../src/img/studio/Empire_Ears_Valkyrie_MK_II.png"
     },
     {
@@ -266,7 +266,7 @@
         "modelo": "U18S In-Ear Monitor",
         "precio": 350000,
         "tipo": ["studio", "auriculares"],
-        "descripcion": "Studio",
+        "descripcion": "El 64 Audio U18s es un monitor universal con controlador de 18 BA de gama alta que cuenta con tecnología de filtro apex, diseño sin cámara tia y gestión de impedancia no lineal LID.",
         "imagen": "../src/img/studio/64_Audio_U18S_In-Ear_Monitor.jpg"
     },
     {
@@ -276,7 +276,7 @@
         "modelo": "Bass IQ Envelope Filter",
         "precio": 45000,
         "tipo": ["studio", "envelope filter"],
-        "descripcion": "Pedal",
+        "descripcion": "El EBS BassIQ produce sonidos que van desde los efectos clásicos de auto-wah hasta sonidos de bajo sintetizado y funky espaciados. Es para todos los que buscan un filtro de envolvente divertido, con un sonido gordo y receptivo que reaccione a la forma en que toca de una manera musical.",
         "imagen": "../src/img/pedales/EBS_BassIQ.jpg"
     },
     {
@@ -286,17 +286,17 @@
         "modelo": "M288 Bass Octave Deluxe",
         "precio": 70000,
         "tipo": ["pedales", "octavador"],
-        "descripcion": "Pedal",
+        "descripcion": "El Bass Octave Deluxe ofrece dos voces de sub-octava analógicas independientes con un control Dry y un interruptor Mid+ para optimizar el sonido de su señal paralela limpia.",
         "imagen": "../src/img/pedales/MXR_M288_Bass_Octave_Deluxe.jpg"
     },
     {
         "id": 30,
         "categoria": "pedales",
         "marca": "MXR",
-        "modelo": "M82 Bass Filter Envelope",
+        "modelo": "M82 Bass Envelope Filter",
         "precio": 500000,
         "tipo": ["pedales", "envelope filter"],
-        "descripcion": "Pedal",
+        "descripcion": "El MXR M82 Bass Envelope Filter ofrece sonidos clásicos de envelope filter analógico en un pedal compacto y fácil de usar diseñado específicamente para bajo. Los controles separados Dry y Effect le permiten marcar la combinación perfecta de señales directas y con efectos, para que pueda traer el funk sin perder el extremo inferior.",
         "imagen": "../src/img/pedales/MXR_M82_Bass_Filter_Envelope.jpg"
     },
     {
@@ -306,7 +306,7 @@
         "modelo": "DD-7 Digital Delay",
         "precio": 80000,
         "tipo": ["pedales", "delay"],
-        "descripcion": "Pedal",
+        "descripcion": "El BOSS DD-7 Digital Delay es un pedal de efectos que toma las mejores características de sus predecesores y expande su potencial creativo. Obtiene el modo de retardo de modulación, el modo de retardo analógico modelado clásico, opciones de control de pedal externo, tiempo de retardo más largo y más.",
         "imagen": "../src/img/pedales/Boss_DD-7.jpg"
     },
     {
@@ -316,7 +316,7 @@
         "modelo": "PS-6 Harmonist",
         "precio": 40000,
         "tipo": ["pedales", "armonizador"],
-        "descripcion": "Pedal",
+        "descripcion": "Cuando desee armonía de guitarra de 3 voces, no necesita llamar a dos de sus amigos, ¡simplemente pise el PS-6 Harmonist y prepárese para sorprenderse! Esta pequeña caja azul contiene modos inteligentes de armonía, cambio de tono y desafinación. Además, cuenta con el nuevo modo Super Bend de BOSS para efectos de flexión de pedal increíbles y barridos de tono de 3 y 4 octavas. El PS-6 Harmonist es una herramienta creativa impresionante y muy divertida de usar, definitivamente una pedalera imprescindible para el guitarrista aventurero. ¡No olvide agregar un pedal de expresión para tomar el control total de los efectos de armonía de su PS-6 Harmonist!",
         "imagen": "../src/img/pedales/Boss_PS-6_Harmonist.jpg"
     },
     {
@@ -326,7 +326,7 @@
         "modelo": "Freeze",
         "precio": 320000,
         "tipo": ["pedales", "reverb"],
-        "descripcion": "Pedal",
+        "descripcion": "El EHX Freeze Sound Retainer ofrece un sostenido infinito de cualquier nota o acorde con solo presionar un interruptor de pie momentáneo. Suelte el interruptor de pie y estará nuevamente listo para la muestra. Tres velocidades de caída seleccionables, incluido un modo de bloqueo, garantizan transiciones tonales fluidas y suaves.",
         "imagen": "../src/img/pedales/Electro_Harmonix_Freeze.jpg"
     },
     {
@@ -336,7 +336,7 @@
         "modelo": "TR-2 Tremolo",
         "precio": 30000,
         "tipo": ["pedales", "tremolo"],
-        "descripcion": "Pedal",
+        "descripcion": "El trémolo BOSS TR-2 está diseñado para proporcionar a los guitarristas efectos de trémolo clásicos en un pedal compacto fácil de usar. Las perillas dedicadas de onda, velocidad y profundidad brindan una multitud de posibilidades de efectos.",
         "imagen": "../src/img/pedales/Boss_TR-2_Tremolo.jpg"
     },
     {
@@ -346,7 +346,7 @@
         "modelo": "Nano Battalion",
         "precio": 45000,
         "tipo": ["pedales", "overdrive"],
-        "descripcion": "Pedal",
+        "descripcion": "Nano Battalion presenta un ecualizador de tres bandas con tres modos de posición de ecualización para una máxima flexibilidad y control de modelado del sonido. El ecualizador de tres bandas incluye controles de agudos (aumento/corte por encima de 1 kHz) y graves (aumento/corte por debajo de 200 Hz), además de un interruptor de medios que proporciona un aumento o corte de 9 dB a 500 Hz.al",
         "imagen": "../src/img/pedales/Electro_Harmonix_Nano_Battalion.jpg"
     },
     {
@@ -356,7 +356,7 @@
         "modelo": "The Bends",
         "precio": 30000,
         "tipo": ["pedales", "compresor"],
-        "descripcion": "Pedal",
+        "descripcion": "Pedal compresor con características amigables con el tono. El control de recuperación marca la sensación del pedal. El nivel y el drive determinan la cantidad de señal en la entrada y salida del pedal. Blend devuelve la señal no afectada.",
         "imagen": "../src/img/pedales/FENDER_The_Bends.jpg"
     },
     {
@@ -366,7 +366,7 @@
         "modelo": "EXL160BT (50-120)",
         "precio": 4000,
         "tipo": ["accesorios", "cuerdas"],
-        "descripcion": "Accesorio",
+        "descripcion": "EXL160 BT es un juego de tensión equilibrada que permite flexiones, trastes, punteos y golpes uniformemente equilibrados. Las cuerdas de bajo eléctrico XL Nickel Wound, reconocidas durante mucho tiempo como el estándar de la industria, son ideales para una amplia gama de estilos musicales.",
         "imagen": "../src/img/accesorios/DAddario_EXL160BT_Balanced_Tension_(50-120).webp"
     },
     {
@@ -376,7 +376,7 @@
         "modelo": "Slinky Round Wound",
         "precio": 3500,
         "tipo": ["accesorios", "cuerdas"],
-        "descripcion": "Accesorio",
+        "descripcion": "Estas cuerdas de bajo de entorchado redondo están hechas de acero niquelado envuelto alrededor de un alambre de núcleo de acero con forma hexagonal. Tocadas tanto por principiantes como por estrellas de rock, las cuerdas de bajo Slinky proporcionan un tono brillante y equilibrado y se ofrecen en muchos calibres.",
         "imagen": "../src/img/accesorios/Ernie_Ball_2831_Slinky_Round_Wound.webp"
     },
     {
@@ -386,7 +386,7 @@
         "modelo": "Clip Tuner",
         "precio": 2500,
         "tipo": ["accesorios", "afinadores"],
-        "descripcion": "Accesorio",
+        "descripcion": "Práctico y discreto, el afinador con clip multifunción FCT-2 ayuda a garantizar que su instrumento esté siempre afinado, incluso en escenarios oscuros. Sintonizador de clip compacto de doble bisagra. Modos de afinación de guitarra, bajo, ukelele, violín y cromático. Pantalla LCD a color con aguja de afinación fácil de leer.",
         "imagen": "../src/img/accesorios/Afinador_clip_Fender.webp"
     },
     {
@@ -396,7 +396,7 @@
         "modelo": "Cable 3 metros",
         "precio": 3000,
         "tipo": ["accesorios", "cables"],
-        "descripcion": "Accesorio",
+        "descripcion": "Este cable fue hecho para que los músicos vayan al cable. Construido con una cubierta de PVC gris gruesa pero flexible de 8 mm, este cable Kirlin es un cable verdaderamente único durante cualquier actuación en cualquier escenario.",
         "imagen": "../src/img/accesorios/cable1.jpg"
     },
     {
@@ -406,7 +406,7 @@
         "modelo": "Cable 5 metros",
         "precio": 4000,
         "tipo": ["accesorios", "cables"],
-        "descripcion": "Accesorio",
+        "descripcion": "Este cable fue hecho para que los músicos vayan al cable. Construido con una cubierta de PVC gris gruesa pero flexible de 8 mm, este cable Kirlin es un cable verdaderamente único durante cualquier actuación en cualquier escenario.",
         "imagen": "../src/img/accesorios/cable_5_metros.webp"
     },
     {
@@ -416,7 +416,7 @@
         "modelo": "Regular Slinky Round Wound",
         "precio": 3500,
         "tipo": ["accesorios", "cuerdas"],
-        "descripcion": "Accesorio",
+        "descripcion": "Las cuerdas para bajo Ernie Ball Roundwound Regular Slinky están hechas de acero niquelado envuelto alrededor de un alambre de acero con forma hexagonal. Cada cuerda de bajo produce un tono brillante y equilibrado y está fabricada con las materias primas más frescas y finas en el hermoso Valle de Coachella en el sur de California. Calibres .050, .070, .085, .105.",
         "imagen": "../src/img/accesorios/Ernie_Ball_Regular_Slinky_Round_Wound.webp"
     },
     {
@@ -426,7 +426,7 @@
         "modelo": "Bass Guitar Stand",
         "precio": 3000,
         "tipo": ["accesorios", "pies para bajo"],
-        "descripcion": "Accesorio",
+        "descripcion": "Fabricado según especificaciones exigentes con tubo de goma de neopreno negro suave para proteger su bajo. Se pliega para facilitar el transporte.",
         "imagen": "../src/img/accesorios/Pie_para_bajo.jpg"
     },
     {
@@ -436,7 +436,7 @@
         "modelo": "Strap",
         "precio": 5000,
         "tipo": ["accesorios", "correas"],
-        "descripcion": "Accesorio",
+        "descripcion": "La correa de cuero para bajo de 2.5' de Fender ofrece una sensación lujosa y cómoda. La parte superior de cuero genuino resistente luce un elegante acabado de aceite, mientras que el respaldo está hecho de 5 oz. piel de vacuno. Esta correa se ajusta de 44,5' a 53' de largo, lo que la hace ideal para bajistas de cualquier altura.",
         "imagen": "../src/img/accesorios/Fender_strap.webp"
     },
     {
@@ -446,7 +446,7 @@
         "modelo": "Strap",
         "precio": 6000,
         "tipo": ["accesorios", "correas"],
-        "descripcion": "Accesorio",
+        "descripcion": "La correa de cuero para bajo de 2.5' de Fender ofrece una sensación lujosa y cómoda. La parte superior de cuero genuino resistente luce un elegante acabado de aceite, mientras que el respaldo está hecho de 5 oz. piel de vacuno. Esta correa se ajusta de 44,5' a 53' de largo, lo que la hace ideal para bajistas de cualquier altura.",
         "imagen": "../src/img/accesorios/ernie_ball_strap.webp"
     }
 ]
